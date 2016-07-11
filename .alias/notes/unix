@@ -1,0 +1,8 @@
+# add user to a group
+usermod -a -G <groupname> <username>
+
+# create a new group
+groupadd <groupname>
+
+# change a user's primary group
+usermod -g <groupname> <username>
