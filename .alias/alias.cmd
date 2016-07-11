@@ -179,3 +179,10 @@ EOF
 	echo new$name alias-name string
 	source /home/ildar/.zshrc
 }
+
+dotfiles.upload()
+{
+	git add /home/ildar/git/dotfiles;
+	git commit
+	git push
+}
