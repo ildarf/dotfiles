@@ -1,0 +1,25 @@
+# /bin/bash
+# git-aliases
+
+alias alias.git='vim /home/ildar/.alias/alias.git && source /home/ildar/.alias/alias.git'
+
+newgit() {
+		echo "alias $1=\"$2\"" >> ~/.alias/alias.git
+				source /home/ildar/.alias/alias.git
+}
+
+dotfiles.upload()
+{
+	cd /home/ildar/git/dotfiles
+	git add .
+	git commit
+	git push
+	cd -
+}
+
+dotfiles.status()
+{
+	cd /home/ildar/git/dotfiles
+	git status
+	cd -
+}

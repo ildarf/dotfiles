@@ -154,7 +154,7 @@ band()
 newalias()
 {
 	name=$1
-	cat << EOF > alias.$name
+	cat << EOF > /home/ildar/.alias/alias.$name
 # /bin/bash
 # $name-aliases
 
@@ -180,9 +180,3 @@ EOF
 	source /home/ildar/.zshrc
 }
 
-dotfiles.upload()
-{
-	git add /home/ildar/git/dotfiles;
-	git commit
-	git push
-}

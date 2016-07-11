@@ -1,0 +1,15 @@
+# add or change a passphrase:
+ssh-keygen -p
+
+# generate a new ssh key for git:
+ssh-keygen -t rsa -b 4096 -C "mail@address"
+
+# add ssh-key to ssh-agent:
+# first start the ssh-agent in the backgroud
+eval `ssh-agent -s`
+# now add the private key file
+ssh-add <keyfile>
+
+# get my public key fingerprint:
+ssh-add -l
+ssh-add -l -E md5
