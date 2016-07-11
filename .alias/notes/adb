@@ -1,0 +1,24 @@
+# create full backup of system:
+adb backup -all -f <backupfile.ab>
+adb bakcup -all -apk -shared -f <backupfile.ab>
+
+# restore backup
+adb restore <backupfile.ab>
+
+
+####################################################
+# cyanogenmod installation guide
+####################################################
+https://wiki.cyanogenmod.org/w/Install_CM_for_i9300
+# log into shell 
+adb shell
+
+# go into recovery mode
+adb reboot recovery
+
+# place cm-i9300.zip & gapps.zip on root of /sdcard
+adb push <cm-i9300.zip> /sdcard
+adb push <gapps.zip> /sdcard/
+
+# in recovery:
+# choose install from zip, install the zips

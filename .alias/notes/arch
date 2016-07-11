@@ -1,0 +1,13 @@
+# copy arch iso to usb-stick and view progress
+pv arch.iso | sudo dd of=/dev/sdXY
+
+# set up time
+sudo timedatectl set-ntp tru
+
+# check directory size
+sudo du -khs *
+
+echo "${@:2}"
+
+# setting sound properly:
+# install pulseaudio-alsa, configure vlc to PulseAudio-Audioausgabe

@@ -1,0 +1,12 @@
+# check syntax of perl file 
+$ perl -c
+
+# user perldoc to get information about functions, etc
+#
+# show documentation of functions
+$ perldoc -f <funcname>
+
+# show full-text-search in faq to some buzzwords
+$ perldoc -q <searchword>
+
+# use pragma to 

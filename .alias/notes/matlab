@@ -1,0 +1,16 @@
+matlab - notes:
+=================================
+ mandelbrot set:
+	 z, c = matrix with complex coordinates
+ 	set maximum depth
+ 	depth times do:
+ 		compute recursively z
+ 		if abs(z) < 2, set c to depth-value
+ 	
+ 	map values of c to colors and display the
+ 	image
+ 	
+ image-plot:
+ 	set(gca, 'YDir', 'normal') flippt die y-Achsen
+
+axis 'normal|square|equal|equal tight' setzt die Achsenproportionen

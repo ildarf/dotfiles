@@ -1,0 +1,14 @@
+1) Download package
+wget url
+2) check md5sum
+md5sum package.tar.bz2
+3) unpack it
+tar -xjvf package.tar.bz2
+4) cd into new dir
+cd package
+5) configure it
+./configure
+6) make it
+make
+7) install it
+sudo make install

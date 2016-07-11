@@ -1,0 +1,74 @@
+# uni-aliases
+
+alias alias.uni='vim /home/ildar/.alias/alias.uni && source /home/ildar/.alias/alias.uni'
+
+newuni() {
+	echo "alias $1=\"${@:2}\"" >> ~/.alias/alias.uni
+	source /home/ildar/.alias/alias.uni
+}
+
+alias lsf="chromium 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=wtree&search=1&trex=step&root120161=46276|46354|45763|45868&P.vx=kurz'"
+alias lsf.ml="chromium 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=verpublish&status=init&vmfile=no&publishid=141854&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung'"
+alias lsf.pp="chromium 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=verpublish&status=init&vmfile=no&publishid=136542&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung'"
+alias lsf.ki="chromium 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=verpublish&status=init&vmfile=no&publishid=141818&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung'"
+alias lsf.nt="chromium 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=verpublish&status=init&vmfile=no&publishid=137560&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung'"
+alias studportal="chromium \
+'https://sts.uni-duesseldorf.de/Login.aspx?ReturnUrl=%2fdefault.aspx%3fwa%3dwsignin1.0%26wtrealm%3durn%253asharepoint%253astudierende%26wctx%3dhttp%253a%252f%252fstudierende.uni-duesseldorf.de%252f_layouts%252fAuthenticate.aspx%253fSource%253d%25252F%26wreply%3dhttp%253a%252f%252fstudierende.uni-duesseldorf.de%252f_trust%252fdefault.aspx&wa=wsignin1.0&wtrealm=urn%3asharepoint%3astudierende&wctx=http%3a%2f%2fstudierende.uni-duesseldorf.de%2f_layouts%2fAuthenticate.aspx%3fSource%3d%252F&wreply=http%3a%2f%2fstudierende.uni-duesseldorf.de%2f_trust%2fdefault.aspx'"
+
+alias webmail="chromium \
+'https://wwwmail.uni-duesseldorf.de/user/'"
+
+alias uni='cd /home/ildar/uni/ && ranger-cd'
+
+alias chemie='ranger-cd /home/ildar/uni/chemie'
+alias bsys='ranger-cd /home/ildar/uni/betriebssysteme'
+alias bsys.u='chromium http://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/betriebssysteme/lehre-und-abschlussarbeiten/fruehere-lehrveranstaltungen/vorlesungen/ws-201516/betriebssysteme.html'
+
+alias vsys='ranger-cd /home/ildar/uni/verteilte_sys'
+alias vsys.u='chromium http://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/betriebssysteme/lehre-und-abschlussarbeiten/fruehere-lehrveranstaltungen/vorlesungen/ws-201516/grundlagen-verteilter-systeme.html'
+
+alias rnet='ranger-cd /home/ildar/uni/rechnernetze/folien /home/ildar/uni/rechnernetze/blatt /home/ildar/uni/rechnernetze/loesung /home/ildar/uni/rechnernetze/altklausuren'
+
+alias rnet.u='chromium http://www.tsn.hhu.de/teaching/lectures/2015ws/rechnernetze.html'
+
+alias info1='ranger-cd /home/ildar/uni/info1'
+
+alias ml='ranger-cd \
+/home/ildar/uni/machine_learning/Vorlesung \
+/home/ildar/uni/machine_learning/Ubung \
+/home/ildar/uni/machine_learning/old \
+/home/ildar/uni/machine_learning/misc \
+/home/ildar/uni/machine_learning \
+/home/ildar/uni/machine_learning \
+/home/ildar/uni/machine_learning \
+/home/ildar/Downloads \
+/home/ildar/Downloads \
+'
+
+alias pp='ranger-cd \
+/home/ildar/uni/propra/Projekte \
+/home/ildar/uni/propra/Ubung \
+/home/ildar/uni/propra/Ubungsaufgaben \
+/home/ildar/uni/propra/Ubungsfolien \ 
+/home/ildar/uni/propra/Vorkursfolien \
+/home/ildar/uni/propra/Vorlesungsfolien \
+/home/ildar/Downloads \
+/home/ildar/Downloads \
+/home/ildar/Downloads \
+'
+
+alias whiteb='ranger-cd /home/ildar/uni/whiteb'
+
+alias lehrplan="chromium 'http://dbs.cs.uni-duesseldorf.de/lehrplanungWE.php'"
+
+alias vsys.l="chromium 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=verpublish&status=init&vmfile=no&publishid=131316&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung'"
+alias rnet.l="chromium 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=verpublish&status=init&vmfile=no&publishid=129254&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung'"
+alias bsys.l="chromium 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=verpublish&status=init&vmfile=no&publishid=131314&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung'"
+
+alias uni.archiv='chromium archiv.hhu-fscs.de'
+
+project.clog()
+{
+	cd ~/IdeaProjects/Clog
+	watch tree -a
+}

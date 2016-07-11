@@ -1,0 +1,1 @@
+graphic driver of gurke-netbook is using SNA as the default acceleration method. Falling back to UXA is possible by editing /etc/X11/xorg.conf.d/20-intel.conf, by commenting out 'Option "AccelMethod" "sna"' and adding 'Option "AccelMethod" "uxa"'

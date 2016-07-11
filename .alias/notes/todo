@@ -1,0 +1,49 @@
+=================================================================
+CREATE A FUCKING STRONG PASSPHRASE FOR THE FUTURE!!!!!!!!!!!!!!!!
+=================================================================
+zsh:
+	read about history expansion
+	use benefits of zsh
+	learn keybindings
+	learn to use zle
+	create separate alias-file
+	display input mode of zle
+=================================================================
+arch:
+
+	create script for abc-lists
+	  for x in {a..z}; do echo "$x"; done
+	find a lightweight tabbed pdf reader with vim keybindings
+	understand and enhance boot performance
+#	fix integrity of group and password files
+=================================================================
+vim:
+	copy between different vim windows
+	codefolding
+	xml tag completion
+	use plugins
+	learn/create keybindings in insert mode
+=================================================================
+linux:
+	read linux cookbook
+	learn about process management
+	learn to user powertop, htop
+	learn more shellscriting
+	how to manage disk space
+	use cron
+	install and use a irc-client
+	everything about usb-drives
+	manage music files and best use of a music player
+	install and understand wireshark
+	install and learn virtualbox
+		- set up secure windows installation
+=================================================================
+xset:
+	react to docking station
+=================================================================
+ntpd:
+	synchronize
+	explain all errors, take notes
+=================================================================
+xterm:
+	configure like master

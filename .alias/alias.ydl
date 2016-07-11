@@ -1,0 +1,15 @@
+# /bin/bash
+# ydl-aliases
+
+alias alias.ydl='vim /home/ildar/.alias/alias.ydl && source /home/ildar/.alias/alias.ydl'
+
+newydl() {
+	echo "alias $1=\"$2\"" >> ~/.alias/alias.ydl
+	source /home/ildar/.alias/alias.ydl
+}
+
+ydl.mp3() {
+	youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 $1
+}
+
+alias ydl.d='cd /home/ildar/Downloads/ydl/'

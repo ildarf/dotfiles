@@ -1,0 +1,161 @@
+vim - cheatsheet:
+======================================================= 
+keybindings for copying between multiple vim windows:
+
+	\y "+y
+	\Y "+Y
+	\y "+y
+	\Y "+Y
+
+	\p "+p
+	\P "+P
+	\p "+p
+	\P "+P
+
+======================================================= 
+use vim as hex editor:
+	convert (changes file, don't forget to convert back!)
+		:%!xxd
+	convert back
+		:%!xxd -r
+======================================================= 
+if file has not same charset as machine, run
+	:set fileformat=unix
+======================================================= 
+copy to X clipboard
+	:w !xsel -b
+======================================================= 
+count words in vim
+	g CTRL-G
+=======================================================
+look up how to handle text objects
+	:help object-select (text-objects)
+	as	a sentence
+	ap	a paragraph
+	a]	a [] block
+	.
+	.
+select some tags in xml files
+	vat	select with boundary tags
+	vit	select inner text of tags
+	v2at	select with second tag around
+	v2it	select without second tag around
+=======================================================
+in Visual selection with v or V indention is made wih
+	<,> or =. = is for auto indent
+indent whole file
+	gg=G
+to paste indented text from a gui or browser do
+	:set paste and after that 
+	:set nopaste
+indent the current block 
+	[[=]]
+prettify an xml file
+	:!tidy -mi xml %
+prettify an html file
+	:!tidy -mi html %
+=======================================================
+hier steht ein satz.
+	z.  	line with the cursor at the center
+	zt  	line with the cursor at the top
+	zb  	line with the cursor at the bottom of the screen
+=======================================================
+move section to new file
+	:'<,'>!cat >> other_file
+=======================================================
+	*	search for next word under cursor
+	#	search for prev word under cursor
+=======================================================
+handling windows in vim:
+	:new
+	:sp
+	:vsp
+	<C-w>w	next window
+	<C-w>h/j/k/l	next window
+	<C-w>c	close window
+	[count]<C-w>+/-	resize window
+	<C-w>_	close window
+=======================================================
+Filter a block of text with external program
+	!<motion>command or
+	<selection>!command
+Filter current line through external command with
+	!!command
+=======================================================
+on startup may run this to enable needed shit:
+	:set ru nu is ic smc
+=======================================================
+create a mark for a character in text with:
+	m[char]
+useful for example to delete some text til this mark
+=======================================================
+press xp to twiddle characters
+=======================================================
+enter something in block mode
+	move cursor to beginning of first line
+	enter visual block mode with ctrl+v
+	go down some lines
+	go into insert mode with I
+	type some nice shit
+	press esc
+add something at end of selected lines:
+	<C-v>, mark some lines,
+	go to end of line with $,
+	write some text with A
+=======================================================
+Kommandovervollständgigung mit <C-d>
+=======================================================
+remove search highlighting with :nohls
+:set noic to not ignore case
+=======================================================
+Zeugs in einer Zeile finden mit f
+Letzte Suche dieser Art wiederholen mit ;
+Rückwärts gehts mit ,
+=======================================================
+externes Kommando ausführen mit :!<command>
+
+eine Datei einlesen mit:
+	:r <Dateiname>
+
+Ausgabe eines externen Kommandos einlesen mit:
+	:r !<command>
+	zb :r !ls oder die Paket-liste
+=======================================================
+search and replace
+	:s/alt/neu/g <- g für 'in ganzer Zeile',
+			sonst das erste Vorkommen
+	:%s/alt/neu/g <- %s für 'in gesamter Datei'
+	:s/alt/neu/gc <- c für 'confirm'
+=======================================================
+<C-o> kehrt zur Ausgangsposition vor der Suche zurück
+<C-i> umgekehrt
+=======================================================
+:set ruler zeigt unten die cursorposition und kram an
+:set number nu
+=======================================================
+Completion is done with <C-n> and <C-p>
+=======================================================
+Zone selection in visual mode:
+	select all between " with vi"
+	* including the " with va"
+=======================================================
+delete til <char> function:
+	dt<char>, for example dt" means delete til "
+=======================================================
+go to correspondending bracket with %
+go to next or previous ocurrence of the word under the 
+cursor with * or #. - veri nyce!
+=======================================================
+repeat last action with .
+=======================================================
+creating a macro for repeated jobs:
+#recording:
+	q<letter><commands>q
+#executing
+	<number>@<letter> or
+	<number>@@ to reexecute last macro
+#example:
+	qq^I# {esc}{enter}q
+	@q or @@ puts '# ' at beginning of current
+		line and places caret on the next line
+=======================================================

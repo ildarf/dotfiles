@@ -1,0 +1,18 @@
+enbl
+bluetoothctl -a
+	power on
+	agent KeyboardOnly // already registered
+	default-agent
+	pairable on
+	scan on
+	pair <tab>
+	trust <tab>
+	connect <tab>
+	(remove <tab>)
+
+==================================================
+
+hciconfig hci0 up
+hcitool scan
+hcitool cc // doesn't work
+	

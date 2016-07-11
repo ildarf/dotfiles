@@ -1,0 +1,24 @@
+neue hortcuts:
+===========================================
+w-o
+	sk		skype
+	speed 	speedcrunch
+	spot	spotify
+	g		geany
+	j		jupyter-qtconsole
+	t		tuxguitar
+	w		wireshark-gtk
+	k		klavaro
+	c		chromium
+	x		xterm
+	i		intellij
+===========================================
+vlc global:
+	ctrl+shift+space	play/pause
+	ctrl+shift+n		next
+	ctrl+shift+p		prev
+	alt+shift+left		kurzer Sprung zurück
+	ctrl+shift+left		Sprung zurück
+	alt+shift+right		kurzer Sprung vor
+	ctrl+shift+right	Sprung vor
+===========================================
