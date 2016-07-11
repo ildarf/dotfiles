@@ -1,2 +1,4 @@
 # this is an example dotfile,
 symlinked to a file in a git-repository
+
+alias ls="ls --color=always -lah"
