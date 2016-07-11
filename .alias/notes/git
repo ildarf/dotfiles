@@ -1,0 +1,5 @@
+# check your remote
+git remote -v
+
+# set an ssh url for existing repo
+git remot set-url origin git@github.com:name/repo
