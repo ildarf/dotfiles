@@ -1,0 +1,24 @@
+W-u,
+	v	- Set vi keybindings in shell
+	u	- uzziel
+	cf	- cyrus-fe1
+	cb	- cyrus-be5
+	d	- debian-dev
+
+loop for creating new ox-filters:
+n=<last id number>
+# puppet
+cat notes | while read name; do ((n=n+1)); newoxfilter $n $name; done
+# general
+cat notes | while read name; do ((n=n+1)); newoxfilter $n $name; done
+=> $ newoxfilters
+
+get biggest Unique-Id in Open-Xchange.script
+grep "|UniqueId:" Open-Xchange.script | sort -n -t : -k 3 | tail -n 1 | awk -F "|" '{print $2}' | awk -F ":" '{print $2}'
+=> W-u,i
+
+Open-Xchange.script
+cyrus-be5:/var/lib/cyrus-imapd/sieve/f/fatkullin/Open-Xchange.script
+
+fatkullin.sub
+cyrus-be5:/var/lib/cyrus-imapd/imap/user/f/fatkullin.sub
