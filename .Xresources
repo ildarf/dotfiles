@@ -1,0 +1,53 @@
+*foreground: white
+*background: #171717
+
+! xterm  ---------------------------------------------------
+xterm*locale: true
+xterm*metaSendsEscape: true
+Xterm*termName: xterm-256color
+xterm*saveLines: 4096
+xterm*256colors.geometry: 80x32
+xterm*faceName: Droid Sans Mono: size=10: antialias=true
+xterm*font: -*-terminus-medium-*-*-*-18-*-*-*-*-*-iso10646-*
+xterm*utf8: 2
+xterm*selectToClipboard: true
+xterm*backarrowKeyIsErase: false
+
+!! black dark/light
+*color0:                #232323
+*color8:                #686868
+
+!! red dark/light
+*color1:                #D03030
+*color9:                #FE7575
+
+!! green dark/light
+*color2:                #37B137
+*color10:               #66FE66
+
+!! yellow dark/light
+*color3:                #B16818
+*color11:               #FEFE6D
+
+!! blue dark/light
+*color4:                #477BFE
+*color12:               #477BFE
+
+!! magenta dark/light
+*color5:                #B118B1
+*color13:               #FE6EFE
+
+!! cyan dark/light
+*color6:                #18B1B1
+*color14:               #54FEFE
+
+!! white dark/light
+*color7:                #FEFEFE
+*color15:               #FEFEFE
+
+
+xterm*VT100.Translations: #override \
+              <Key>BackSpace: string(0x7F) \n\
+               <Key>Delete:    string(0x1b) string("[3~") \n\
+			   Ctrl<Key>h:		string("^H") \n\
+*ttyModes: erase ^?
