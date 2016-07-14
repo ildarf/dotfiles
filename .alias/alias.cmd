@@ -34,25 +34,6 @@ hdr() {
 	chromium "https://www.youtube.com/watch?v=mGas0vqaoF8&feature=youtu.be&t=$1h$2m$3s"
 }
 
-# lcthw() {
-#  	tmux break-pane
-#  	tmux rename-window "lcthw"
-#  	cd /home/ildar/lcthw
-#  	tmux split-window -h -c /home/ildar/lcthw
-#  	tmux split-window -c /home/ildar/lcthw -t 0 -p 20
-#  	tmux split-window -c /home/ildar/lcthw -t 1
-#   	tmux send-keys -t 1 "clear" Enter
-#   	tmux send-keys -t 1 "ls ${!#} | entr -c make ${!#%.*}" Enter
-#   	tmux send-keys -t 2 "clear" Enter
-#   	tmux send-keys -t 2 "echo ${!#%.*} | entr -c ./${!#%.*}" Enter
-#  	tmux send-keys -t 3 "clear" Enter
-#  	tmux send-keys -t 3 "echo ${!#%.*} | entr -c valgrind --leak-check=full ./${1%.*}" Enter
-#  	tmux select-pane -t 0
-#  	tmux send-keys "vim -p Makefile $*" Enter
-#  	# tmux send-keys -t 0 ":tablast" Enter
-#  	# vim -p Makefile $*
-# }
-
 alias offscreen="xrandr --output LVDS1 --off --output VGA1 --off --output HDMI1 --off"
 
 valwatch() {
