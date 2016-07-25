@@ -127,7 +127,7 @@
 
 	   use obconf if you want to change these without having to log out
 	   and back in -->
-	<number>2</number>
+	<number>3</number>
 	<firstdesk>1</firstdesk>
 	<names>
 		<!-- set names up here if you want to, like this:
@@ -340,7 +340,7 @@
 		  <keybind key="d">
 			  <action name="Execute">
 				  <!--dockscreen-->
-				  <command>~/scripts/./thinkpad-dock</command>
+				  <command>xrandr --output eDP1 --mode 1920x1080 --output HDMI2 --mode 1280x1024 --right-of eDP1 --rotate right</command>
 			  </action>
 		  </keybind>
 		  <keybind key="n">
@@ -396,21 +396,9 @@
 		  </action>
 	  </keybind>
 	  <keybind key="A-s">
-		  <keybind key="A-s">
-			  <action name="Execute">
-				  <command>tmux send-keys "ssh root@"</command>
-			  </action>
-		  </keybind>
-		  <keybind key="A-f">
-			  <action name="Execute">
-				  <command>tmux send-keys "ssh fatkullin@"</command>
-			  </action>
-		  </keybind>
-		  <keybind key="A-c">
-			  <action name="Execute">
-				  <command>tmux send-keys "scp ildar@sna-aio2:~/"</command>
-			  </action>
-		  </keybind>
+		  <action name="Execute">
+			  <command>tmux send-keys "ssh "</command>
+		  </action>
 	  </keybind>
 	  <keybind key="A-l">
 		  <action name="Execute">

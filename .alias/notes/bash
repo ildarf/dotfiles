@@ -1,4 +1,7 @@
 ============================================================
+print many files, with filename above:
+	tail -n +1 file1 file2 file3
+============================================================
 remove suspicious windows carriage return characters with
 sed:
 	sed -i -e '/s\r//' <filename>
