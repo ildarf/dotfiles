@@ -1,10 +1,10 @@
 # java-aliases
 
-alias alias.j='vim /home/ildar/.alias/alias.j && source /home/ildar/.alias/alias.j'
+alias alias.j='vim /home/fatkullin/.alias/alias.j && source /home/fatkullin/.alias/alias.j'
 
 newjava() {
 	echo "alias $1=\"$2\"" >> ~/.alias/alias.j
-	source /home/ildar/.alias/alias.j
+	source /home/fatkullin/.alias/alias.j
 }
 
 newjav() {

@@ -1,10 +1,10 @@
 # uni-aliases
 
-alias alias.uni='vim /home/ildar/.alias/alias.uni && source /home/ildar/.alias/alias.uni'
+alias alias.uni='vim /home/fatkullin/.alias/alias.uni && source /home/fatkullin/.alias/alias.uni'
 
 newuni() {
 	echo "alias $1=\"${@:2}\"" >> ~/.alias/alias.uni
-	source /home/ildar/.alias/alias.uni
+	source /home/fatkullin/.alias/alias.uni
 }
 
 alias lsf="chromium 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=wtree&search=1&trex=step&root120161=46276|46354|45763|45868&P.vx=kurz'"
@@ -18,46 +18,46 @@ alias studportal="chromium \
 alias webmail="chromium \
 'https://wwwmail.uni-duesseldorf.de/user/'"
 
-alias uni='cd /home/ildar/uni/ && ranger-cd'
+alias uni='cd /home/fatkullin/uni/ && ranger-cd'
 
-alias chemie='ranger-cd /home/ildar/uni/chemie'
-alias bsys='ranger-cd /home/ildar/uni/betriebssysteme'
+alias chemie='ranger-cd /home/fatkullin/uni/chemie'
+alias bsys='ranger-cd /home/fatkullin/uni/betriebssysteme'
 alias bsys.u='chromium http://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/betriebssysteme/lehre-und-abschlussarbeiten/fruehere-lehrveranstaltungen/vorlesungen/ws-201516/betriebssysteme.html'
 
-alias vsys='ranger-cd /home/ildar/uni/verteilte_sys'
+alias vsys='ranger-cd /home/fatkullin/uni/verteilte_sys'
 alias vsys.u='chromium http://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/betriebssysteme/lehre-und-abschlussarbeiten/fruehere-lehrveranstaltungen/vorlesungen/ws-201516/grundlagen-verteilter-systeme.html'
 
-alias rnet='ranger-cd /home/ildar/uni/rechnernetze/folien /home/ildar/uni/rechnernetze/blatt /home/ildar/uni/rechnernetze/loesung /home/ildar/uni/rechnernetze/altklausuren'
+alias rnet='ranger-cd /home/fatkullin/uni/rechnernetze/folien /home/fatkullin/uni/rechnernetze/blatt /home/fatkullin/uni/rechnernetze/loesung /home/fatkullin/uni/rechnernetze/altklausuren'
 
 alias rnet.u='chromium http://www.tsn.hhu.de/teaching/lectures/2015ws/rechnernetze.html'
 
-alias info1='ranger-cd /home/ildar/uni/info1'
+alias info1='ranger-cd /home/fatkullin/uni/info1'
 
 alias ml='ranger-cd \
-/home/ildar/uni/machine_learning/Vorlesung \
-/home/ildar/uni/machine_learning/Ubung \
-/home/ildar/uni/machine_learning/old \
-/home/ildar/uni/machine_learning/misc \
-/home/ildar/uni/machine_learning \
-/home/ildar/uni/machine_learning \
-/home/ildar/uni/machine_learning \
-/home/ildar/Downloads \
-/home/ildar/Downloads \
+/home/fatkullin/uni/machine_learning/Vorlesung \
+/home/fatkullin/uni/machine_learning/Ubung \
+/home/fatkullin/uni/machine_learning/old \
+/home/fatkullin/uni/machine_learning/misc \
+/home/fatkullin/uni/machine_learning \
+/home/fatkullin/uni/machine_learning \
+/home/fatkullin/uni/machine_learning \
+/home/fatkullin/Downloads \
+/home/fatkullin/Downloads \
 '
 
 alias pp='ranger-cd \
-/home/ildar/uni/propra/Projekte \
-/home/ildar/uni/propra/Ubung \
-/home/ildar/uni/propra/Ubungsaufgaben \
-/home/ildar/uni/propra/Ubungsfolien \ 
-/home/ildar/uni/propra/Vorkursfolien \
-/home/ildar/uni/propra/Vorlesungsfolien \
-/home/ildar/Downloads \
-/home/ildar/Downloads \
-/home/ildar/Downloads \
+/home/fatkullin/uni/propra/Projekte \
+/home/fatkullin/uni/propra/Ubung \
+/home/fatkullin/uni/propra/Ubungsaufgaben \
+/home/fatkullin/uni/propra/Ubungsfolien \ 
+/home/fatkullin/uni/propra/Vorkursfolien \
+/home/fatkullin/uni/propra/Vorlesungsfolien \
+/home/fatkullin/Downloads \
+/home/fatkullin/Downloads \
+/home/fatkullin/Downloads \
 '
 
-alias whiteb='ranger-cd /home/ildar/uni/whiteb'
+alias whiteb='ranger-cd /home/fatkullin/uni/whiteb'
 
 alias lehrplan="chromium 'http://dbs.cs.uni-duesseldorf.de/lehrplanungWE.php'"
 

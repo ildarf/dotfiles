@@ -1,5 +1,11 @@
 vim - cheatsheet:
 ======================================================= 
+use vim as hex editor:
+	convert (changes file, don't forget to convert back!)
+		:%!xxd
+	convert back
+		:%!xxd -r
+======================================================= 
 keybindings for copying between multiple vim windows:
 
 	\y "+y
@@ -12,12 +18,6 @@ keybindings for copying between multiple vim windows:
 	\p "+p
 	\P "+P
 
-======================================================= 
-use vim as hex editor:
-	convert (changes file, don't forget to convert back!)
-		:%!xxd
-	convert back
-		:%!xxd -r
 ======================================================= 
 if file has not same charset as machine, run
 	:set fileformat=unix

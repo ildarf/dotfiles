@@ -1,16 +1,16 @@
 # /bin/bash
 # git-aliases
 
-alias alias.git='vim /home/ildar/.alias/alias.git && source /home/ildar/.alias/alias.git'
+alias alias.git='vim /home/fatkullin/.alias/alias.git && source /home/fatkullin/.alias/alias.git'
 
 newgit() {
 		echo "alias $1=\"$2\"" >> ~/.alias/alias.git
-				source /home/ildar/.alias/alias.git
+				source /home/fatkullin/.alias/alias.git
 }
 
 dotfiles.upload()
 {
-	cd /home/ildar/git/dotfiles
+	cd /home/fatkullin/git/dotfiles
 	git add .
 	git commit
 	git push
@@ -19,7 +19,7 @@ dotfiles.upload()
 
 dotfiles.status()
 {
-	cd /home/ildar/git/dotfiles
+	cd /home/fatkullin/git/dotfiles
 	git status
 	cd -
 }

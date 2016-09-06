@@ -2,11 +2,11 @@
 # cmd-aliases
 
 
-alias alias.work='vim /home/ildar/.alias/alias.work && source /home/ildar/.alias/alias.work'
+alias alias.work='vim /home/fatkullin/.alias/alias.work && source /home/fatkullin/.alias/alias.work'
 
 nwork() {
 	echo "alias $1=\"$2\"" >> ~/.alias/alias.work
-		source /home/ildar/.alias/alias.work
+		source /home/fatkullin/.alias/alias.work
 }
 
 alias sievedoc="chromium https://www.fastmail.com/help/technical/sieve-howto.html"
@@ -14,11 +14,4 @@ alias sievedoc="chromium https://www.fastmail.com/help/technical/sieve-howto.htm
 uzziel()
 {
 	ssh fatkullin@uzziel
-}
-
-cyrus-fe1()
-{
-	ssh fatkullin@uzziel
-	sleep 1
-	tmux send-keys "ssh root@cyrus-fe1"
 }

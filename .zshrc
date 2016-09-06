@@ -135,7 +135,7 @@ compinit
 export KEYTIMEOUT=1
 
 # Set $PATH variable
-export PATH=$PATH:/home/ildar/scripts
+export PATH=$PATH:/home/fatkullin/scripts
 
 # Set GRAPHVIZ_DOT variable
 export GRAPHVIZ_DOT=/usr/bin/dot
@@ -196,7 +196,7 @@ alias cls='cl && shutdown +0'
 alias susp='systemctl suspend'
 
 # directory aliases
-alias dls='cd /home/ildar/Downloads/ && ranger-cd'
+alias dls='cd /home/fatkullin/Downloads/ && ranger-cd'
 
 # function to create directory and immediately enter it
 mkdirenter() {

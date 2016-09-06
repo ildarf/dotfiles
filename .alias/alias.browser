@@ -1,10 +1,10 @@
 # browser-aliases
 
-alias alias.browser='vim /home/ildar/.alias/alias.browser && source /home/ildar/.alias/alias.browser'
+alias alias.browser='vim /home/fatkullin/.alias/alias.browser && source /home/fatkullin/.alias/alias.browser'
 
 newbrowse() {
 	echo "alias $1=\"chromium '$2'\"" >> ~/.alias/alias.browser
-	source /home/ildar/.alias/alias.browser
+	source /home/fatkullin/.alias/alias.browser
 }
 
 alias filmprog="chromium 'http://www.filmkunstkinos.de/programm/677.php'"
