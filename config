@@ -144,10 +144,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
+        bindsym $left       resize shrink width 5 px or 5 ppt
+        bindsym $down       resize grow height 5 px or 5 ppt
+        bindsym $up         resize shrink height 5 px or 5 ppt
+        bindsym $right      resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt
@@ -180,15 +180,6 @@ mode "work" {
 }
 
 bindsym Mod4+u mode "work"
-
-mode "config" {
-		bindsym v	exec tmux send-keys ":inoremap { {}<esc>i | inoremap {<CR> {<CR>}<ESC>O | inoremap ( ()<esc>i | inoremap [ []<esc>i " Enter , mode "default"
-
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
-}
-
-bindsym Mod4+c mode "config"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 

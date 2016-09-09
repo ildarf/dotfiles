@@ -249,7 +249,6 @@ inoremap [ []<esc>i
 inoremap < <
 inoremap <<tab> <><esc>i
 inoremap (<tab> ()<CR>{<CR>}<esc>2kf(a
-"inoremap <<space> <<space>
 inoremap "<tab> ""<esc>i
 inoremap '<tab> ''<esc>i
 inoremap `<tab> ``<esc>i
