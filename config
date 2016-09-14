@@ -181,6 +181,26 @@ mode "work" {
 
 bindsym Mod4+u mode "work"
 
+mode "puppet" {
+		bindsym s exec tmux send-keys "vim /etc/puppetlabs/code/environments/production/manifests/*" Enter, mode "default"
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+bindsym Mod4+p mode "puppet"
+
+set $git git (s) status, (c) commit -m, (a) add, (p) push
+mode "git" {
+		bindsym s exec tmux send-keys "status" Enter, mode "default"
+		bindsym a exec tmux send-keys "add ." Enter, mode "default"
+		bindsym p exec tmux send-keys "push" Enter, mode "default"
+		bindsym c exec tmux send-keys "commit -m \"" , mode "default"
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+bindsym Mod4+g exec tmux send-keys "git ", mode "git"
+
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 
 mode "$mode_system" {
@@ -189,7 +209,7 @@ mode "$mode_system" {
 	bindsym s exec --no-startup-id i3exit suspend, mode "default"
 	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
 	bindsym r exec --no-startup-id i3exit reboot, mode "default"
-	bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+	bindsym Shift+s exec shutdown +0, mode "default"
 
 # back to normal: Enter or Escape
 	bindsym Return mode "default"
