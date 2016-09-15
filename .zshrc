@@ -13,7 +13,7 @@ xset r rate 200 70
 xset m 61 3
 
 # set keyboardlayout changing shortcut
-setxkbmap -option "grp:shifts_toggle"
+setxkbmap -layout gb,ru -variant ,phonetic -option grp:ctrls_toggle
 
 # man page coloration
 man() {

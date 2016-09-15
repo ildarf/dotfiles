@@ -190,16 +190,17 @@ mode "puppet" {
 bindsym Mod4+p mode "puppet"
 
 set $git git (s) status, (c) commit -m, (a) add, (p) push
-mode "git" {
-		bindsym s exec tmux send-keys "status" Enter, mode "default"
-		bindsym a exec tmux send-keys "add ." Enter, mode "default"
-		bindsym p exec tmux send-keys "push" Enter, mode "default"
-		bindsym c exec tmux send-keys "commit -m \"" , mode "default"
+mode "$git" {
+		bindsym s exec tmux send-keys 'status' Enter, mode "default"
+		bindsym a exec tmux send-keys 'add .' Enter, mode "default"
+		bindsym p exec tmux send-keys 'push' Enter, mode "default"
+		bindsym c exec tmux send-keys 'commit -m "' , mode "default"
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
 
-bindsym Mod4+g exec tmux send-keys "git ", mode "git"
+bindsym Mod4+g exec tmux send-keys "git ", mode "$git"
+bindsym Mod1+g exec tmux send-keys "git ", mode "$git"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 
