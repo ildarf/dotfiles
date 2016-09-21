@@ -6,3 +6,6 @@ groupadd <groupname>
 
 # change a user's primary group
 usermod -g <groupname> <username>
+
+# find and change permissions
+find . -type d -exec chmod 0755 {} \;

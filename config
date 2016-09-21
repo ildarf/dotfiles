@@ -159,13 +159,13 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym Mod4+r mode "resize"
 
 mode "launch" {
 		bindsym c	exec chromium, mode "default"
 		bindsym 7	exec virtualbox --startvm win7, mode "default"
 		bindsym k	exec keepass, mode "default"
+		bindsym t	exec tuxguitar, mode "default"
 
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
@@ -186,7 +186,6 @@ mode "puppet" {
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-
 bindsym Mod4+p mode "puppet"
 
 set $git git (s) status, (c) commit -m, (a) add, (p) push
@@ -195,15 +194,14 @@ mode "$git" {
 		bindsym a exec tmux send-keys 'add .' Enter, mode "default"
 		bindsym p exec tmux send-keys 'push' Enter, mode "default"
 		bindsym c exec tmux send-keys 'commit -m "' , mode "default"
+# back to normal: Enter or Escape
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-
 bindsym Mod4+g exec tmux send-keys "git ", mode "$git"
 bindsym Mod1+g exec tmux send-keys "git ", mode "$git"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-
 mode "$mode_system" {
 	bindsym l exec --no-startup-id i3exit lock, mode "default"
 	bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -211,13 +209,26 @@ mode "$mode_system" {
 	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
 	bindsym r exec --no-startup-id i3exit reboot, mode "default"
 	bindsym Shift+s exec shutdown +0, mode "default"
-
 # back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
-
 bindsym Mod4+Pause mode "$mode_system"
+
+set $mode_display Display (d) dockscreen, (l) laptopscreen, (b) bigscreen, (s) bigscreen small res.
+mode "$mode_display" {
+	bindsym d exec xrandr --output HDMI1 --mode 1920x1200 --output VGA1 --mode 1280x1024 --rotate right --right-of HDMI1 --output LVDS1 --off, mode "default"
+	bindsym l exec xrandr --output HDMI1 --off --output VGA1 --off --output LVDS1 --auto, mode "default"
+	bindsym b exec xrandr --output HDMI1 --mode 1920x1200 --output VGA1 --off --output LVDS1 --off, mode "default"
+	bindsym s exec xrandr --output HDMI1 --mode 1280x960 --output VGA1 --off --output LVDS1 --off, mode "default"
+# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym Mod4+Shift+d mode "$mode_display"
+
+bindsym Mod4+Control+j exec amixer -c 0 set Master 2- unmute
+bindsym Mod4+Control+k exec amixer -c 0 set Master 2+ unmute
 
 
 
@@ -238,4 +249,4 @@ bar {
 #######################################################################
 exec i3-config-wizard
 
-exec --no-startup-id i3-msg 'workspace 1; exec chromium https://ox.phil-fak.uni-duesseldorf.de/ox6/ox.html; workpace 2; exec i3-sensible-terminal; workspace1'
+exec --no-startup-id i3-msg 'workspace 1; exec chromium; workpace 2; exec i3-sensible-terminal; workspace1'

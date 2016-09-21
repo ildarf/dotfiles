@@ -2,11 +2,11 @@
 # cmd-aliases
 
 
-alias alias.cmd='vim /home/fatkullin/.alias/alias.cmd && source /home/fatkullin/.alias/alias.cmd'
+alias alias.cmd='vim ~/.alias/alias.cmd && source ~/.alias/alias.cmd'
 
 newcmd() {
 	echo "alias $1=\"$2\"" >> ~/.alias/alias.cmd
-		source /home/fatkullin/.alias/alias.cmd
+		source ~/.alias/alias.cmd
 }
 
 newf() {
@@ -28,7 +28,7 @@ alias sbox.c="cd ~/projekte/c/sbox"
 alias sbox.java="cd ~/projekte/java/sbox"
 alias sbox.bash="cd ~/projekte/bash/sbox"
 
-alias sd.music="cd /home/fatkullin/mnt/sdcard/music && ranger-cd"
+alias sd.music="cd ~/mnt/sdcard/music && ranger-cd"
 
 hdr() {
 	chromium "https://www.youtube.com/watch?v=mGas0vqaoF8&feature=youtu.be&t=$1h$2m$3s"
@@ -64,7 +64,7 @@ geoip() {
 alias uziprm="uzipall +rm"
 
 scans() {
-	ranger-cd ~/Pictures/scans
+	ranger-cd ~/pics/scans
 }
 
 scrs()
@@ -107,7 +107,7 @@ alias hypnose2="chromium 'https://www.youtube.com/watch?v=-GrISxPLMzk'"
 fixkeymap()
 {
 	sudo cp -v /usr/share/X11/xkb/symbols/gb{,.bak}
-	sudo cp -v /home/fatkullin/gb /usr/share/X11/xkb/symbols/gb
+	sudo cp -v ~/git/dotfiles/gb /usr/share/X11/xkb/symbols/gb
 }
 
 pdfs()
@@ -135,20 +135,20 @@ band()
 newalias()
 {
 	name=$1
-	cat << EOF > /home/fatkullin/.alias/alias.$name
+	cat << EOF > ~/.alias/alias.$name
 # /bin/bash
 # $name-aliases
 
-alias alias.$name='vim /home/fatkullin/.alias/alias.$name && source /home/fatkullin/.alias/alias.$name'
+alias alias.$name='vim ~/.alias/alias.$name && source ~/.alias/alias.$name'
 
 new$name() {
 		echo "alias \$1=\"\$2\"" >> ~/.alias/alias.$name
-				source /home/fatkullin/.alias/alias.$name
+				source ~/.alias/alias.$name
 }
 EOF
 
 	echo file alias.$name created
-	cat << EOF >> /home/fatkullin/.zshrc
+	cat << EOF >> ~/.zshrc
 # load alias.$name file
 if [ -f ~/.alias/alias.$name ]
 then
@@ -158,6 +158,6 @@ fi
 EOF
 	echo create new alias in alias.$name file with:
 	echo new$name alias-name string
-	source /home/fatkullin/.zshrc
+	source ~/.zshrc
 }
 

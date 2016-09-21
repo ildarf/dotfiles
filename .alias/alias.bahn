@@ -1,7 +1,7 @@
 # /bin/bash
 # bahn-aliases
 
-alias alias.bahn='vim /home/fatkullin/.alias/alias.bahn && source /home/fatkullin/.alias/alias.bahn'
+alias alias.bahn='vim ~/.alias/alias.bahn && source ~/.alias/alias.bahn'
 
 newbahn() {
 	if [[ -z $1 ]]
@@ -10,7 +10,7 @@ newbahn() {
 		echo newbahn bahn.uost2hbf \"bahn \'uni ost botanischer garten düsseldorf\' \'düsseldorf hbf\'\"
 	else
 		echo "alias $1=\"$2\"" >> ~/.alias/alias.bahn
-		source /home/fatkullin/.alias/alias.bahn
+		source ~/.alias/alias.bahn
 	fi
 }
 

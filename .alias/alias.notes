@@ -1,10 +1,10 @@
 # notes aliase
-alias alias.notes='vim /home/fatkullin/.alias/alias.notes && source /home/fatkullin/.alias/alias.notes'
+alias alias.notes='vim ~/.alias/alias.notes && source ~/.alias/alias.notes'
 
 newnote() {
 	echo "alias notes.$1='vim ~/.alias/notes/$1'" >> ~/.alias/alias.notes
 	vim ~/.alias/notes/$1
-	source /home/fatkullin/.alias/alias.notes
+	source ~/.alias/alias.notes
 }
 
 alias notes.adb='vim ~/.alias/notes/adb'
