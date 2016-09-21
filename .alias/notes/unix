@@ -6,3 +6,6 @@ groupadd <groupname>
 
 # change a user's primary group
 usermod -g <groupname> <username>
+
+# find between two dates
+find -type f -newermt "2016-08-28 00:00:00" ! -newermt "2016-08-30 00:00:00"

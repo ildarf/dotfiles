@@ -193,6 +193,7 @@ set $git git (s) status, (c) commit -m, (a) add, (p) push
 mode "$git" {
 		bindsym s exec tmux send-keys 'status' Enter, mode "default"
 		bindsym a exec tmux send-keys 'add .' Enter, mode "default"
+		bindsym d exec tmux send-keys 'diff ' , mode "default"
 		bindsym p exec tmux send-keys 'push' Enter, mode "default"
 		bindsym c exec tmux send-keys 'commit -m "' , mode "default"
 		bindsym Return mode "default"
@@ -200,7 +201,21 @@ mode "$git" {
 }
 
 bindsym Mod4+g exec tmux send-keys "git ", mode "$git"
-bindsym Mod1+g exec tmux send-keys "git ", mode "$git"
+
+set $systemctl systemctl (s) status, (r) restart, (S) stop, (A) start, (e) enable, (d) disable
+mode "$systemctl" {
+		bindsym a exec tmux send-keys 'start ', mode "default"
+		bindsym d exec tmux send-keys 'disable ', mode "default"
+		bindsym e exec tmux send-keys 'enable ', mode "default"
+		bindsym r exec tmux send-keys 'restart ', mode "default"
+		bindsym s exec tmux send-keys 'status ', mode "default"
+		bindsym Shift+a exec tmux send-keys 'start ', mode "default"
+		bindsym Shift+s exec tmux send-keys 'stop ', mode "default"
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+bindsym Mod4+y exec tmux send-keys "systemctl ", mode "$systemctl"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 
@@ -238,4 +253,4 @@ bar {
 #######################################################################
 exec i3-config-wizard
 
-exec --no-startup-id i3-msg 'workspace 1; exec chromium https://ox.phil-fak.uni-duesseldorf.de/ox6/ox.html; workpace 2; exec i3-sensible-terminal; workspace1'
+exec --no-startup-id i3-msg 'workspace 1; exec chromium https://ox.phil-fak.uni-duesseldorf.de/ox6/ox.html https://ocsinventory.phil-fak.uni-duesseldorf.de/glpi/front/ticket.php?is_deleted=0&criteria%5B0%5D%5Bfield%5D=12&criteria%5B0%5D%5Bsearchtype%5D=equals&criteria%5B0%5D%5Bvalue%5D=notold&criteria%5B1%5D%5Blink%5D=AND+NOT&criteria%5B1%5D%5Bfield%5D=1&criteria%5B1%5D%5Bsearchtype%5D=contains&criteria%5B1%5D%5Bvalue%5D=mrbs&criteria%5B2%5D%5Blink%5D=AND&criteria%5B2%5D%5Bfield%5D=80&criteria%5B2%5D%5Bsearchtype%5D=notunder&criteria%5B2%5D%5Bvalue%5D=8&search=Suchen&itemtype=Ticket&start=0&_glpi_csrf_token=8c1d79eb2f9f1540b42c508e9632cfff; workpace 2; exec i3-sensible-terminal; workspace1'
