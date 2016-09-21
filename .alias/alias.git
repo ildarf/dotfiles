@@ -8,20 +8,5 @@ newgit() {
 				source ~/.alias/alias.git
 }
 
-dotfiles.upload()
-{
-	cd ~/git/dotfiles
-	git add .
-	git commit
-	git push
-	cd -
-}
-
-dotfiles.status()
-{
-	cd ~/git/dotfiles
-	git status
-	cd -
-}
 alias git.dotfiles="cd ~/git/dotfiles"
 alias git.scripts="cd ~/git/scripts"
