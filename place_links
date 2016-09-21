@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "setting links to configs in git-repo ..."
+ln -sfv ~/git/dotfiles/.alias ~
+ln -sfv ~/git/dotfiles/config ~/.config/i3/
+ln -sfv ~/git/dotfiles/.tmux.conf ~
+ln -sfv ~/git/dotfiles/.vimrc ~
+ln -sfv ~/git/dotfiles/.zshrc ~
+ln -sfv ~/git/dotfiles/.xinitrc ~
+ln -sfv ~/git/dotfiles/.zprofile ~
+ln -sfv ~/git/dotfiles/.Xresources ~
+ln -sfv ~/git/dotfiles/.workrc ~
+echo done
