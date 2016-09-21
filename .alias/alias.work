@@ -15,3 +15,5 @@ uzziel()
 {
 	ssh fatkullin@uzziel
 }
+
+alias mitarbeiter="chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/common:mitarbeiter'"
