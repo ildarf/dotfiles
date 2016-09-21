@@ -1,3 +1,3 @@
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
-  startx
+  exec startx
 fi
