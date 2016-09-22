@@ -9,3 +9,6 @@ newbrowse() {
 
 alias filmprog="chromium 'http://www.filmkunstkinos.de/programm/677.php'"
 alias progmus="chromium 'http://musicforprogramming.net/?two'"
+alias arte="chromium 'http://www.arte.tv/guide/de/plus7/?country=DE'"
+alias ard="chromium 'http://www.tagesschau.de/index.html'"
+alias zdf="chromium 'http://www.heute.de/'"
