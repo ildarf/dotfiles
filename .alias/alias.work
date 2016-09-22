@@ -17,3 +17,5 @@ uzziel()
 }
 
 alias mitarbeiter="chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/common:mitarbeiter'"
+alias kopierkarte="chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer:kopierkarten#kopierkarte_registrieren'"
+alias moodle-update="chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/sysadmin:seiten:webdienste:moodle#updateprozedur'"
