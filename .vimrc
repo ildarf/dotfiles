@@ -50,6 +50,7 @@ set history=50		" keep 50 lines of command line history
 set ruler		"ru"	show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		"is"	do incremental searching
+set hlsearch
 set number		"nu"	show line numbers
 set ignorecase		"ic"	set ignore case on searching 
 set smartcase		"smc"	override ignorecase if uppercase letters given

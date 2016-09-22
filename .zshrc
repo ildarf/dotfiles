@@ -13,7 +13,7 @@ xset r rate 200 70
 xset m 61 3
 
 # set keyboardlayout changing shortcut
-setxkbmap -layout gb,ru -variant ,phonetic -option grp:ctrls_toggle
+setxkbmap -layout gb,de,ru -variant ,,phonetic -option grp:ctrls_toggle
 
 # man page coloration
 man() {
@@ -135,7 +135,7 @@ compinit
 export KEYTIMEOUT=1
 
 # Set $PATH variable
-export PATH=$PATH:/home/fatkullin/scripts
+export PATH=$PATH:~/scripts
 
 # Set GRAPHVIZ_DOT variable
 export GRAPHVIZ_DOT=/usr/bin/dot

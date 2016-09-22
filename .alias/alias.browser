@@ -1,11 +1,14 @@
 # browser-aliases
 
-alias alias.browser='vim /home/fatkullin/.alias/alias.browser && source /home/fatkullin/.alias/alias.browser'
+alias alias.browser='vim ~/.alias/alias.browser && source ~/.alias/alias.browser'
 
 newbrowse() {
 	echo "alias $1=\"chromium '$2'\"" >> ~/.alias/alias.browser
-	source /home/fatkullin/.alias/alias.browser
+	source ~/.alias/alias.browser
 }
 
 alias filmprog="chromium 'http://www.filmkunstkinos.de/programm/677.php'"
 alias progmus="chromium 'http://musicforprogramming.net/?two'"
+alias arte="chromium 'http://www.arte.tv/guide/de/plus7/?country=DE'"
+alias ard="chromium 'http://www.tagesschau.de/index.html'"
+alias zdf="chromium 'http://www.heute.de/'"

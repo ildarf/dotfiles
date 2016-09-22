@@ -159,13 +159,13 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym Mod4+r mode "resize"
 
 mode "launch" {
 		bindsym c	exec chromium, mode "default"
 		bindsym 7	exec virtualbox --startvm win7, mode "default"
 		bindsym k	exec keepass, mode "default"
+		bindsym t	exec tuxguitar, mode "default"
 
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
@@ -186,30 +186,29 @@ mode "puppet" {
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-
 bindsym Mod4+p mode "puppet"
 
-set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push
+set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push, (P) pull
 mode "$git" {
 		bindsym s exec tmux send-keys 'status' Enter, mode "default"
 		bindsym a exec tmux send-keys 'add .' Enter, mode "default"
 		bindsym d exec tmux send-keys 'diff ' , mode "default"
 		bindsym p exec tmux send-keys 'push' Enter, mode "default"
+		bindsym P exec tmux send-keys 'pull' Enter, mode "default"
 		bindsym c exec tmux send-keys 'commit -m "' , mode "default"
+# back to normal: Enter or Escape
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-
 bindsym Mod4+g exec tmux send-keys "git ", mode "$git"
 
-set $systemctl systemctl (s) status, (r) restart, (S) stop, (A) start, (e) enable, (d) disable
+set $systemctl systemctl (s) status, (r) restart, (S) stop, (a) start, (e) enable, (d) disable
 mode "$systemctl" {
 		bindsym a exec tmux send-keys 'start ', mode "default"
 		bindsym d exec tmux send-keys 'disable ', mode "default"
 		bindsym e exec tmux send-keys 'enable ', mode "default"
 		bindsym r exec tmux send-keys 'restart ', mode "default"
 		bindsym s exec tmux send-keys 'status ', mode "default"
-		bindsym Shift+a exec tmux send-keys 'start ', mode "default"
 		bindsym Shift+s exec tmux send-keys 'stop ', mode "default"
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
@@ -217,22 +216,33 @@ mode "$systemctl" {
 
 bindsym Mod4+y exec tmux send-keys "systemctl ", mode "$systemctl"
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-	bindsym l exec --no-startup-id i3exit lock, mode "default"
-	bindsym e exec --no-startup-id i3exit logout, mode "default"
-	bindsym s exec --no-startup-id i3exit suspend, mode "default"
-	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-	bindsym r exec --no-startup-id i3exit reboot, mode "default"
-	bindsym Shift+s exec shutdown +0, mode "default"
+	bindsym l exec --no-startup-id i3lock, mode "default"
+	bindsym e exec --no-startup-id i3-msg exit, mode "default"
+	bindsym s exec --no-startup-id i3lock && systemctl suspend, mode "default"
+	bindsym r exec --no-startup-id systemctl reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
+	bindsym Return exec --no-startup-id systemctl poweroff, mode "default"
+# back to normal: Enter or Escape
+	bindsym Escape mode "default"
+}
+bindsym Mod1+Control+Delete mode "$mode_system"
 
+set $mode_display Display (d) dockscreen, (l) laptopscreen, (b) bigscreen, (s) bigscreen small res.
+mode "$mode_display" {
+	bindsym d exec xrandr --output HDMI1 --mode 1920x1200 --output VGA1 --mode 1280x1024 --rotate right --right-of HDMI1 --output LVDS1 --off, mode "default"
+	bindsym l exec xrandr --output HDMI1 --off --output VGA1 --off --output LVDS1 --auto, mode "default"
+	bindsym b exec xrandr --output HDMI1 --mode 1920x1200 --output VGA1 --off --output LVDS1 --off, mode "default"
+	bindsym s exec xrandr --output HDMI1 --mode 1280x960 --output VGA1 --off --output LVDS1 --off, mode "default"
 # back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
+bindsym Mod4+Shift+d mode "$mode_display"
 
-bindsym Mod4+Pause mode "$mode_system"
+bindsym Mod4+Control+j exec amixer -c 0 set Master 2- unmute
+bindsym Mod4+Control+k exec amixer -c 0 set Master 2+ unmute
 
 
 
@@ -252,5 +262,8 @@ bar {
 # Please remove the following exec line:
 #######################################################################
 exec i3-config-wizard
+exec --no-startup-id dunst
+exec --no-startup-id volumeicon
+exec --no-startup-id nm-applet
 
 exec --no-startup-id i3-msg 'workspace 1; exec chromium https://ox.phil-fak.uni-duesseldorf.de/ox6/ox.html https://ocsinventory.phil-fak.uni-duesseldorf.de/glpi/front/ticket.php?is_deleted=0&criteria%5B0%5D%5Bfield%5D=12&criteria%5B0%5D%5Bsearchtype%5D=equals&criteria%5B0%5D%5Bvalue%5D=notold&criteria%5B1%5D%5Blink%5D=AND+NOT&criteria%5B1%5D%5Bfield%5D=1&criteria%5B1%5D%5Bsearchtype%5D=contains&criteria%5B1%5D%5Bvalue%5D=mrbs&criteria%5B2%5D%5Blink%5D=AND&criteria%5B2%5D%5Bfield%5D=80&criteria%5B2%5D%5Bsearchtype%5D=notunder&criteria%5B2%5D%5Bvalue%5D=8&search=Suchen&itemtype=Ticket&start=0&_glpi_csrf_token=8c1d79eb2f9f1540b42c508e9632cfff; workpace 2; exec i3-sensible-terminal; workspace1'

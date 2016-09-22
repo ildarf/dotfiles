@@ -2,11 +2,11 @@
 # cmd-aliases
 
 
-alias alias.mnt='vim /home/fatkullin/.alias/alias.mnt && source /home/fatkullin/.alias/alias.mnt'
+alias alias.mnt='vim ~/.alias/alias.mnt && source ~/.alias/alias.mnt'
 
 newmnt() {
 	echo "alias $1=\"$2\"" >> ~/.alias/alias.mnt
-		source /home/fatkullin/.alias/alias.mnt
+		source ~/.alias/alias.mnt
 }
 
 mnt.s() {

@@ -2,11 +2,11 @@
 # cmd-aliases
 
 
-alias alias.work='vim /home/fatkullin/.alias/alias.work && source /home/fatkullin/.alias/alias.work'
+alias alias.work='vim ~/.alias/alias.work && source ~/.alias/alias.work'
 
 nwork() {
 	echo "alias $1=\"$2\"" >> ~/.alias/alias.work
-		source /home/fatkullin/.alias/alias.work
+		source ~/.alias/alias.work
 }
 
 alias sievedoc="chromium https://www.fastmail.com/help/technical/sieve-howto.html"

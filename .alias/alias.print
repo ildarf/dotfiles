@@ -1,5 +1,5 @@
 # printing aliases
-alias alias.print='vim /home/fatkullin/.alias/alias.print && source /home/fatkullin/.alias/alias.print'
+alias alias.print='vim ~/.alias/alias.print && source ~/.alias/alias.print'
 
 # NOTE PRINTING >1 DOCUMENTS: after printig odd pages, the documents must be listed in reverse order as parameters for "pre"
 # HOW TO SET PAGE-RANGES: -o page-ranges=#-#
