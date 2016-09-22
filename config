@@ -216,7 +216,7 @@ mode "$systemctl" {
 
 bindsym Mod4+y exec tmux send-keys "systemctl ", mode "$systemctl"
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+set $mode_system (Return) shutdown, System (l) lock, (e) logout, (s) suspend, (r) reboot
 mode "$mode_system" {
 	bindsym l exec --no-startup-id i3lock, mode "default"
 	bindsym e exec --no-startup-id i3-msg exit, mode "default"
