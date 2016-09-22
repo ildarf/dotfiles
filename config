@@ -172,7 +172,7 @@ mode "launch" {
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-bindsym Mod4+o mode "$launch"
+bindsym Mod4+o mode "launch"
 
 mode "work" {
 		bindsym Mod4+u	exec tmux send-keys "uzziel" Enter, mode "default"
@@ -213,7 +213,6 @@ mode "$systemctl" {
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-
 bindsym Mod4+y exec tmux send-keys "systemctl ", mode "$systemctl"
 
 set $mode_system (Return) shutdown, System (l) lock, (e) logout, (s) suspend, (r) reboot
@@ -241,10 +240,18 @@ mode "$mode_display" {
 }
 bindsym Mod4+Shift+d mode "$mode_display"
 
+# set $keyboard keyboard layout (r) ru, (d) de, (g) gb
+# mode "$keyboard" {
+# 	bindsym r exec setxkbmap -layout ru -variant phonetic, mode "default"
+# 	bindsym d exec setxkbmap -layout de, mode "default"
+# 	bindsym g exec setxkbmap -layout gb, mode "default"
+# # back to normal: Enter or Escape
+# 	bindsym Escape mode "default"
+# }
+# bindsym Mod4+n mode "$keyboard"
+
 bindsym Mod4+Control+j exec amixer -c 0 set Master 2- unmute
 bindsym Mod4+Control+k exec amixer -c 0 set Master 2+ unmute
-
-
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
