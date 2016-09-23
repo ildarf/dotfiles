@@ -174,23 +174,36 @@ mode "launch" {
 }
 bindsym Mod4+o mode "launch"
 
-set $debian debian (u) update && upgrade, (l) lsb_release -a (d) dpkg -l | grep
+set $debian debian (u) update && upgrade, (i) install, (r) remove, (l) lsb_release -a, (d) dpkg -l | grep
 mode "$debian" {
 		bindsym u	exec tmux send-keys "apt-get update && apt-get upgrade" Enter, mode "default"
+		bindsym i	exec tmux send-keys "apt-get install " , mode "default"
+		bindsym r	exec tmux send-keys "apt-get remove " , mode "default"
 		bindsym l	exec tmux send-keys "lsb_release -a" Enter, mode "default"
 		bindsym d	exec tmux send-keys "dpkg -l | grep " , mode "default"
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
+set $arch arch (u) pacaur -Suy, (i) pacaur -S, (r) pacaur -Rns, (q) pacaur -Q
+mode "$arch" {
+		bindsym u	exec tmux send-keys "pacaur -Suy" Enter, mode "default"
+		bindsym i	exec tmux send-keys "pacaur -S " , mode "default"
+		bindsym r	exec tmux send-keys "pacaur -Rns " , mode "default"
+		bindsym q	exec tmux send-keys "pacaur -Q " , mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
 }
 
 mode "sysadmin" {
-		bindsym a	exec tmux send-keys "uname -a" Enter, mode "default"
+		bindsym u	exec tmux send-keys "uname -a" Enter, mode "default"
 		bindsym d	mode "$debian"
+		bindsym a	mode "$arch"
 		bindsym v	exec tmux send-keys "vim \`which " , mode "default"
 		bindsym w	exec tmux send-keys "which " , mode "default"
 		bindsym Mod4+u	exec tmux send-keys "uzziel" Enter, mode "default"
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
 }
 bindsym Mod4+u mode "sysadmin"
 
@@ -229,10 +242,10 @@ mode "$systemctl" {
 }
 bindsym Mod4+y exec tmux send-keys "systemctl ", mode "$systemctl"
 
-set $mode_system System (Return) shutdown, (l) lock, (e) logout, (s) suspend, (r) reboot
+set $mode_system System (Return) shutdown, (l) lock, (o) logout, (s) suspend, (r) reboot
 mode "$mode_system" {
 	bindsym l	exec --no-startup-id i3lock, mode "default"
-	bindsym e	exec --no-startup-id i3-msg exit, mode "default"
+	bindsym o	exec --no-startup-id i3-msg exit, mode "default"
 	bindsym s	exec --no-startup-id i3lock && systemctl suspend, mode "default"
 	bindsym r	exec --no-startup-id systemctl reboot, mode "default"
 	bindsym Return	exec --no-startup-id systemctl poweroff, mode "default"
