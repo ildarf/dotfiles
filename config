@@ -174,23 +174,28 @@ mode "launch" {
 }
 bindsym Mod4+o mode "launch"
 
-set $debian debian (u) update && upgrade
+set $debian debian (u) update && upgrade, (l) lsb_release -a (d) dpkg -l | grep
 mode "$debian" {
 		bindsym u	exec tmux send-keys "apt-get update && apt-get upgrade" Enter, mode "default"
+		bindsym l	exec tmux send-keys "lsb_release -a" Enter, mode "default"
+		bindsym d	exec tmux send-keys "dpkg -l | grep " , mode "default"
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
 
-mode "work" {
+mode "sysadmin" {
 		bindsym Mod4+u	exec tmux send-keys "uzziel" Enter, mode "default"
+		bindsym v	exec tmux send-keys "vim \`which " , mode "default"
+		bindsym w	exec tmux send-keys "which " , mode "default"
 		bindsym d mode "$debian"
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-bindsym Mod4+u mode "work"
+bindsym Mod4+u mode "sysadmin"
 
 mode "puppet" {
 		bindsym s exec tmux send-keys "vim /etc/puppetlabs/code/environments/production/manifests/*" Enter, mode "default"
+		bindsym p exec tmux send-keys "puppet agent -t" Enter, mode "default"
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
