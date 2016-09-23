@@ -194,7 +194,7 @@ mode "$git" {
 		bindsym a exec tmux send-keys 'add .' Enter, mode "default"
 		bindsym d exec tmux send-keys 'diff ' , mode "default"
 		bindsym p exec tmux send-keys 'push' Enter, mode "default"
-		bindsym P exec tmux send-keys 'pull' Enter, mode "default"
+		bindsym Shift+p exec tmux send-keys 'pull' Enter, mode "default"
 		bindsym c exec tmux send-keys 'commit -m "' , mode "default"
 # back to normal: Enter or Escape
 		bindsym Return mode "default"
