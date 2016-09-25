@@ -1,0 +1,11 @@
+# add user to lp group!!
+usermod -a -G lp <user>
+
+# add user to sys group!!
+usermod -a -G sys <user>
+
+# install hplip!
+pacaur -S hplip
+
+# add printer!
+hp_LaserJet_4350, socket://134.99.58.179

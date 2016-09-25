@@ -31,7 +31,7 @@ alias sbox.bash="cd ~/projekte/bash/sbox"
 alias sd.music="cd ~/mnt/sdcard/music && ranger-cd"
 
 hdr() {
-	$BROWSER "https://www.youtube.com/watch?v=mGas0vqaoF8&feature=youtu.be&t=$1h$2m$3s"
+	chromium "https://www.youtube.com/watch?v=mGas0vqaoF8&feature=youtu.be&t=$1h$2m$3s"
 }
 
 alias offscreen="xrandr --output LVDS1 --off --output VGA1 --off --output HDMI1 --off"
@@ -100,9 +100,9 @@ alias v="d gwenview"
 alias ips="ip addr show"
 alias lnt="learntimer"
 
-alias tibs="$BROWSER 'https://www.youtube.com/watch?v=Q5dU6serXkg'"
-alias hypnose1="$BROWSER 'https://www.youtube.com/watch?v=K6wGvCh4i24'"
-alias hypnose2="$BROWSER 'https://www.youtube.com/watch?v=-GrISxPLMzk'"
+alias tibs="chromium 'https://www.youtube.com/watch?v=Q5dU6serXkg'"
+alias hypnose1="chromium 'https://www.youtube.com/watch?v=K6wGvCh4i24'"
+alias hypnose2="chromium 'https://www.youtube.com/watch?v=-GrISxPLMzk'"
 
 fixkeymap()
 {

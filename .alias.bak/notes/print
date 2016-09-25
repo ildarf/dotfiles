@@ -1,0 +1,37 @@
+========================================
+install new hp-printer
+	hp-setup -i
+========================================
+
+printing cheat-sheet:
+
+list connected printers:
+	lpinfo -v
+list stats of printers:
+	lpstat -p
+install hp-printer:
+	hp-setup -i
+cancel jobs:
+	cancel
+	cancel -a
+	cancel $printer
+enable paused printer
+	cupsenable $printer
+
+Skript drucken:
+erst die ungeraden Seiten drucken:
+	pro document  ## print odd
+dann die geraden Seiten drucken
+	pre document ## print even 
+
+Bereiche drucken mit printr
+Achtung: immer Beginn und Ende angeben!
+	printr -o page-ranges=#-# $doc
+
+Mehrere Dokumente drucken mit prints
+keine Angabe von Bereichen möglich!
+	prints $docs
+	
+Seitenzahlen für page-ranges ermitteln
+x = aufrunden(p/2)
+   = (p+1)/2

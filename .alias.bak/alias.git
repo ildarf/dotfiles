@@ -1,0 +1,12 @@
+# /bin/bash
+# git-aliases
+
+alias alias.git='vim ~/.alias/alias.git && source ~/.alias/alias.git'
+
+newgit() {
+		echo "alias $1=\"$2\"" >> ~/.alias/alias.git
+				source ~/.alias/alias.git
+}
+
+alias git.dotfiles="cd ~/git/dotfiles"
+alias git.scripts="cd ~/git/scripts"

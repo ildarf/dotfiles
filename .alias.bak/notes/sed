@@ -1,0 +1,2 @@
+# replace in place (change the file, don't output to stdout)
+sed -i 's/ugly/beautiful/g' file.txt

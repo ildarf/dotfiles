@@ -1,0 +1,38 @@
+# notes aliase
+alias alias.notes='vim ~/.alias/alias.notes && source ~/.alias/alias.notes'
+
+newnote() {
+	echo "alias notes.$1='vim ~/.alias/notes/$1'" >> ~/.alias/alias.notes
+	vim ~/.alias/notes/$1
+	source ~/.alias/alias.notes
+}
+
+alias notes.adb='vim ~/.alias/notes/adb'
+alias notes.arch='vim ~/.alias/notes/arch'
+alias notes.bash='vim ~/.alias/notes/bash'
+alias notes.bass='vim ~/.alias/notes/bass'
+alias notes.bluetooth='vim ~/.alias/notes/bluetooth'
+alias notes.curl='vim ~/.alias/notes/curl'
+alias notes.git='vim ~/.alias/notes/git'
+alias notes.install='vim ~/.alias/notes/install'
+alias notes.ipcmd='vim ~/.alias/notes/ipcmd'
+alias notes.matlab='vim ~/.alias/notes/matlab'
+alias notes.mogrify='vim ~/.alias/notes/mogrify'
+alias notes.netbook='vim ~/.alias/notes/netbook'
+alias notes.network='vim ~/.alias/notes/network'
+alias notes.perl='vim ~/.alias/notes/perl'
+alias notes.print='vim ~/.alias/notes/print'
+alias notes.screens='vim ~/.alias/notes/screens'
+alias notes.sed='vim ~/.alias/notes/sed'
+alias notes.shortcuts='vim ~/.alias/notes/shortcuts'
+alias notes.ssh='vim ~/.alias/notes/ssh'
+alias notes.tar='vim ~/.alias/notes/tar'
+alias notes.tmux='vim ~/.alias/notes/tmux'
+alias notes.uni='vim ~/.alias/notes/uni'
+alias notes.unix='vim ~/.alias/notes/unix'
+alias notes.usbstick='vim ~/.alias/notes/usbstick'
+alias notes.vim='vim ~/.alias/notes/vim'
+alias notes.work='vim ~/.alias/notes/work'
+alias notes.ydl='vim ~/.alias/notes/ydl'
+alias notes.zip='vim ~/.alias/notes/zip'
+alias notes.cups='vim ~/.alias/notes/cups'

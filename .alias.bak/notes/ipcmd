@@ -1,0 +1,30 @@
+How to Assign a IP Address to Specific Interface
+# ip addr add 192.168.50.5 dev eth1
+
+How to Remove an IP Address
+# ip addr del 192.168.50.5/24 dev eth1
+
+How do I Check Route Table?
+# ip route show
+
+How do I Add Static Route
+# ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0
+
+How to Remove Static Route
+# ip route del 10.10.20.0/24
+
+How do I Add Persistence Static Routes
+# vi /etc/sysconfig/network-scripts/route-eth0
+$ sudo vi /etc/network/interfaces
+==========
+auto eth0
+iface eth0 inet static
+address 192.168.50.2
+netmask 255.255.255.0
+gateway 192.168.50.100
+#########{Static Route}###########
+up ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0
+==========
+
+How do I Add Default Gateway
+# ip route add default via 192.168.50.100

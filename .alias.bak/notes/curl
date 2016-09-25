@@ -1,0 +1,9 @@
+# download not to standard output, but to file
+curl -O url
+
+# http authentication
+curl -u user:password
+curl -Ou user:password	# combined with above option
+
+# ip geolookup
+curl ipinfo.io/ipaddr
