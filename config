@@ -236,7 +236,7 @@ bindsym Mod4+p mode "puppet"
 set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push, (P) pull
 mode "$git" {
 		bindsym s	exec tmux send-keys 'status' Enter, mode "default"
-		bindsym a	exec tmux send-keys 'add .' Enter, mode "default"
+		bindsym a	exec tmux send-keys 'add ', mode "default"
 		bindsym d	exec tmux send-keys 'diff ' , mode "default"
 		bindsym p	exec tmux send-keys 'push' Enter, mode "default"
 		bindsym Shift+p	exec tmux send-keys 'pull' Enter, mode "default"
