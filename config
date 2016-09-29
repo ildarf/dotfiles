@@ -212,7 +212,7 @@ mode "sysadmin" {
 bindsym Mod4+u mode "sysadmin"
 
 
-set $browser (b) Benutzer, (c) Kopierkarte, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) todo-ildar
+set $browser (b) Benutzer, (c) Kopierkarte, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) todo-ildar, (m) Mensa
 mode "$browser" {
 		bindsym b exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer', mode "default"
 		bindsym c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer:kopierkarten#kopierkarte_registrieren', mode "default"
@@ -221,6 +221,7 @@ mode "$browser" {
 		bindsym h exec chromium 'https://hosttab.phil-fak.uni-duesseldorf.de/Hosttab/hosts/list', mode "default"
 		bindsym i exec chromium 'https://monitor.phil.hhu.de/icinga/', mode "default"
 		bindsym t exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/todo:ildar', mode "default"
+		bindsym m exec chromium 'http://www.stw-d.de/Essen/Speiseplan.php?ort=9.100&lang=de', mode "default"
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
