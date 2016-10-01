@@ -12,3 +12,6 @@ find . -type d -exec chmod 0755 {} \;
 
 # find between two dates
 find -type f -newermt "2016-08-28 00:00:00" ! -newermt "2016-08-30 00:00:00"
+
+# grep in logs
+xzgrep <expr> <file> 

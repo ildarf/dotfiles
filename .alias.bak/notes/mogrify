@@ -1,3 +1,0 @@
-mogrify -resize 500x\> -verbose *
-mogrify -resize x750\> -verbose *
-

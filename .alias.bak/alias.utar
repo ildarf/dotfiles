@@ -1,9 +1,0 @@
-# /bin/bash
-# tar-aliases
-
-alias alias.utar='vim ~/.alias/alias.utar && source ~/.alias/alias.utar'
-
-alias untar='tar xvf'
-alias untar.gz='tar xvzf'
-alias untar.bz2='tar xvjf'
-alias untar.xz='tar xvJf'

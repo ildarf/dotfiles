@@ -199,8 +199,10 @@ mode "$arch" {
 
 mode "sysadmin" {
 		bindsym u	exec tmux send-keys "uname -a" Enter, mode "default"
+		bindsym c	exec tmux send-keys "cal -my" Enter, mode "default"
 		bindsym d	mode "$debian"
 		bindsym a	mode "$arch"
+		bindsym b	mode "$browser"
 		bindsym v	exec tmux send-keys "vim \`which " , mode "default"
 		bindsym w	exec tmux send-keys "which " , mode "default"
 		bindsym Mod4+u	exec tmux send-keys "uzziel" Enter, mode "default"
@@ -208,6 +210,21 @@ mode "sysadmin" {
 		bindsym Escape	mode "default"
 }
 bindsym Mod4+u mode "sysadmin"
+
+
+set $browser (b) Benutzer, (c) Kopierkarte, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) todo-ildar, (m) Mensa
+mode "$browser" {
+		bindsym b exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer', mode "default"
+		bindsym c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer:kopierkarten#kopierkarte_registrieren', mode "default"
+		bindsym d exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/', mode "default"
+		bindsym g exec chromium 'https://ocsinventory.phil-fak.uni-duesseldorf.de/glpi/front/ticket.php?is_deleted=0&criteria%5B0%5D%5Bfield%5D=12&criteria%5B0%5D%5Bsearchtype%5D=equals&criteria%5B0%5D%5Bvalue%5D=notold&criteria%5B1%5D%5Blink%5D=AND+NOT&criteria%5B1%5D%5Bfield%5D=1&criteria%5B1%5D%5Bsearchtype%5D=contains&criteria%5B1%5D%5Bvalue%5D=mrbs&criteria%5B2%5D%5Blink%5D=AND&criteria%5B2%5D%5Bfield%5D=80&criteria%5B2%5D%5Bsearchtype%5D=notunder&criteria%5B2%5D%5Bvalue%5D=8&search=Suchen&itemtype=Ticket&start=0&_glpi_csrf_token=8c1d79eb2f9f1540b42c508e9632cfff', mode "default"
+		bindsym h exec chromium 'https://hosttab.phil-fak.uni-duesseldorf.de/Hosttab/hosts/list', mode "default"
+		bindsym i exec chromium 'https://monitor.phil.hhu.de/icinga/', mode "default"
+		bindsym t exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/todo:ildar', mode "default"
+		bindsym m exec chromium 'http://www.stw-d.de/Essen/Speiseplan.php?ort=9.100&lang=de', mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
 
 mode "puppet" {
 		bindsym s	exec tmux send-keys "vim /etc/puppetlabs/code/environments/production/manifests/*" Enter, mode "default"
@@ -220,7 +237,7 @@ bindsym Mod4+p mode "puppet"
 set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push, (P) pull
 mode "$git" {
 		bindsym s	exec tmux send-keys 'status' Enter, mode "default"
-		bindsym a	exec tmux send-keys 'add .' Enter, mode "default"
+		bindsym a	exec tmux send-keys 'add ', mode "default"
 		bindsym d	exec tmux send-keys 'diff ' , mode "default"
 		bindsym p	exec tmux send-keys 'push' Enter, mode "default"
 		bindsym Shift+p	exec tmux send-keys 'pull' Enter, mode "default"
