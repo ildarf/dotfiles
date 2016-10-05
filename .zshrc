@@ -185,11 +185,6 @@ alias v2bjava="cd /home/ildar/projekte/javagespaste && echo 'start v2b?' && yn &
 alias v2bfoto="cd /home/ildar/v2b/menschen_fotografieren && d vlc /home/ildar/v2b/menschen_fotografieren/*"
 
 # aliases for scripts
-alias pagenr="java /home/ildar/skripte/Zahlen"
-alias photoshop="d wine /home/ildar/wine/Photoshop\ Portable/Photoshop.exe"
-alias oct="cd /home/ildar/uni/octave && d octave --force-gui"
-alias ren="renamescript &> /dev/null"
-alias irm="invertedrm"
 
 # aliases for shutdown, logout, suspend, etc
 alias cls='cl && shutdown +0'
@@ -203,6 +198,7 @@ mkdirenter() {
 	mkdir $1 && cd $1
 }
 alias mkd=mkdirenter
+alias vim='vim -p'
 
 # screen settings configuration aliases
 alias scr.dock="xrandr --output VGA1 --auto --right-of HDMI1"
