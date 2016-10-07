@@ -176,7 +176,7 @@ mode "launch" {
 }
 bindsym Mod4+o mode "launch"
 
-set $debian debian (u) update && upgrade, (i) install, (r) remove, (l) lsb_release -a, (d) dpkg -l | grep
+set $debian DEBIAN (u) update && upgrade, (i) install, (r) remove, (l) lsb_release -a, (d) dpkg -l | grep
 mode "$debian" {
 		bindsym u	exec tmux send-keys "apt-get update && apt-get upgrade" Enter, mode "default"
 		bindsym i	exec tmux send-keys "apt-get install " , mode "default"
@@ -187,7 +187,7 @@ mode "$debian" {
 		bindsym Escape	mode "default"
 }
 
-set $arch arch (u) pacaur -Suy, (i) pacaur -S, (r) pacaur -Rns, (q) pacaur -Q
+set $arch ARCH (u) pacaur -Suy, (i) pacaur -S, (r) pacaur -Rns, (q) pacaur -Q
 mode "$arch" {
 		bindsym u	exec tmux send-keys "pacaur -Suy" Enter, mode "default"
 		bindsym i	exec tmux send-keys "pacaur -S " , mode "default"
@@ -197,11 +197,20 @@ mode "$arch" {
 		bindsym Escape	mode "default"
 }
 
+set $suse SUSE (l) zypper list-patches, (p) zypper -t patch
+mode "$suse" {
+		bindsym l	exec tmux send-keys "zypper list-patches" Enter, mode "default"
+		bindsym p	exec tmux send-keys "zypper -t patch" , mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
 set $sysadmin (a) arch, (c) cal -my, (d) debian, (Mod4+u) uzziel, (u) uname -a, (v) vim `which , (w) which 
 mode "$sysadmin" {
 		bindsym a	mode "$arch"
 		bindsym c	exec tmux send-keys "cal -my" Enter, mode "default"
 		bindsym d	mode "$debian"
+		bindsym s	mode "$suse"
 		bindsym u	exec tmux send-keys "uname -a" Enter, mode "default"
 		bindsym v	exec tmux send-keys "vim \`which " , mode "default"
 		bindsym w	exec tmux send-keys "which " , mode "default"
@@ -212,7 +221,7 @@ mode "$sysadmin" {
 bindsym Mod4+u mode "$sysadmin"
 
 
-set $browser (b) Benutzer, (c) Kopierkarte, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) todo-ildar, (m) Mensa, (M) Mitarbeiter
+set $browser (b) Benutzer, (c) Kopierkarte, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) todo-ildar, (M) Mensa, (m) Mitarbeiter
 mode "$browser" {
 		bindsym b exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer', mode "default"
 		bindsym c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer:kopierkarten#kopierkarte_registrieren', mode "default"
@@ -221,8 +230,8 @@ mode "$browser" {
 		bindsym h exec chromium 'https://hosttab.phil-fak.uni-duesseldorf.de/Hosttab/hosts/list', mode "default"
 		bindsym i exec chromium 'https://monitor.phil.hhu.de/icinga/', mode "default"
 		bindsym t exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/todo:ildar', mode "default"
-		bindsym m exec chromium 'http://www.stw-d.de/Essen/Speiseplan.php?ort=9.100&lang=de', mode "default"
-		bindsym Shift+m exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/common:mitarbeiter', mode "default"
+		bindsym Shift+m exec chromium 'http://www.stw-d.de/Essen/Speiseplan.php?ort=9.100&lang=de', mode "default"
+		bindsym m exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/common:mitarbeiter', mode "default"
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
