@@ -6,6 +6,8 @@ autoload -Uz vcs_info
 PROMPT="%{$fg[yellow]%}%B%n@%m %~ %#>%b %{$reset_color%}"
 RPROMPT="%{$fg[yellow]%}%B%* %{$reset_color%}%(?.%{$fg[green]%}✔.%{$fg[red]%}✘)%b%{$reset_color%}"
 
+# _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
 # set keyboard repeat delay and rate
 xset r rate 200 70
 
