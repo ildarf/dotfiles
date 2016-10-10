@@ -98,7 +98,7 @@ bindsym Mod4+space focus mode_toggle
 bindsym Mod4+a focus parent
 
 # focus the child container
-# bindsym Mod4+c focus child
+bindsym Mod4+c focus child
 
 # move the currently focused window to the scratchpad
 bindsym Mod4+Shift+minus move scratchpad
@@ -176,7 +176,7 @@ mode "launch" {
 }
 bindsym Mod4+o mode "launch"
 
-set $debian debian (u) update && upgrade, (i) install, (r) remove, (l) lsb_release -a, (d) dpkg -l | grep
+set $debian DEBIAN (u) update && upgrade, (i) install, (r) remove, (l) lsb_release -a, (d) dpkg -l | grep
 mode "$debian" {
 		bindsym u	exec tmux send-keys "apt-get update && apt-get upgrade" Enter, mode "default"
 		bindsym i	exec tmux send-keys "apt-get install " , mode "default"
@@ -187,7 +187,7 @@ mode "$debian" {
 		bindsym Escape	mode "default"
 }
 
-set $arch arch (u) pacaur -Suy, (i) pacaur -S, (r) pacaur -Rns, (q) pacaur -Q
+set $arch ARCH (u) pacaur -Suy, (i) pacaur -S, (r) pacaur -Rns, (q) pacaur -Q
 mode "$arch" {
 		bindsym u	exec tmux send-keys "pacaur -Suy" Enter, mode "default"
 		bindsym i	exec tmux send-keys "pacaur -S " , mode "default"
@@ -197,22 +197,31 @@ mode "$arch" {
 		bindsym Escape	mode "default"
 }
 
-mode "sysadmin" {
-		bindsym u	exec tmux send-keys "uname -a" Enter, mode "default"
+set $suse SUSE (l) zypper list-patches, (p) zypper -t patch
+mode "$suse" {
+		bindsym l	exec tmux send-keys "zypper list-patches" Enter, mode "default"
+		bindsym p	exec tmux send-keys "zypper -t patch" Enter , mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
+set $sysadmin (a) arch, (c) cal -my, (d) debian, (Mod4+u) uzziel, (u) uname -a, (v) vim `which , (w) which 
+mode "$sysadmin" {
+		bindsym a	mode "$arch"
 		bindsym c	exec tmux send-keys "cal -my" Enter, mode "default"
 		bindsym d	mode "$debian"
-		bindsym a	mode "$arch"
-		bindsym b	mode "$browser"
+		bindsym s	mode "$suse"
+		bindsym u	exec tmux send-keys "uname -a" Enter, mode "default"
 		bindsym v	exec tmux send-keys "vim \`which " , mode "default"
 		bindsym w	exec tmux send-keys "which " , mode "default"
 		bindsym Mod4+u	exec tmux send-keys "uzziel" Enter, mode "default"
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
-bindsym Mod4+u mode "sysadmin"
+bindsym Mod4+u mode "$sysadmin"
 
 
-set $browser (b) Benutzer, (c) Kopierkarte, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) todo-ildar, (m) Mensa
+set $browser (b) Benutzer, (c) Kopierkarte, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) todo-ildar, (u) useractivity, (M) Mensa, (m) Mitarbeiter
 mode "$browser" {
 		bindsym b exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer', mode "default"
 		bindsym c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer:kopierkarten#kopierkarte_registrieren', mode "default"
@@ -221,10 +230,13 @@ mode "$browser" {
 		bindsym h exec chromium 'https://hosttab.phil-fak.uni-duesseldorf.de/Hosttab/hosts/list', mode "default"
 		bindsym i exec chromium 'https://monitor.phil.hhu.de/icinga/', mode "default"
 		bindsym t exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/todo:ildar', mode "default"
-		bindsym m exec chromium 'http://www.stw-d.de/Essen/Speiseplan.php?ort=9.100&lang=de', mode "default"
+		bindsym u exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/useractivity/', mode "default"
+		bindsym Shift+m exec chromium 'http://www.stw-d.de/Essen/Speiseplan.php?ort=9.100&lang=de', mode "default"
+		bindsym m exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/common:mitarbeiter', mode "default"
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
+bindsym Mod4+b	mode "$browser"
 
 mode "puppet" {
 		bindsym s	exec tmux send-keys "vim /etc/puppetlabs/code/environments/production/manifests/*" Enter, mode "default"
@@ -318,4 +330,4 @@ exec --no-startup-id dunst
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 
-exec --no-startup-id i3-msg 'workspace 1; exec chromium https://ox.phil-fak.uni-duesseldorf.de/ox6/ox.html https://ocsinventory.phil-fak.uni-duesseldorf.de/glpi/front/ticket.php?is_deleted=0&criteria%5B0%5D%5Bfield%5D=12&criteria%5B0%5D%5Bsearchtype%5D=equals&criteria%5B0%5D%5Bvalue%5D=notold&criteria%5B1%5D%5Blink%5D=AND+NOT&criteria%5B1%5D%5Bfield%5D=1&criteria%5B1%5D%5Bsearchtype%5D=contains&criteria%5B1%5D%5Bvalue%5D=mrbs&criteria%5B2%5D%5Blink%5D=AND&criteria%5B2%5D%5Bfield%5D=80&criteria%5B2%5D%5Bsearchtype%5D=notunder&criteria%5B2%5D%5Bvalue%5D=8&search=Suchen&itemtype=Ticket&start=0&_glpi_csrf_token=8c1d79eb2f9f1540b42c508e9632cfff; workpace 2; exec xterm'
+exec --no-startup-id i3-msg 'workspace 1; exec chromium ; workpace 2; exec xterm'
