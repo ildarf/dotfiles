@@ -165,6 +165,7 @@ bindsym Mod4+r mode "resize"
 
 mode "launch" {
 		bindsym c	exec chromium, mode "default"
+		bindsym e	exec evolution, mode "default"
 		bindsym 7	exec virtualbox --startvm win7, mode "default"
 		bindsym k	exec keepass, mode "default"
 		bindsym t	exec tuxguitar, mode "default"
@@ -330,4 +331,5 @@ exec --no-startup-id dunst
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 
-exec --no-startup-id i3-msg 'workspace 1; exec chromium ; workpace 2; exec xterm'
+exec --no-startup-id i3-msg 'workspace 1; exec chromium ; workpace 2; exec evolution'
+
