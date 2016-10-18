@@ -78,7 +78,7 @@ blon()
 		tmux send-keys "power on" Enter
 		tmux send-keys "discoverable on" Enter
 		tmux send-keys "scan on" Enter
-# tmux send-keys "connect 90:7F:61:11:2B:FB" Enter
+ tmux send-keys "connect 90:7F:61:11:2B:FB" Enter
 		tmux send-keys "exit" Enter
 		xset s off
 		xset -dpms
