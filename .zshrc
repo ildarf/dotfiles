@@ -182,16 +182,6 @@ mmnt() {
 	ranger ~/mnt
 }
 
-# video2brain aliases
-alias v2bjava="cd /home/ildar/projekte/javagespaste && echo 'start v2b?' && yn && d vlc ~/v2b/java/*"
-alias v2bfoto="cd /home/ildar/v2b/menschen_fotografieren && d vlc /home/ildar/v2b/menschen_fotografieren/*"
-
-# aliases for scripts
-
-# aliases for shutdown, logout, suspend, etc
-alias cls='cl && shutdown +0'
-alias susp='systemctl suspend'
-
 # directory aliases
 alias dls='cd /home/fatkullin/Downloads/ && ranger-cd'
 
@@ -200,24 +190,14 @@ mkdirenter() {
 	mkdir $1 && cd $1
 }
 alias mkd=mkdirenter
+	
 alias vim='vim -p'
-
-# screen settings configuration aliases
-alias scr.dock="xrandr --output VGA1 --auto --right-of HDMI1"
-alias scr.big="xrandr --output HDMI1 --auto --output VGA1 --off"
-alias scr.small="xrandr --output VGA1 --auto --output HDMI1 --off"
 
 # screensaver alias
 alias soff="xset s off; xset -dpms"
 alias son="xset s on; xset +dpms"
 
 # program-aliases
-alias mt='matlab&'
-alias yd='youtube-dl'
-alias gimptut='d vlc /mnt/win7/Users/ildar/Downloads/gimp_tutorial/*'
-alias rns='renamescript'
-alias bkg='background'
-
 resizepics() {
 	mogrify -resize 500x\> -verbose $* && mogrify -resize x750\> -verbose $*
 }

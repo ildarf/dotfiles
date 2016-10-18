@@ -165,11 +165,13 @@ bindsym Mod4+r mode "resize"
 
 mode "launch" {
 		bindsym c	exec chromium, mode "default"
+		bindsym e	exec evolution, mode "default"
 		bindsym 7	exec virtualbox --startvm win7, mode "default"
 		bindsym k	exec keepass, mode "default"
 		bindsym t	exec tuxguitar, mode "default"
 		bindsym s	exec spotify, mode "default"
 		bindsym d	exec dropbox, mode "default"
+		bindsym b	exec tmux send-keys "blon" Enter, mode "default"
 
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
@@ -297,6 +299,20 @@ mode "$mode_display" {
 }
 bindsym Mod4+Shift+d mode "$mode_display"
 
+set $sleep sleep (6) 60min, (9) 90min, (1) 120min, (2) 240min
+mode "$sleep" {
+		bindsym 1	exec tmux send-keys 'shutdown +120' Enter, mode "default"
+		bindsym 2	exec tmux send-keys 'shutdown +240' Enter, mode "default"
+		bindsym 6	exec tmux send-keys 'shutdown +60' Enter, mode "default"
+		bindsym Mod4+x	exec tmux send-keys 'blon && shutdown +90' Enter, mode "default"
+		bindsym 9	exec tmux send-keys 'shutdown +90' Enter, mode "default"
+		bindsym Mod4+c	exec tmux send-keys 'shutdown -c' Enter, mode "default"
+		bindsym c	exec tmux send-keys 'shutdown -c' Enter, mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+bindsym Mod4+x mode "$sleep"
+
 # set $keyboard keyboard layout (r) ru, (d) de, (g) gb
 # mode "$keyboard" {
 # 	bindsym r exec setxkbmap -layout ru -variant phonetic, mode "default"
@@ -330,4 +346,5 @@ exec --no-startup-id dunst
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 
-exec --no-startup-id i3-msg 'workspace 1; exec chromium ; workpace 2; exec xterm'
+exec --no-startup-id i3-msg 'workspace 1; exec chromium; exec evolution; exec i3-sensible-terminal'
+
