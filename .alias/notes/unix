@@ -1,3 +1,10 @@
+# list members of a group
+getent group <groupname>
+
+# list all groups
+cat /etc/group
+cut -d: -f1 /etc/group
+
 # add user to a group
 usermod -a -G <groupname> <username>
 
