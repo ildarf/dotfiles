@@ -183,7 +183,7 @@ mmnt() {
 }
 
 # directory aliases
-alias dls='cd /home/fatkullin/Downloads/ && ranger-cd'
+alias dls='cd ~/Downloads/ && ranger-cd'
 
 # function to create directory and immediately enter it
 mkdirenter() {
