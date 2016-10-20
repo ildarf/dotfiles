@@ -314,6 +314,17 @@ mode "$sleep" {
 }
 bindsym Mod4+x mode "$sleep"
 
+# set $screenshot screenshot
+# mode "$screenshot" {
+# 	bindsym s exec scrot -s, mode "default"
+# 	bindsym Return	mode "default"
+# 	bindsym Escape	mode "default"
+# }
+# 
+# bindsym Print mode "$screenshot"
+
+bindsym Print exec "scrot -s"
+
 # set $keyboard keyboard layout (r) ru, (d) de, (g) gb
 # mode "$keyboard" {
 # 	bindsym r exec setxkbmap -layout ru -variant phonetic, mode "default"
@@ -347,5 +358,5 @@ exec --no-startup-id dunst
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 
-exec --no-startup-id i3-msg 'workspace 1; exec sh ~/default-screen; exec evolution; exec chromium; workspace 2; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'exec sh ~/default-screen; workspace 1; exec chromium; workspace 2; exec i3-sensible-terminal'
 
