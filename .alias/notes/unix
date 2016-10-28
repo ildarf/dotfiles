@@ -1,3 +1,12 @@
+# remove user from group
+gpasswd -d <user> <group>
+
+# add a new user
+userdel -r <user>
+
+# add a new user
+useradd -m -g <group> <user>
+
 # function to ask for yes or no
 printf "[Y/n]\n"
 read -s -n 1 key
@@ -7,20 +16,24 @@ then
 fi
 
 # list members of a group
-getent group <groupname>
+getent group <group>
 
 # list all groups
 cat /etc/group
 cut -d: -f1 /etc/group
 
 # add user to a group
-usermod -a -G <groupname> <username>
+usermod -a -G <group> <user>
+gpasswd -a <user> <group>
 
 # create a new group
-groupadd <groupname>
+groupadd <group>
+
+# delete a group
+groupdel <group>
 
 # change a user's primary group
-usermod -g <groupname> <username>
+usermod -g <group> <user>
 
 # find and change permissions
 find . -type d -exec chmod 0755 {} \;
