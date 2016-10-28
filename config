@@ -171,6 +171,7 @@ mode "launch" {
 		bindsym 7	exec virtualbox --startvm win7, mode "default"
 		bindsym k	exec keepass, mode "default"
 		bindsym t	exec tuxguitar, mode "default"
+		bindsym o	exec owncloud, mode "default"
 		bindsym s	exec spotify, mode "default"
 		bindsym d	exec dropbox, mode "default"
 		bindsym b	exec tmux send-keys "blon" Enter, mode "default"
