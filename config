@@ -363,5 +363,5 @@ exec --no-startup-id dunst
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 
-exec --no-startup-id i3-msg 'exec sh ~/default-screen; exec owncloud; workspace 1; exec chromium; workspace 2; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'exec sh ~/default-screen; workspace 1; exec chromium; workspace 2; exec i3-sensible-terminal'
 
