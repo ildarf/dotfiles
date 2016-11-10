@@ -1,10 +1,3 @@
-W-u,
-	v	- Set vi keybindings in shell
-	u	- uzziel
-	cf	- cyrus-fe1
-	cb	- cyrus-be5
-	d	- debian-dev
-
 loop for creating new ox-filters:
 n=<last id number>
 # puppet
