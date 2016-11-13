@@ -212,7 +212,7 @@ mode "$suse" {
 		bindsym Escape	mode "default"
 }
 
-set $sysadmin (a) arch, (c) cal -my, (d) debian, (Mod4+u) uzziel, (u) uname -a, (v) vim `which , (w) which 
+set $sysadmin (a) arch, (c) cal -my, (d) debian, (Mod4+u) uzziel, (u) uname -a, (s) suse, (v) vim `which , (w) which 
 mode "$sysadmin" {
 		bindsym a	mode "$arch"
 		bindsym c	exec tmux send-keys "cal -my" Enter, mode "default"
