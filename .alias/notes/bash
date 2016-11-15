@@ -1,4 +1,9 @@
 ============================================================
+print shell-var lowercase
+	echo ${var~}
+print shell-var uppercase
+	echo ${var^^}
+============================================================
 print many files, with filename above:
 	tail -n +1 file1 file2 file3
 ============================================================
