@@ -228,10 +228,11 @@ mode "$sysadmin" {
 bindsym Mod4+u mode "$sysadmin"
 
 
-set $browser (b) Benutzer, (c) Kopierkarte, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) ildar:howto, (u) useractivity, (M) Mensa, (m) Mitarbeiter
+set $browser (b) Benutzer, (c) Kopierkarte, (C) cgit, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) ildar:howto, (u) useractivity, (M) Mensa, (m) Mitarbeiter
 mode "$browser" {
 		bindsym b exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer', mode "default"
 		bindsym c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer:kopierkarten#kopierkarte_registrieren', mode "default"
+		bindsym Shift+c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/cgit/', mode "default"
 		bindsym d exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/', mode "default"
 		bindsym f exec chromium 'https://www.facebook.com/', mode "default"
 		bindsym g exec chromium 'https://ocsinventory.phil-fak.uni-duesseldorf.de/glpi/front/ticket.php?sort=19&order=DESC&criteria[0][field]=12&criteria[0][searchtype]=equals&criteria[0][value]=notold&criteria[1][link]=AND%20NOT&criteria[1][field]=1&criteria[1][searchtype]=contains&criteria[1][value]=mrbs&criteria[2][link]=AND&criteria[2][field]=80&criteria[2][searchtype]=notunder&criteria[2][value]=8&criteria[3][link]=AND%20NOT&criteria[3][field]=1&criteria[3][searchtype]=contains&criteria[3][value]=spss%20f%C3%BCr%20studierende&criteria[4][link]=AND%20NOT&criteria[4][field]=1&criteria[4][searchtype]=contains&criteria[4][value]=Versandbest%C3%A4tigung&criteria[5][link]=AND&criteria[5][field]=80&criteria[5][searchtype]=notunder&criteria[5][value]=9&criteria[6][link]=AND%20NOT&criteria[6][field]=1&criteria[6][searchtype]=contains&criteria[6][value]=Bestellbest%C3%A4tigung&&start=0', mode "default"
