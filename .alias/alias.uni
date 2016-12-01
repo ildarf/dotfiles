@@ -21,3 +21,4 @@ alias uni='cd ~/uni/ && ranger-cd'
 alias lehrplan="$BROWSER 'http://dbs.cs.uni-duesseldorf.de/lehrplanungWE.php'"
 
 alias uni.archiv='$BROWSER archiv.hhu-fscs.de'
+alias hhumap="$BROWSER http://www.uni-duesseldorf.de/home/fileadmin/redaktion/Oeffentliche_Medien/Karten-Anfahrtplaene-HHU/Infocenter__Lage_und_Anreise/HHU_Campusplan_Juni_2016-smart.jpg"
