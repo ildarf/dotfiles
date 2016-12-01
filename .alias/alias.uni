@@ -7,7 +7,7 @@ newuni() {
 	source ~/.alias/alias.uni
 }
 
-alias lsf="$BROWSER 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=wtree&search=1&trex=step&root120161=46276|46354|45763|45868&P.vx=kurz'"
+alias lsf="$BROWSER 'https://lsf.uni-duesseldorf.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=wtree&search=1&trex=step&root120162=47947|46864|47683|47395&P.vx=kurz'"
 alias studportal="$BROWSER \
 'https://sts.uni-duesseldorf.de/Login.aspx?ReturnUrl=%2fdefault.aspx%3fwa%3dwsignin1.0%26wtrealm%3durn%253asharepoint%253astudierende%26wctx%3dhttp%253a%252f%252fstudierende.uni-duesseldorf.de%252f_layouts%252fAuthenticate.aspx%253fSource%253d%25252F%26wreply%3dhttp%253a%252f%252fstudierende.uni-duesseldorf.de%252f_trust%252fdefault.aspx&wa=wsignin1.0&wtrealm=urn%3asharepoint%3astudierende&wctx=http%3a%2f%2fstudierende.uni-duesseldorf.de%2f_layouts%2fAuthenticate.aspx%3fSource%3d%252F&wreply=http%3a%2f%2fstudierende.uni-duesseldorf.de%2f_trust%2fdefault.aspx'"
 alias sto="$BROWSER 'http://www.math.uni-duesseldorf.de/~stoch/lehrveran-Dateien/WS16_17/Stochastik/stocha1617.php?sektion=info'"
