@@ -97,7 +97,7 @@ bindsym Mod4+Shift+space floating toggle
 bindsym Mod4+space focus mode_toggle
 
 # focus the parent container
-bindsym Mod4+a focus parent
+bindsym Mod4+p focus parent
 
 # focus the child container
 bindsym Mod4+c focus child
@@ -253,7 +253,7 @@ mode "puppet" {
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-bindsym Mod4+p mode "puppet"
+bindsym Mod4+Shift+p mode "puppet"
 
 set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push, (P) pull
 mode "$git" {
