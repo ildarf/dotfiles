@@ -315,7 +315,7 @@ mode "$sleep" {
 		bindsym 1	exec tmux send-keys 'shutdown +120' Enter, mode "default"
 		bindsym 2	exec tmux send-keys 'shutdown +240' Enter, mode "default"
 		bindsym 6	exec tmux send-keys 'shutdown +60' Enter, mode "default"
-		bindsym Mod4+x	exec tmux send-keys 'blon && shutdown +90' Enter, mode "default"
+		bindsym Mod4+x	exec tmux send-keys 'shutdown +90' Enter, mode "default"
 		bindsym 9	exec tmux send-keys 'shutdown +90' Enter, mode "default"
 		bindsym Mod4+c	exec tmux send-keys 'shutdown -c' Enter, mode "default"
 		bindsym c	exec tmux send-keys 'shutdown -c' Enter, mode "default"

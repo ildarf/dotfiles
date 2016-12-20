@@ -1,5 +1,9 @@
 vim - cheatsheet:
 ======================================================= 
+replace all whitespace in file with comma
+	:%s/\s\+/,/g
+	:%s/\s\{1,}/,/g
+======================================================= 
 use vim as hex editor:
 	convert (changes file, don't forget to convert back!)
 		:%!xxd
