@@ -1,0 +1,4 @@
+# useful sql-commands
+show databases;
+
+drop user [if exists] user [, user] ...
