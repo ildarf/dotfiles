@@ -175,6 +175,7 @@ mode "launch" {
 		bindsym r	exec speedcrunch, mode "default"
 		bindsym o	exec owncloud, mode "default"
 		bindsym s	exec spotify, mode "default"
+		bindsym v	exec virtualbox, mode "default"
 		bindsym d	exec dropbox, mode "default"
 		bindsym y	exec yed, mode "default"
 		bindsym b	exec tmux send-keys "blon" Enter, mode "default"
