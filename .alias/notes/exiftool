@@ -1,0 +1,4 @@
+#
+# exif-pdf-Titel mit dem sichtbarem Dateinamen überschreiben
+#
+for f in `ls`; do exiftool -Title=${f%.*} $f; done
