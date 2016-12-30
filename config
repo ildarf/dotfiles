@@ -166,15 +166,17 @@ mode "resize" {
 bindsym Mod4+r mode "resize"
 
 mode "launch" {
+		bindsym a	exec chromium 'https://auas.cs.uni-duesseldorf.de/', mode "default"
 		bindsym c	exec chromium, mode "default"
 		bindsym e	exec evolution, mode "default"
 		bindsym f	exec firefox, mode "default"
 		bindsym 7	exec virtualbox --startvm win7, mode "default"
 		bindsym k	exec keepass, mode "default"
-		bindsym t	exec tuxguitar, mode "default"
+		bindsym Shift+t	exec tuxguitar, mode "default"
 		bindsym r	exec speedcrunch, mode "default"
 		bindsym o	exec owncloud, mode "default"
 		bindsym s	exec spotify, mode "default"
+		bindsym t	exec chromium 'https://translate.google.de/#auto/de/', mode "default"
 		bindsym v	exec virtualbox, mode "default"
 		bindsym d	exec dropbox, mode "default"
 		bindsym y	exec yed, mode "default"
