@@ -7,7 +7,7 @@ xterm*metaSendsEscape: true
 Xterm*termName: xterm-256color
 xterm*saveLines: 4096
 xterm*256colors.geometry: 80x32
-xterm*faceName: Droid Sans Mono: size=10: antialias=true
+xterm*faceName: Droid Sans Mono: size=9: antialias=true
 xterm*font: -*-terminus-medium-*-*-*-18-*-*-*-*-*-iso10646-*
 xterm*utf8: 2
 xterm*selectToClipboard: true
