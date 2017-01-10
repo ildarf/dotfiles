@@ -2,20 +2,18 @@
 # useful sql-commands
 #
 
-#
+# sqlite show headers and beatify output in column mode
+	.headers on
+	.mode column
+
 # insert multiple table rows
-#
 insert into 'tablename' ('column1', 'column2') values
 	('data1', 'data2'),
 	('data1', 'data2');
 
 
-#
 # show databases
-#
 show databases;
 
-#
 # delete user from database
-#
 drop user [if exists] user [, user] ...
