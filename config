@@ -76,6 +76,14 @@ bindsym Mod4+Shift+Down move down
 bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+Right move right
 
+# move workspaces to another screen
+bindsym Mod4+Mod1+h	exec --no-startup-id i3-msg move workspace to output left
+bindsym Mod4+Mod1+l	exec --no-startup-id i3-msg move workspace to output right
+
+# focus another monitor
+bindsym Mod4+Control+h	exec --no-startup-id i3-msg focus output left
+bindsym Mod4+Control+l	exec --no-startup-id i3-msg focus output right
+
 # split in horizontal orientation
 bindsym Mod1+Right split h
 
