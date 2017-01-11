@@ -1,5 +1,15 @@
 vim - cheatsheet:
 ======================================================= 
+delete all lines containing "shit"
+	:g/shit/d
+======================================================= 
+find this or that
+	/this\|that
+replace this or that with shit
+	:%s/this\|that/shit/g
+find only whole words
+	/\<\(this\|that\)\>
+======================================================= 
 replace all whitespace in file with comma
 	:%s/\s\+/,/g
 	:%s/\s\{1,}/,/g

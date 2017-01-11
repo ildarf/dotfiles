@@ -1,4 +1,8 @@
 ============================================================
+print a string n times
+	printf "%.s<string>" {1..n}
+http://stackoverflow.com/questions/5799303/print-a-character-repeatedly-in-bash
+============================================================
 print shell-var lowercase
 	echo ${var~}
 print shell-var uppercase
