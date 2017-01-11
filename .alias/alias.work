@@ -13,7 +13,7 @@ alias sievedoc="$BROWSER https://www.fastmail.com/help/technical/sieve-howto.htm
 
 uzziel()
 {
-	ssh fatkullin@uzziel
+	ssh fatkullin@uzziel.phil.hhu.de
 }
 
 alias mitarbeiter="$BROWSER 'https://sna.phil-fak.uni-duesseldorf.de/doku/common:mitarbeiter'"
