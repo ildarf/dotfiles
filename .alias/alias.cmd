@@ -1,4 +1,4 @@
-# /bin/bash
+#!/bin/bash
 # cmd-aliases
 
 
@@ -115,13 +115,6 @@ pdfs()
 	pdfgrep -in "$*" *.pdf
 }
 
-alias upgrade.shrottkiste="ssh root@134.99.154.31 pacman -Suy"
-
-wintuxguitar()
-{
-	wine /mnt/win7/Program\ Files\ \(x86\)/tuxguitar-1.3.2/tuxguitar.exe
-}
-
 ideavimrc()
 {
 	vim -p ~/.ideavimrc ~/.vimrc
@@ -161,3 +154,12 @@ EOF
 	source ~/.zshrc
 }
 
+vw () {
+	which_cmd=`which $1`
+	if [ -f $which_cmd ]
+	then
+		vim $which_cmd
+	else
+		echo "file does not exist"
+	fi
+}
