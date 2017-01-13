@@ -37,7 +37,7 @@ set $left h
 set $right l
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
-floating_modifier Mod1
+floating_modifier Mod4
 
 # start a terminal
 bindsym Mod4+Return exec i3-sensible-terminal
@@ -47,7 +47,7 @@ bindsym Mod4+Shift+q kill
 bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
-bindsym Mod4+d exec dmenu_run
+bindsym Mod4+d exec dmenu_run -fn 'Droid Sans Mono-7'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -384,3 +384,11 @@ exec --no-startup-id nm-applet
 
 exec --no-startup-id i3-msg 'exec sh ~/default-screen; workspace 1; exec owncloud; exec chromium; workspace 2; exec i3-sensible-terminal'
 
+# Make the currently focused window a scratchpad
+bindsym Mod4+Shift+s move scratchpad
+
+# Show the first scratchpad window
+bindsym Mod4+Shift+f scratchpad show
+
+# Show the sup-mail scratchpad window, if any.
+#bindsym mod4+Ss [title="^Sup ::"] scratchpad show
