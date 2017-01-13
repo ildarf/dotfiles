@@ -1,6 +1,12 @@
-#
 # useful sql-commands
-#
+
+# set constraints
+	check 'somecolumn' in ('this', 'that');
+	check ('somaval' > 0);
+	
+# delete statement
+delete from 'tablename' where 'somecolumn'='value';
+
 
 # sqlite show headers and beatify output in column mode
 	.headers on
