@@ -1,3 +1,9 @@
+# show entire history of file, with diffs
+# --follow	tracks renames
+# -p 		include diffs
+# --		it won't show the file's history when it had another name
+git log --follow -p -- <file>
+
 # check your remote
 git remote -v
 
