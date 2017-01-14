@@ -7,11 +7,18 @@ xterm*metaSendsEscape: true
 Xterm*termName: xterm-256color
 xterm*saveLines: 4096
 xterm*256colors.geometry: 80x32
+! xterm*faceName: Droid Sans Mono: size=9: antialias=true
 xterm*faceName: Droid Sans Mono: size=9: antialias=true
-xterm*font: -*-terminus-medium-*-*-*-18-*-*-*-*-*-iso10646-*
+
+! xterm*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
 xterm*utf8: 2
 xterm*selectToClipboard: true
 xterm*backarrowKeyIsErase: false
+
+XTerm.VT100.translations: #override Super <Key> minus: smaller-vt-font() \n\
+Super <Key> plus: larger-vt-font() \n\
+Super <Key> KP_Subtract: smaller-vt-font() \n\
+Super <Key> KP_Add: larger-vt-font() \n
 
 !! black dark/light
 *color0:                #232323
