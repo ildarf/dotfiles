@@ -1,4 +1,20 @@
 ============================================================
+# conditional one-liners:
+	askphrase "weiter?" || echo ne && echo jo
+	weiter? (Y|n)? Y
+	jo
+
+	weiter? (Y|n)? n
+	ne
+	jo
+
+	askphrase "weiter?" && echo jo || echo ne 
+	weiter? (Y|n)? Y
+	jo
+
+	weiter? (Y|n)? n
+	ne
+============================================================
 # function to ask for yes or no
 printf "[Y/n]\n"
 read -s -n 1 key
