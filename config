@@ -16,7 +16,7 @@ font pango:Droid Sans Mono 7
 
 workspace_layout tabbed
 
-new_window pixel 0
+new_window pixel 1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -178,6 +178,7 @@ mode "launch" {
 		bindsym r	exec speedcrunch, mode "default"
 		bindsym o	exec owncloud, mode "default"
 		bindsym s	exec spotify, mode "default"
+		bindsym Shift+s	exec speedcrunch, mode "default"
 		bindsym t	exec chromium 'https://translate.google.de/#auto/de/', mode "default"
 		bindsym v	exec virtualbox, mode "default"
 		bindsym d	exec dropbox, mode "default"
