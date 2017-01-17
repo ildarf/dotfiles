@@ -268,18 +268,19 @@ mode "puppet" {
 }
 bindsym Mod4+Shift+p mode "puppet"
 
-set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push, (P) pull, (l) log
+set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push, (P) pull, (l) log, (t) tag
 mode "$git" {
-		bindsym s	exec tmux send-keys 'status' Enter, mode "default"
 		bindsym a	exec tmux send-keys 'add ', mode "default"
 		bindsym b	exec tmux send-keys 'branch ', mode "default"
+		bindsym c	exec tmux send-keys 'commit -m "' , mode "default"
+		bindsym Shift+c	exec tmux send-keys 'checkout ' , mode "default"
 		bindsym d	exec tmux send-keys 'diff ' , mode "default"
 		bindsym Shift+d	exec tmux send-keys 'describe ' , mode "default"
+		bindsym l	exec tmux send-keys 'log ' , mode "default"
 		bindsym p	exec tmux send-keys 'push' Enter, mode "default"
 		bindsym Shift+p	exec tmux send-keys 'pull' Enter, mode "default"
-		bindsym c	exec tmux send-keys 'commit -m "' , mode "default"
-		bindsym l	exec tmux send-keys 'log ' , mode "default"
-		bindsym Shift+c	exec tmux send-keys 'checkout ' , mode "default"
+		bindsym s	exec tmux send-keys 'status' Enter, mode "default"
+		bindsym t	exec tmux send-keys 'tag ' , mode "default"
 # back to normal: Enter or Escape
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
@@ -289,12 +290,14 @@ bindsym Mod4+g exec tmux send-keys "git ", mode "$git"
 set $systemctl systemctl (s) status, (r) restart, (R) reload, (S) stop, (a) start, (e) enable, (d) disable
 mode "$systemctl" {
 		bindsym a	exec tmux send-keys 'start ', mode "default"
+		bindsym c	exec tmux send-keys 'cat ', mode "default"
 		bindsym d	exec tmux send-keys 'disable ', mode "default"
 		bindsym e	exec tmux send-keys 'enable ', mode "default"
 		bindsym r	exec tmux send-keys 'restart ', mode "default"
 		bindsym Shift+r	exec tmux send-keys 'reload ', mode "default"
 		bindsym s	exec tmux send-keys "status ", mode "default"
 		bindsym Shift+s	exec tmux send-keys 'stop ', mode "default"
+
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }

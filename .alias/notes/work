@@ -1,4 +1,4 @@
-loop for creating new ox-filters:
+# loop for creating new ox-filters:
 n=<last id number>
 # puppet
 cat notes | while read name; do ((n=n+1)); newoxfilter $n $name; done
@@ -6,8 +6,11 @@ cat notes | while read name; do ((n=n+1)); newoxfilter $n $name; done
 cat notes | while read name; do ((n=n+1)); newoxfilter $n $name; done
 => $ newoxfilters
 
-get biggest Unique-Id in Open-Xchange.script
-grep "|UniqueId:" Open-Xchange.script | sort -n -t : -k 3 | awk -F "|" '{print $2}' | awk -F ":" '{print $2}' | tail -n 1
+# get biggest Unique-Id in Open-Xchange.script
+grep "|UniqueId:" script | sort -n -t : -k 3 | awk -F "|" '{print $2}' | awk -F ":" '{print $2}' | tail -n 1
+# shorter version
+awk -F"|" '/|UniqueId:/ { print $2 }' script | sort -n -t: -k2
+
 => W-u,i
 
 Open-Xchange.script
