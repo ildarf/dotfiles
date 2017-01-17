@@ -242,7 +242,7 @@ mode "$browser" {
 		bindsym Shift+c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/cgit/', mode "default"
 		bindsym d exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/', mode "default"
 		bindsym f exec chromium 'https://www.facebook.com/', mode "default"
-		bindsym g exec chromium 'https://ocsinventory.phil-fak.uni-duesseldorf.de/glpi/front/ticket.php?sort=19&order=DESC&criteria[0][field]=12&criteria[0][searchtype]=equals&criteria[0][value]=notold&criteria[1][link]=AND%20NOT&criteria[1][field]=1&criteria[1][searchtype]=contains&criteria[1][value]=mrbs&criteria[2][link]=AND&criteria[2][field]=80&criteria[2][searchtype]=notunder&criteria[2][value]=8&criteria[3][link]=AND%20NOT&criteria[3][field]=1&criteria[3][searchtype]=contains&criteria[3][value]=spss%20f%C3%BCr%20studierende&criteria[4][link]=AND%20NOT&criteria[4][field]=1&criteria[4][searchtype]=contains&criteria[4][value]=Versandbest%C3%A4tigung&criteria[5][link]=AND&criteria[5][field]=80&criteria[5][searchtype]=notunder&criteria[5][value]=9&criteria[6][link]=AND%20NOT&criteria[6][field]=1&criteria[6][searchtype]=contains&criteria[6][value]=Bestellbest%C3%A4tigung&&start=0', mode "default"
+		bindsym g exec chromium 'https://ocsinventory.phil-fak.uni-duesseldorf.de/glpi/front/ticket.php?is_deleted=0&criteria%5B0%5D%5Bfield%5D=12&criteria%5B0%5D%5Bsearchtype%5D=equals&criteria%5B0%5D%5Bvalue%5D=notold&criteria%5B1%5D%5Blink%5D=AND+NOT&criteria%5B1%5D%5Bfield%5D=1&criteria%5B1%5D%5Bsearchtype%5D=contains&criteria%5B1%5D%5Bvalue%5D=mrbs&criteria%5B2%5D%5Blink%5D=AND&criteria%5B2%5D%5Bfield%5D=80&criteria%5B2%5D%5Bsearchtype%5D=notunder&criteria%5B2%5D%5Bvalue%5D=8&criteria%5B3%5D%5Blink%5D=AND+NOT&criteria%5B3%5D%5Bfield%5D=1&criteria%5B3%5D%5Bsearchtype%5D=contains&criteria%5B3%5D%5Bvalue%5D=spss+f%C3%BCr+studierende&criteria%5B4%5D%5Blink%5D=AND+NOT&criteria%5B4%5D%5Bfield%5D=1&criteria%5B4%5D%5Bsearchtype%5D=contains&criteria%5B4%5D%5Bvalue%5D=Versandbest%C3%A4tigung&criteria%5B5%5D%5Blink%5D=AND&criteria%5B5%5D%5Bfield%5D=80&criteria%5B5%5D%5Bsearchtype%5D=notunder&criteria%5B5%5D%5Bvalue%5D=9&criteria%5B6%5D%5Blink%5D=AND+NOT&criteria%5B6%5D%5Bfield%5D=1&criteria%5B6%5D%5Bsearchtype%5D=contains&criteria%5B6%5D%5Bvalue%5D=Bestellbest%C3%A4tigung&criteria%5B7%5D%5Blink%5D=AND+NOT&criteria%5B7%5D%5Bfield%5D=4&criteria%5B7%5D%5Bsearchtype%5D=contains&criteria%5B7%5D%5Bvalue%5D=%40voelkner&criteria%5B8%5D%5Blink%5D=AND+NOT&criteria%5B8%5D%5Bfield%5D=4&criteria%5B8%5D%5Bsearchtype%5D=contains&criteria%5B8%5D%5Bvalue%5D=%40gls-group&criteria%5B9%5D%5Blink%5D=AND+NOT&criteria%5B9%5D%5Bfield%5D=4&criteria%5B9%5D%5Bsearchtype%5D=contains&criteria%5B9%5D%5Bvalue%5D=%40news.hitmeister&criteria%5B10%5D%5Blink%5D=AND+NOT&criteria%5B10%5D%5Bfield%5D=5&criteria%5B10%5D%5Bsearchtype%5D=contains&criteria%5B10%5D%5Bvalue%5D=Labudda&search=Suchen&itemtype=Ticket&start=0&_glpi_csrf_token=8e11963c607271cb31ff2d1579a738d2', mode "default"
 		bindsym h exec chromium 'https://hosttab.phil-fak.uni-duesseldorf.de/Hosttab/hosts/list', mode "default"
 		bindsym i exec chromium 'https://monitor.phil.hhu.de/icinga/', mode "default"
 		bindsym t exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/ildar:howto', mode "default"
@@ -262,18 +262,19 @@ mode "puppet" {
 }
 bindsym Mod4+Shift+p mode "puppet"
 
-set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push, (P) pull, (l) log
+set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push, (P) pull, (l) log, (t) tag
 mode "$git" {
-		bindsym s	exec tmux send-keys 'status' Enter, mode "default"
 		bindsym a	exec tmux send-keys 'add ', mode "default"
 		bindsym b	exec tmux send-keys 'branch ', mode "default"
+		bindsym c	exec tmux send-keys 'commit -m "' , mode "default"
+		bindsym Shift+c	exec tmux send-keys 'checkout ' , mode "default"
 		bindsym d	exec tmux send-keys 'diff ' , mode "default"
 		bindsym Shift+d	exec tmux send-keys 'describe ' , mode "default"
+		bindsym l	exec tmux send-keys 'log ' , mode "default"
 		bindsym p	exec tmux send-keys 'push' Enter, mode "default"
 		bindsym Shift+p	exec tmux send-keys 'pull' Enter, mode "default"
-		bindsym c	exec tmux send-keys 'commit -m "' , mode "default"
-		bindsym l	exec tmux send-keys 'log ' , mode "default"
-		bindsym Shift+c	exec tmux send-keys 'checkout ' , mode "default"
+		bindsym s	exec tmux send-keys 'status' Enter, mode "default"
+		bindsym t	exec tmux send-keys 'tag ' , mode "default"
 # back to normal: Enter or Escape
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
@@ -283,12 +284,14 @@ bindsym Mod4+g exec tmux send-keys "git ", mode "$git"
 set $systemctl systemctl (s) status, (r) restart, (R) reload, (S) stop, (a) start, (e) enable, (d) disable
 mode "$systemctl" {
 		bindsym a	exec tmux send-keys 'start ', mode "default"
+		bindsym c	exec tmux send-keys 'cat ', mode "default"
 		bindsym d	exec tmux send-keys 'disable ', mode "default"
 		bindsym e	exec tmux send-keys 'enable ', mode "default"
 		bindsym r	exec tmux send-keys 'restart ', mode "default"
 		bindsym Shift+r	exec tmux send-keys 'reload ', mode "default"
 		bindsym s	exec tmux send-keys "status ", mode "default"
 		bindsym Shift+s	exec tmux send-keys 'stop ', mode "default"
+
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
@@ -301,6 +304,7 @@ mode "$mode_system" {
 	bindsym s	exec --no-startup-id i3lock && systemctl suspend, mode "default"
 	bindsym r	exec --no-startup-id systemctl reboot, mode "default"
 	bindsym Return	exec --no-startup-id systemctl poweroff, mode "default"
+	bindsym space	exec --no-startup-id tmux send-keys 'cd ~/git/dotfiles && git add . && git commit && git push && cd ~/git/scripts && git add . && git commit && git push && cd || systemctl poweroff' Enter , mode "default"
 # back to normal: Enter or Escape
 	bindsym Escape mode "default"
 }
