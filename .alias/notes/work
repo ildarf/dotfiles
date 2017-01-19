@@ -13,8 +13,5 @@ awk -F"|" '/|UniqueId:/ { print $2 }' script | sort -n -t: -k2
 
 => W-u,i
 
-Open-Xchange.script
-cyrus-be5:/var/lib/cyrus-imapd/sieve/f/fatkullin/Open-Xchange.script
-
-fatkullin.sub
-cyrus-be5:/var/lib/cyrus-imapd/imap/user/f/fatkullin.sub
+# command to compile script
+/usr/lib/cyrus/bin/sievec <script>{script,bc}

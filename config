@@ -388,7 +388,7 @@ exec --no-startup-id i3-msg 'exec sh ~/default-screen; workspace 1; exec ownclou
 bindsym Mod4+Shift+s move scratchpad
 
 # Show the first scratchpad window
-bindsym Mod4+Shift+f scratchpad show
+bindsym Mod4+Shift+f scratchpad show, resize set 1600 1000
 
 # Show the sup-mail scratchpad window, if any.
 #bindsym mod4+Ss [title="^Sup ::"] scratchpad show
