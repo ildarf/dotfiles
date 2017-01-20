@@ -1,0 +1,2 @@
+# first mailx command
+echo "testmail" | mailx -a "From: Name <sender_address@host>" -s "subject" recipient

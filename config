@@ -190,20 +190,28 @@ mode "launch" {
 }
 bindsym Mod4+o mode "launch"
 
-set $debian DEBIAN (u) update && upgrade, (i) install, (r) remove, (l) lsb_release -a, (d) dpkg -l | grep
+set $debian DEBIAN (u) update && upgrade, (i) install, (I) aptitude install, (r) remove, (l) dpkg -l | grep, (L) dpkg -L, (p) purge, (P) policy, (s) search, (S) show, (Meta+s) showpkg
 mode "$debian" {
-		bindsym u	exec tmux send-keys "apt-get update && apt-get upgrade" Enter, mode "default"
 		bindsym i	exec tmux send-keys "apt-get install " , mode "default"
+		bindsym Shift+i	exec tmux send-keys "aptitude install " , mode "default"
+		bindsym l	exec tmux send-keys "dpkg -l | grep " , mode "default"
+		bindsym Shift+l	exec tmux send-keys "dpkg -L " , mode "default"
+		bindsym p	exec tmux send-keys "apt-get purge " , mode "default"
+		bindsym Shift+p	exec tmux send-keys "apt-cache policy " , mode "default"
 		bindsym r	exec tmux send-keys "apt-get remove " , mode "default"
-		bindsym l	exec tmux send-keys "lsb_release -a" Enter, mode "default"
-		bindsym d	exec tmux send-keys "dpkg -l | grep " , mode "default"
+		bindsym s	exec tmux send-keys "apt-cache search " , mode "default"
+		bindsym Shift+s	exec tmux send-keys "apt-cache show " , mode "default"
+		bindsym Mod4+s	exec tmux send-keys "apt-cache showpkg " , mode "default"
+		bindsym u	exec tmux send-keys "apt-get update && apt-get upgrade" Enter, mode "default"
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
 
-set $arch ARCH (u) pacaur -Suy, (i) pacaur -S, (r) pacaur -Rns, (q) pacaur -Q
+set $arch ARCH (u) pacaur -Suy, (i) pacaur -S, (r) pacaur -Rns, (q) pacaur -Q, (s) pacaur -sS
 mode "$arch" {
 		bindsym u	exec tmux send-keys "pacaur -Suy" Enter, mode "default"
+		bindsym s	exec tmux send-keys "pacaur -Suy" Enter, mode "default"
+		bindsym s	exec tmux send-keys "pacaur -sS " , mode "default"
 		bindsym i	exec tmux send-keys "pacaur -S " , mode "default"
 		bindsym r	exec tmux send-keys "pacaur -Rns " , mode "default"
 		bindsym q	exec tmux send-keys "pacaur -Q " , mode "default"
@@ -262,12 +270,13 @@ mode "puppet" {
 }
 bindsym Mod4+Shift+p mode "puppet"
 
-set $git git (s) status, (c) commit -m, (d) diff, (a) add, (p) push, (P) pull, (l) log, (t) tag
+set $git git (s) status, (c) commit -m, (C) checkout, (Meta+c) clone, (d) diff, (D) describe, (a) add, (p) push, (P) pull, (l) log, (t) tag
 mode "$git" {
 		bindsym a	exec tmux send-keys 'add ', mode "default"
 		bindsym b	exec tmux send-keys 'branch ', mode "default"
 		bindsym c	exec tmux send-keys 'commit -m "' , mode "default"
 		bindsym Shift+c	exec tmux send-keys 'checkout ' , mode "default"
+		bindsym Mod4+c	exec tmux send-keys 'clone ' , mode "default"
 		bindsym d	exec tmux send-keys 'diff ' , mode "default"
 		bindsym Shift+d	exec tmux send-keys 'describe ' , mode "default"
 		bindsym l	exec tmux send-keys 'log ' , mode "default"
