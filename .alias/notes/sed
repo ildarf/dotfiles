@@ -1,2 +1,5 @@
 # replace in place (change the file, don't output to stdout)
 sed -i 's/ugly/beautiful/g' file.txt
+
+sed -i '/shit to remove/d' <file>
+sed -i.bak '/shit to remove/d' <file>
