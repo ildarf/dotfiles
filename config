@@ -246,6 +246,7 @@ bindsym Mod4+u mode "$sysadmin"
 
 set $browser (b) Benutzer, (c) Kopierkarte, (C) cgit, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) ildar:howto, (u) useractivity, (M) Mensa, (m) Mitarbeiter
 mode "$browser" {
+		bindsym a exec chromium 'https://auas.cs.uni-duesseldorf.de/abgabe/student/login', mode "default"
 		bindsym b exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer', mode "default"
 		bindsym c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer:kopierkarten#kopierkarte_registrieren', mode "default"
 		bindsym Shift+c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/cgit/', mode "default"
