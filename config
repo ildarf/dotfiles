@@ -315,7 +315,7 @@ mode "$mode_system" {
 	bindsym s	exec --no-startup-id i3lock && systemctl suspend, mode "default"
 	bindsym r	exec --no-startup-id systemctl reboot, mode "default"
 	bindsym Return	exec --no-startup-id systemctl poweroff, mode "default"
-	bindsym space	exec --no-startup-id tmux send-keys 'cd ~/git/dotfiles && git add . && git commit && git push && cd ~/git/scripts && git add . && git commit && git push && cd || askphrase "shutdown?" && systemctl poweroff' Enter, mode "default"
+	bindsym space	exec --no-startup-id tmux send-keys 'cd ~/git/dotfiles && git add . && git commit && git push && cd ~/git/scripts && git add . && git commit && git push && cd ~ || askphrase "shutdown?" && systemctl poweroff' Enter, mode "default"
 # back to normal: Enter or Escape
 	bindsym Escape mode "default"
 }
