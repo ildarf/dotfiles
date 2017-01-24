@@ -1,3 +1,12 @@
+# Tunnel knowledge
+# - Reverse Tunnel
+# nice graphical explanation seen on unix.stackexchange
+# http://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work
+<user>@<dst-host>$ ssh -R <dst-port>:localhost:22 <gateway-user>@<gateway>
+<src-host>$ ssh gateway
+<gateway>$ ssh -p <dst-port> <user>@localhost
+
+
 # add or change a passphrase:
 ssh-keygen -p
 
