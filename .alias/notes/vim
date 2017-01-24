@@ -1,5 +1,12 @@
 vim - cheatsheet:
 ======================================================= 
+search for lines not containing foo
+	/^\(\(.*foo.*\)\@!.\)*$
+search for lines which are not a comment
+	/^\(\(^#\|^;\)\@!.\)*$
+search for comment lines
+	/^\(#\|;\).*$
+======================================================= 
 delete all lines containing "shit"
 	:g/shit/d
 ======================================================= 
