@@ -137,7 +137,7 @@ compinit
 export KEYTIMEOUT=1
 
 # Set $PATH variable
-export PATH=$PATH:~/scripts
+export PATH=$PATH:~/scripts:~/bin
 
 # Set GRAPHVIZ_DOT variable
 export GRAPHVIZ_DOT=/usr/bin/dot

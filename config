@@ -235,6 +235,8 @@ mode "$sysadmin" {
 		bindsym c	exec tmux send-keys "cal -my" Enter, mode "default"
 		bindsym d	mode "$debian"
 		bindsym s	mode "$suse"
+		bindsym p	exec tmux send-keys "uberspace" Enter, mode "default"
+		bindsym Mod4+p	exec tmux send-keys "uberspace" Enter, mode "default"
 		bindsym u	exec tmux send-keys "uname -a" Enter, mode "default"
 		bindsym v	exec tmux send-keys "vim \`which " , mode "default"
 		bindsym w	exec tmux send-keys "which " , mode "default"
