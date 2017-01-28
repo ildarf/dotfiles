@@ -163,3 +163,25 @@ vw () {
 		echo "file does not exist"
 	fi
 }
+
+conf.push ()
+{
+	cd ~/git/dotfiles && \
+	git add . && \
+	git commit && \
+	git push && \
+	cd ~/git/scripts && \
+	git add . && \
+	git commit && \
+	git push && \
+	cd ~
+}
+
+conf.pull ()
+{
+	cd ~/git/dotfiles && \
+	git pull && \
+	cd ~/git/scripts && \
+	git pull && \
+	cd ~
+}
