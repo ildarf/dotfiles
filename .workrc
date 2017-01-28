@@ -19,7 +19,7 @@ if [[ -f $SSH_ENV ]]
 then
 	. $SSH_ENV # > /dev/null
 	ps -ef | grep $SSH_AGENT_PID | grep ssh-agent > /dev/null || {
-		start_agent && cd ~/git/dotfiles && git pull && cd ~/git/scripts && git pull && cd && pacaur -Suy || source ~/.zshrc
+		start_agent && conf.pull&; pacaur -Suy || source ~/.zshrc
 	}
 else
 	start_agent
