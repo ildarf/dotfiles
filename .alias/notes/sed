@@ -1,3 +1,5 @@
+# replace a or b with shit
+sed 's/[ab]/shit/g'
 # replace in place (change the file, don't output to stdout)
 sed -i 's/ugly/beautiful/g' file.txt
 
