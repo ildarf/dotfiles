@@ -173,6 +173,7 @@ mode "launch" {
 		bindsym e	exec evolution, mode "default"
 		bindsym f	exec firefox, mode "default"
 		bindsym 7	exec virtualbox --startvm win7, mode "default"
+		bindsym 0	exec virtualbox --startvm win10, mode "default"
 		bindsym k	exec keepass, mode "default"
 		bindsym l	exec libreoffice, mode "default"
 		bindsym r	exec speedcrunch, mode "default"
