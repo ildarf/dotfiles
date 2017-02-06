@@ -12,7 +12,7 @@ RPROMPT="%{$fg[yellow]%}%B%* %{$reset_color%}%(?.%{$fg[green]%}âœ”.%{$fg[red]%}â
 xset r rate 200 70
 
 # set pointer acceleration
-xset m 61 3
+xset m 120 3
 
 # set keyboardlayout changing shortcut
 setxkbmap -layout gb,de,ru -variant ,,phonetic -option grp:ctrls_toggle
