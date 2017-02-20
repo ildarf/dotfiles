@@ -1,4 +1,5 @@
 https://ubuntuforums.org/showthread.php?t=620003
+https://bbs.archlinux.org/viewtopic.php?id=167007
 
 Xephyr -screen 800x600 :1
 xterm -bg black -fg white -geometry 800x600 -display :1 & ; xrandr -display :1 --output default --rotate right
