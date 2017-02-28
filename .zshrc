@@ -270,12 +270,6 @@ then
 	source ~/.alias/alias.mnt
 fi
 
-# load alias.work file
-if [ -f ~/.alias/alias.work ]
-then
-	source ~/.alias/alias.work
-fi
-
 # load alias.bahn file
 if [ -f ~/.alias/alias.bahn ]
 then
