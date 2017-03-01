@@ -1,5 +1,13 @@
 # useful sql-commands
 
+# show databases
+show databases;
+
+# list tables of db
+show tables from db_name;
+
+select * from db_name.table_name;
+
 # set constraints
 	check 'somecolumn' in ('this', 'that');
 	check ('somaval' > 0);
@@ -16,10 +24,6 @@ delete from 'tablename' where 'somecolumn'='value';
 insert into 'tablename' ('column1', 'column2') values
 	('data1', 'data2'),
 	('data1', 'data2');
-
-
-# show databases
-show databases;
 
 # delete user from database
 drop user [if exists] user [, user] ...
