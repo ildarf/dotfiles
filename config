@@ -175,7 +175,7 @@ mode "launch" {
 		bindsym 7	exec virtualbox --startvm win7, mode "default"
 		bindsym 0	exec virtualbox --startvm win10, mode "default"
 		bindsym k	exec keepass, mode "default"
-		bindsym l	exec libreoffice, mode "default"
+		bindsym l	mode "$libreoffice"
 		bindsym r	exec speedcrunch, mode "default"
 		bindsym o	exec owncloud, mode "default"
 		bindsym s	exec spotify, mode "default"
@@ -192,6 +192,16 @@ mode "launch" {
 		bindsym Escape mode "default"
 }
 bindsym Mod4+o mode "launch"
+
+
+set $libreoffice libreoffice (w) writer, (c) calc
+mode "$libreoffice" {
+		bindsym w	exec libreoffice --writer, mode "default"
+		bindsym c	exec libreoffice --calc, mode "default"
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
 
 set $debian DEBIAN (u) update && upgrade, (i) install, (I) aptitude install, (r) remove, (l) dpkg -l | grep, (L) dpkg -L, (p) purge, (P) policy, (s) search, (S) show, (Meta+s) showpkg
 mode "$debian" {
