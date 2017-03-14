@@ -206,6 +206,31 @@ alias res='resizepics'
 # swap caps lock and esc in X
 setxkbmap -option caps:swapescape
 
+# ssh-agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+SSH_ENV=$HOME/.ssh/environment
+
+start_agent()
+{
+    echo "initializing new SSH agent ..."
+    ssh-agent | sed 's/^echo/#echo/' > $SSH_ENV
+    echo "succeeded"
+    chmod 600 $SSH_ENV
+    . $SSH_ENV
+    ssh-add
+}
+
+# source SSH settings, if applicable
+if [[ -f $SSH_ENV ]]
+then
+    . $SSH_ENV # > /dev/null
+    ps -ef | grep $SSH_AGENT_PID | grep ssh-agent > /dev/null || {
+        curl -4 http://wttr.in/Düsseldorf && start_agent && source ~/.zshrc && conf.pull&; pacaur -Suy
+    }
+else
+    start_agent
+fi
+
 if [ -f ~/.workrc ]
 then
 	source ~/.workrc
