@@ -401,7 +401,7 @@ exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id owncloud
 
-exec --no-startup-id i3-msg 'exec sh ~/default-screen; workspace 1; exec chromium; workspace 2; exec i3-sensible-terminal; workspace 3; exec keepass;'
+exec --no-startup-id i3-msg 'exec sh ~/default-screen; workspace 1; exec i3-sensible-terminal; exec keepass; workspace 2; exec chromium;'
 
 # Make the currently focused window a scratchpad
 bindsym Mod4+Shift+s move scratchpad
