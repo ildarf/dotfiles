@@ -1,5 +1,20 @@
 # useful sql-commands
 
+# show grants of user
+show grants for 'user'@'host';
+show grants for current_user;
+show grants;
+
+# add columnt to table
+alter table table_name
+add column_name datatype [first|after name];
+
+# show users of database
+select * from mysql.user;
+
+# get description of a database
+desc db_name.table_name;
+
 # show databases
 show databases;
 
