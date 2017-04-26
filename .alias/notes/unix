@@ -1,3 +1,7 @@
+# fix permissions with find
+find . -type d -exec chmod 775 {} \;
+find . -type f -exec chmod 664 {} \;
+
 # remove user from group
 gpasswd -d <user> <group>
 

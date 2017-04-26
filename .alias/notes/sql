@@ -1,11 +1,43 @@
 # useful sql-commands
 
+# rename tables
+rename table `tablename` to `other_tablename`;
+
+# delete row
+delete from `tablename` where <condition>
+
+# drop column
+alter table `tablename` drop column `columnname`;
+
+# modify null / not null
+alter table `tablename` modify column `columnname` <datatype>
+
+# add primary key to table
+alter table `tablename` add primary key (`key_name`);
+
+# change value in row
+update `tablename`
+set `columnname` = 'value1'
+where key_value = 'some_value';
+
+# delete foreign key from table
+alter table `tablename`
+drop foreign key contraint_name;
+
+# add foreign key to table
+alter table `tablename`
+add foreign key (`key_name`)
+references `other_table_name`(`referenced_key_name`);
+
+# show current database
+select database();
+
 # show grants of user
 show grants for 'user'@'host';
 show grants for current_user;
 show grants;
 
-# add columnt to table
+# add column to table
 alter table table_name
 add column_name datatype [first|after name];
 
@@ -35,7 +67,7 @@ delete from 'tablename' where 'somecolumn'='value';
 	.headers on
 	.mode column
 
-# insert multiple table rows
+#ginsert multiple table rows
 insert into 'tablename' ('column1', 'column2') values
 	('data1', 'data2'),
 	('data1', 'data2');

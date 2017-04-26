@@ -1,0 +1,15 @@
+# some useful php notes
+http://php.net/manual/en/control-structures.foreach.php
+# foreach example 3: key and value
+
+$a = array(
+    "one" => 1,
+    "two" => 2,
+    "three" => 3,
+    "seventeen" => 17
+);
+
+foreach ($a as $k => $v) {
+    echo "\$a[$k] => $v.\n";
+}
+

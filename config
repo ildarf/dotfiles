@@ -174,6 +174,7 @@ mode "launch" {
 		bindsym f	exec firefox, mode "default"
 		bindsym 7	exec virtualbox --startvm win7, mode "default"
 		bindsym 0	exec virtualbox --startvm win10, mode "default"
+		bindsym h	exec chromium 'http://www.uni-duesseldorf.de/home/fileadmin/redaktion/Oeffentliche_Medien/Karten-Anfahrtplaene-HHU/Infocenter__Lage_und_Anreise/HHU_Campusplan_Juni_2016-smart.jpg', mode "default"
 		bindsym k	exec keepass, mode "default"
 		bindsym l	mode "$libreoffice"
 		bindsym r	exec speedcrunch, mode "default"
@@ -363,6 +364,8 @@ mode "$sleep" {
 		bindsym Escape	mode "default"
 }
 bindsym Mod4+x mode "$sleep"
+
+bindsym Mod4+v exec ~/scripts/copy_vim_filename
 
 # set $screenshot screenshot
 # mode "$screenshot" {

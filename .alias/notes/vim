@@ -1,5 +1,8 @@
 vim - cheatsheet:
 ======================================================= 
+get absolute path of current file
+	1, Ctrl+G
+======================================================= 
 get current syntax
 	:setlocal syntax
 get current filetype
