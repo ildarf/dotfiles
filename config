@@ -135,6 +135,22 @@ bindsym Mod4+Shift+8 move container to workspace 8
 bindsym Mod4+Shift+9 move container to workspace 9
 bindsym Mod4+Shift+0 move container to workspace 10
 
+
+# mouse wheel bindings try
+
+# middle button over titlebar kills window
+bindsym --release button2 kill
+
+# middle button + Mod4 over any part of the window kills it
+bindsym --whole-window Mod4+button2 kill
+
+# the right button toggles floating
+# bindsym --whole-window Mod4+button3 floating toggle
+
+# mod + scrolling selects another window
+bindsym --whole-window Mod4+button5 focus down
+bindsym --whole-window Mod4+button4 focus up
+
 # reload the configuration file
 bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -409,13 +425,20 @@ bar {
 #
 # Please remove the following exec line:
 #######################################################################
+
+# assign terminal to workspace 1
+assign [class="UXTerm"] 1
+assign [class="chromium"] 2
+
 exec i3-config-wizard
 exec --no-startup-id dunst
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id owncloud
 
-exec --no-startup-id i3-msg 'exec sh ~/default-screen; workspace 1; exec i3-sensible-terminal; exec keepass; workspace 2; exec chromium;'
+exec --no-startup-id i3-msg 'exec sh ~/default-screen'
+exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace 2; exec chromium; exec keepass'
 
 # Make the currently focused window a scratchpad
 bindsym Mod4+Shift+s move scratchpad
