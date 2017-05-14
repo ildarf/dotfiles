@@ -338,7 +338,8 @@ bindsym Mod1+Control+Delete mode "$mode_system"
 
 set $mode_display Display (d) dockscreen, (l) leftscreen, (r) rightscreen, (b) bigscreen, (s) bigscreen small res. (m) mirrorscreen, (n) normal
 mode "$mode_display" {
-	bindsym d	exec xrandr --output HDMI1 --mode 1920x1200 --output VGA1 --mode 1280x1024 --rotate right --right-of HDMI1 --output LVDS1 --off, mode "default"
+	# bindsym d	exec xrandr --output HDMI1 --mode 1920x1200 --output VGA1 --mode 1280x1024 --rotate right --right-of HDMI1 --output LVDS1 --off, mode "default"
+	bindsym d	exec xrandr --output HDMI1 --auto --rotate normal --output VGA1 --auto --left-of HDMI1 --rotate normal --output LVDS1 --off, mode "default"
 	bindsym b	exec xrandr --output HDMI1 --mode 1920x1200 --output VGA1 --off --output LVDS1 --off, mode "default"
 	bindsym s	exec xrandr --output HDMI1 --mode 1280x960 --output VGA1 --off --output LVDS1 --off, mode "default"
 	bindsym m	exec xrandr --output LVDS1 --mode 1024x768 --output VGA1 --mode 1024x768 --same-as LVDS1, mode "default"

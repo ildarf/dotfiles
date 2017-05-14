@@ -245,8 +245,8 @@ set pastetoggle=<F12>
 
 inoremap { {}<ESC>i
 inoremap {<CR> {<CR>}<ESC>O
-inoremap ( ()<esc>i
-inoremap [ []<esc>i
+" inoremap ( ()<esc>i
+" inoremap [ []<esc>i
 inoremap < <
 inoremap <<tab> <><esc>i
 inoremap (<tab> ()<CR>{<CR>}<esc>2kf(a
