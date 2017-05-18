@@ -13,9 +13,7 @@
 # is used in the bar {} block below.
 # font pango:monospace 7
 font pango:Droid Sans Mono 7
-
 workspace_layout tabbed
-
 new_window pixel 1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -38,125 +36,6 @@ set $right l
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod4
-
-# start a terminal
-bindsym Mod4+Return exec i3-sensible-terminal
-
-# kill focused window
-bindsym Mod4+Shift+q kill
-bindsym Mod1+F4 kill
-
-# start dmenu (a program launcher)
-bindsym Mod4+d exec dmenu_run -fn 'Droid Sans Mono-7'
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
-
-# change focus
-bindsym Mod4+$left focus left
-bindsym Mod4+$down focus down
-bindsym Mod4+$up focus up
-bindsym Mod4+$right focus right
-
-# alternatively, you can use the cursor keys:
-bindsym Mod4+Left focus left
-bindsym Mod4+Down focus down
-bindsym Mod4+Up focus up
-bindsym Mod4+Right focus right
-
-# move focused window
-bindsym Mod4+Mod1+$left move left
-bindsym Mod4+Mod1+$down move down
-bindsym Mod4+Mod1+$up move up
-bindsym Mod4+Mod1+$right move right
-
-# alternatively, you can use the cursor keys:
-bindsym Mod4+Mod1+Left move left
-bindsym Mod4+Mod1+Down move down
-bindsym Mod4+Mod1+Up move up
-bindsym Mod4+Mod1+Right move right
-
-# move workspaces to another screen
-bindsym Mod4+Shift+h	exec --no-startup-id i3-msg move workspace to output left
-bindsym Mod4+Shift+l	exec --no-startup-id i3-msg move workspace to output right
-
-# focus another monitor
-bindsym Mod4+Control+h	exec --no-startup-id i3-msg focus output left
-bindsym Mod4+Control+l	exec --no-startup-id i3-msg focus output right
-
-# split in horizontal orientation
-bindsym Mod4+Shift+Right split h
-
-# split in vertical orientation
-bindsym Mod4+Shift+Down split v
-
-# enter fullscreen mode for the focused container
-bindsym Mod4+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym Mod4+s layout stacking
-bindsym Mod4+w layout tabbed
-bindsym Mod4+e layout toggle split
-
-# toggle tiling / floating
-bindsym Mod4+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym Mod4+space focus mode_toggle
-
-# focus the parent container
-bindsym Mod4+p focus parent
-
-# focus the child container
-bindsym Mod4+c focus child
-
-# switch to workspace
-bindsym Mod4+1 workspace 1
-bindsym Mod4+2 workspace 2
-bindsym Mod4+3 workspace 3
-bindsym Mod4+4 workspace 4
-bindsym Mod4+5 workspace 5
-bindsym Mod4+6 workspace 6
-bindsym Mod4+7 workspace 7
-bindsym Mod4+8 workspace 8
-bindsym Mod4+9 workspace 9
-bindsym Mod4+0 workspace 10
-
-# move focused container to workspace
-bindsym Mod4+Shift+1 move container to workspace 1
-bindsym Mod4+Shift+2 move container to workspace 2
-bindsym Mod4+Shift+3 move container to workspace 3
-bindsym Mod4+Shift+4 move container to workspace 4
-bindsym Mod4+Shift+5 move container to workspace 5
-bindsym Mod4+Shift+6 move container to workspace 6
-bindsym Mod4+Shift+7 move container to workspace 7
-bindsym Mod4+Shift+8 move container to workspace 8
-bindsym Mod4+Shift+9 move container to workspace 9
-bindsym Mod4+Shift+0 move container to workspace 10
-
-
-# mouse wheel bindings try
-
-# middle button over titlebar kills window
-bindsym --release button2 kill
-
-# middle button + Mod4 over any part of the window kills it
-bindsym --whole-window Mod4+button2 kill
-
-# the right button toggles floating
-# bindsym --whole-window Mod4+button3 floating toggle
-
-# mod + scrolling selects another window
-bindsym --whole-window Mod4+button5 focus down
-bindsym --whole-window Mod4+button4 focus up
-
-# reload the configuration file
-bindsym Mod4+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod4+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -181,7 +60,6 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym Mod4+r mode "resize"
 
 mode "launch" {
 		bindsym a	exec chromium 'https://auas.cs.uni-duesseldorf.de/', mode "default"
@@ -208,8 +86,6 @@ mode "launch" {
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-bindsym Mod4+o mode "launch"
-
 
 set $libreoffice libreoffice (w) writer, (c) calc
 mode "$libreoffice" {
@@ -272,8 +148,6 @@ mode "$sysadmin" {
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
-bindsym Mod4+u mode "$sysadmin"
-
 
 set $browser (b) Benutzer, (c) Kopierkarte, (C) cgit, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) ildar:howto, (u) useractivity, (M) Mensa, (m) Mitarbeiter
 mode "$browser" {
@@ -293,7 +167,6 @@ mode "$browser" {
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
-bindsym Mod4+b	mode "$browser"
 
 mode "puppet" {
 		bindsym s	exec tmux send-keys "vim /etc/puppetlabs/code/environments/production/manifests/*" Enter, mode "default"
@@ -301,7 +174,6 @@ mode "puppet" {
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
-bindsym Mod4+Shift+p mode "puppet"
 
 set $git git (s) status, (c) commit -m, (C) checkout, (Meta+c) clone, (d) diff, (D) describe, (a) add, (p) push, (P) pull, (l) log, (t) tag
 mode "$git" {
@@ -321,7 +193,6 @@ mode "$git" {
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
-bindsym Mod4+g exec tmux send-keys "git ", mode "$git"
 
 set $systemctl systemctl (s) status, (r) restart, (R) reload, (S) stop, (a) start, (e) enable, (d) disable
 mode "$systemctl" {
@@ -337,9 +208,8 @@ mode "$systemctl" {
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
-bindsym Mod4+y exec tmux send-keys "systemctl ", mode "$systemctl"
 
-set $mode_system System (Return) shutdown, (l) lock, (o) logout, (s) suspend, (r) reboot
+set $mode_system System (Return) shutdown, (l) lock, (o) logout, (s) suspend, (r) rebot
 mode "$mode_system" {
 	bindsym l	exec --no-startup-id i3lock -c 000000, mode "default"
 	bindsym o	exec --no-startup-id i3-msg exit, mode "default"
@@ -350,7 +220,6 @@ mode "$mode_system" {
 # back to normal: Enter or Escape
 	bindsym Escape mode "default"
 }
-bindsym Mod1+Control+Delete mode "$mode_system"
 
 set $mode_display Display (d) dockscreen, (l) leftscreen, (r) rightscreen, (b) bigscreen, (s) bigscreen small res. (m) mirrorscreen, (n) normal
 mode "$mode_display" {
@@ -366,7 +235,6 @@ mode "$mode_display" {
 	bindsym Return	mode "default"
 	bindsym Escape	mode "default"
 }
-bindsym Mod4+Shift+d mode "$mode_display"
 
 set $sleep sleep (6) 60min, (9) 90min, (1) 120min, (2) 240min
 mode "$sleep" {
@@ -380,9 +248,7 @@ mode "$sleep" {
 		bindsym Return	mode "default"
 		bindsym Escape	mode "default"
 }
-bindsym Mod4+x mode "$sleep"
-
-bindsym Mod4+v exec ~/scripts/copy_vim_filename
+# bindsym Mod4+x [class="UXTerm"] focus
 
 # set $screenshot screenshot
 # mode "$screenshot" {
@@ -405,8 +271,114 @@ bindsym Print exec "scrot -s"
 # }
 # bindsym Mod4+n mode "$keyboard"
 
+# change focus
+bindsym Mod4+$left focus left
+bindsym Mod4+$down focus down
+bindsym Mod4+$up focus up
+bindsym Mod4+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+# move focused window
+bindsym Mod4+Mod1+$left move left
+bindsym Mod4+Mod1+$down move down
+bindsym Mod4+Mod1+$up move up
+bindsym Mod4+Mod1+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Mod1+Left move left
+bindsym Mod4+Mod1+Down move down
+bindsym Mod4+Mod1+Up move up
+bindsym Mod4+Mod1+Right move right
+
+# bindsym Mod4+a 
+bindsym Mod4+b	mode "$browser"
+bindsym Mod4+c focus child
+bindsym Mod4+d exec dmenu_run -fn 'Droid Sans Mono-7'
+bindsym Mod4+e layout toggle split
+bindsym Mod4+f fullscreen toggle
+bindsym Mod4+g exec tmux send-keys "git ", mode "$git"
+# bindsym Mod4+h ## moving
+# bindsym Mod4+i 
+# bindsym Mod4+j ## moving
+# bindsym Mod4+k ## moving
+# bindsym Mod4+l ## moving
+# bindsym Mod4+m 
+bindsym Mod4+o mode "launch"
+bindsym Mod4+p focus parent
+# bindsym Mod4+q 
+bindsym Mod4+r mode "resize"
+bindsym Mod4+s layout stacking
+# bindsym Mod4+t 
+bindsym Mod4+u mode "$sysadmin"
+bindsym Mod4+v exec ~/scripts/copy_vim_filename
+bindsym Mod4+w layout tabbed
+bindsym Mod4+x exec ~/scripts/focus_last
+bindsym Mod4+y exec tmux send-keys "systemctl ", mode "$systemctl"
+bindsym Mod4+z mode "$sleep"
+
+bindsym Mod4+space focus mode_toggle
+
+bindsym Mod4+Shift+s move scratchpad
+bindsym Mod4+Shift+h	exec --no-startup-id i3-msg move workspace to output left
+bindsym Mod4+Shift+l	exec --no-startup-id i3-msg move workspace to output right
+bindsym Mod4+Shift+Right split h
+bindsym Mod4+Shift+Down split v
+bindsym Mod4+Shift+space floating toggle
+bindsym Mod4+Shift+d mode "$mode_display"
+bindsym Mod4+Shift+p mode "puppet"
+
+bindsym Mod4+Control+h	exec --no-startup-id i3-msg focus output left
+bindsym Mod4+Control+l	exec --no-startup-id i3-msg focus output right
 bindsym Mod4+Control+j exec amixer -c 0 set Master 2- unmute
 bindsym Mod4+Control+k exec amixer -c 0 set Master 2+ unmute
+bindsym Mod1+Control+Delete mode "$mode_system"
+
+bindsym Mod4+1 workspace 1
+bindsym Mod4+2 workspace 2
+bindsym Mod4+3 workspace 3
+bindsym Mod4+4 workspace 4
+bindsym Mod4+5 workspace 5
+bindsym Mod4+6 workspace 6
+bindsym Mod4+7 workspace 7
+bindsym Mod4+8 workspace 8
+bindsym Mod4+9 workspace 9
+bindsym Mod4+0 workspace 10
+bindsym Mod4+Shift+1 move container to workspace 1
+bindsym Mod4+Shift+2 move container to workspace 2
+bindsym Mod4+Shift+3 move container to workspace 3
+bindsym Mod4+Shift+4 move container to workspace 4
+bindsym Mod4+Shift+5 move container to workspace 5
+bindsym Mod4+Shift+6 move container to workspace 6
+bindsym Mod4+Shift+7 move container to workspace 7
+bindsym Mod4+Shift+8 move container to workspace 8
+bindsym Mod4+Shift+9 move container to workspace 9
+bindsym Mod4+Shift+0 move container to workspace 10
+
+bindsym --release button2 kill # middle button over titlebar kills window
+bindsym --whole-window Mod4+button2 kill # middle button + Mod4 over any part of the window kills it
+bindsym --whole-window Mod4+button5 focus down
+bindsym --whole-window Mod4+button4 focus up
+
+bindsym Mod4+Shift+c reload # reload the configuration file
+bindsym Mod4+Shift+r restart # restart i3 inplace 
+# exit i3 (logs you out of your X session)
+bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym Mod4+Shift+f scratchpad show #, resize set 1600 1000 # Show the first scratchpad window
+
+bindsym Mod4+Return exec i3-sensible-terminal
+
+bindsym Mod4+Shift+q kill
+bindsym Mod1+F4 kill
+
+
+# Show the sup-mail scratchpad window, if any.
+#bindsym mod4+Ss [title="^Sup ::"] scratchpad show
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -439,12 +411,3 @@ exec --no-startup-id owncloud
 exec --no-startup-id i3-msg 'exec sh ~/default-screen'
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace 2; exec chromium; exec keepass'
-
-# Make the currently focused window a scratchpad
-bindsym Mod4+Shift+s move scratchpad
-
-# Show the first scratchpad window
-bindsym Mod4+Shift+f scratchpad show, resize set 1600 1000
-
-# Show the sup-mail scratchpad window, if any.
-#bindsym mod4+Ss [title="^Sup ::"] scratchpad show
