@@ -359,8 +359,9 @@ bindsym Mod4+Shift+8 move container to workspace 8
 bindsym Mod4+Shift+9 move container to workspace 9
 bindsym Mod4+Shift+0 move container to workspace 10
 
-bindsym --release button2 kill # middle button over titlebar kills window
-bindsym --whole-window Mod4+button2 kill # middle button + Mod4 over any part of the window kills it
+bindsym --release button2 kill
+# middle button over titlebar kills window
+# bindsym --whole-window Mod4+button2 kill # middle button + Mod4 over any part of the window kills it
 bindsym --whole-window Mod4+button5 focus down
 bindsym --whole-window Mod4+button4 focus up
 
