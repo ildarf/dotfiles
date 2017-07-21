@@ -117,7 +117,7 @@ pdfs()
 
 ideavimrc()
 {
-	vim -p ~/.ideavimrc ~/.vimrc
+	vim ~/.ideavimrc ~/.vimrc
 }
 
 band()

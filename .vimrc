@@ -254,12 +254,12 @@ inoremap "<tab> ""<esc>i
 inoremap '<tab> ''<esc>i
 inoremap `<tab> ``<esc>i
 
-"inoremap <C-i> <esc>/[(){}"'\[\]>;:,.\|\`]<CR>:nohl<CR>lR
-inoremap <C-u> <esc>?[(){}"'\[\]>;:,.\|\`]<CR>:nohl<CR>lR
+inoremap <C-e> <esc>?[(){}"'\[\]>;:,.\|\`]<CR>:nohl<CR>lR
+inoremap <C-f> <esc>/[(){}"'\[\]>;:,.\|\`]<CR>:nohl<CR>lR
 inoremap <C-j> <esc>/[(){}"'\[\]>;:,.\|\`]<CR>:nohl<CR>a
 inoremap <C-k> <esc>?[(){}"'\[\]>;:,.\|\`]<CR>:nohl<CR>a
 inoremap <C-l> <esc>A
-inoremap <C-o> <esc>:w<CR>a
+" inoremap <C-o> <esc>:w<CR>i
 
 nnoremap ci< f<lct>
 nnoremap ca< f<lca>
@@ -269,6 +269,9 @@ nnoremap ci[ f[ci]
 nnoremap ca[ f[ca]
 nnoremap ci{ /{<CR>ciB
 nnoremap ca{ /{<CR>caB
+
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 nnoremap \d "+d
 nnoremap \D "+D
