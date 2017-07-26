@@ -3,8 +3,11 @@ tmux-cheatsheet:
 <C-b>
 ---------------------------------------------------------------
 new:
+
 	joinp -s :2	move window 2 into a new pane in
 			current window
+			<C-y>j
+
 	joinp -t :1	move current pane into new pane
 			in window 1
 

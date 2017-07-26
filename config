@@ -73,6 +73,7 @@ mode "launch" {
 		bindsym l	mode "$libreoffice"
 		bindsym r	exec speedcrunch, mode "default"
 		bindsym o	exec owncloud, mode "default"
+		bindsym q	exec qutebrowser, mode "default"
 		bindsym s	exec spotify, mode "default"
 		bindsym Shift+s	exec speedcrunch, mode "default"
 		bindsym t	exec chromium 'https://translate.google.de/#auto/de/', mode "default"
@@ -401,7 +402,7 @@ bar {
 
 # assign terminal to workspace 1
 assign [class="UXTerm"] 1
-assign [class="chromium"] 2
+assign [class="qutebrowser"] 2
 
 exec i3-config-wizard
 exec --no-startup-id dunst
@@ -411,4 +412,4 @@ exec --no-startup-id owncloud
 
 exec --no-startup-id i3-msg 'exec sh ~/default-screen'
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace 2; exec chromium; exec keepass'
+exec --no-startup-id i3-msg 'workspace 2; exec qutebrowser; exec keepass'
