@@ -1,3 +1,56 @@
+# apache config beaty roundup with vim
+:%s/Alias\s\+/Alias           /
+:%s/ServerAdmin\s\+/ServerAdmin     /
+:%s/ServerName\s\+/ServerName      /
+:%s/ServerAlias\s\+/ServerAlias     /
+:%s/ErrorLog\s\+/ErrorLog        /
+:%s/CustomLog\s\+/CustomLog       /
+:%s/DocumentRoot\s\+/DocumentRoot    /
+:%s/ScriptAlias\s\+/ScriptAlias     /
+:%s/DirectoryIndex\s\+/DirectoryIndex  /
+:%s/php_flag\s\+/php_flag        /
+:%s/php_value\s\+/php_value       /
+:%s/php_admin_value\s\+/php_admin_value /
+:%s/RewriteEngine\s\+/RewriteEngine   /
+:%s/RewriteCond\s\+/RewriteCond     /
+:%s/RewriteRule\s\+/RewriteRule     /
+:%s/Redirect\s\+/Redirect        /
+:%s/Options\s\+/Options         /
+:%s/IndexOptions\s\+/IndexOptions    /
+:%s/HeaderName\s\+/HeaderName      /
+:%s/IndexIgnore\s\+/IndexIgnore     /
+:%s/AllowOverride\s\+/AllowOverride   /
+:%s/AuthBasicProvider\s\+/AuthBasicProvider   /
+:%s/DAV\s\+/DAV             /
+:%s/Satisfy\s\+/Satisfy         /
+:%s/require\s\+/require         /
+:%s/AuthType\s\+/AuthType        /
+:%s/AuthName\s\+/AuthName        /
+:%s/AuthUserFile\s\+/AuthUserFile    /
+:%s/Require\s\+/Require         /
+:%s/SetEnv\s\+/SetEnv          /
+:%s/SSLEngine\s\+/SSLEngine               /
+:%s/SSLCertificateFile\s\+/SSLCertificateFile      /
+:%s/SSLCertificateKeyFile\s\+/SSLCertificateKeyFile   /
+:%s/WSGIProcessGroup\s\+/WSGIProcessGroup        /
+:%s/WSGIDaemonProcess\s\+/WSGIDaemonProcess       /
+:%s/WSGIPassAuthorization\s\+/WSGIPassAuthorization   /
+:%s/WSGIScriptAlias\s\+/WSGIScriptAlias         /
+:%s/ForceType\s\+/ForceType       /
+:%s/Header\s\+/Header          /
+:%s/FileETag\s\+/FileETag        /
+:%s/AddType\s\+/AddType         /
+:%s/AuthBasicProvider\s\+/AuthBasicProvider   /
+:%s/AuthLDAPURL\s\+/AuthLDAPURL         /
+:%s/ProxyPass\s\+/ProxyPass       /
+:%s/BalancerMember\s\+/BalancerMember  /
+:%s/ExpiresActive\s\+/ExpiresActive   /
+:%s/ExpiresDefault\s\+/ExpiresDefault  /
+:%s/:443$//
+:%s/:80$//
+:%s/\s\+//
+
 # apache config test
 apachectl configtest
 apachectl -t
+

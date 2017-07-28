@@ -62,7 +62,7 @@ mode "resize" {
 }
 
 mode "launch" {
-		bindsym a	exec chromium 'https://auas.cs.uni-duesseldorf.de/', mode "default"
+		bindsym a	exec libreoffice --writer ~/ownCloud/Documents/arbeitszeiten.ods, mode "default"
 		bindsym c	exec chromium, mode "default"
 		bindsym e	exec evolution, mode "default"
 		bindsym f	exec firefox, mode "default"
