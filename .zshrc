@@ -1,6 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+setxkbmap -layout gb,de,ru -variant ,,phonetic -option grp:ctrls_toggle
+xset r rate 200 70
+xset m 120 3
+setxkbmap -option caps:swapescape
+
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
