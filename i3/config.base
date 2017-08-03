@@ -1,0 +1,437 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# font pango:monospace 7
+font pango:Droid Sans Mono 7
+workspace_layout tabbed
+new_window pixel 1
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+# use Mouse+Mod1 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 5 px or 5 ppt
+        bindsym $down       resize grow height 5 px or 5 ppt
+        bindsym $up         resize shrink height 5 px or 5 ppt
+        bindsym $right      resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "launch" {
+		bindsym a	exec libreoffice --writer ~/ownCloud/Documents/arbeitszeiten.ods, mode "default"
+		bindsym c	exec chromium, mode "default"
+		bindsym e	exec evolution, mode "default"
+		bindsym f	exec firefox, mode "default"
+		bindsym 7	exec virtualbox --startvm win7, mode "default"
+		bindsym 0	exec virtualbox --startvm win10, mode "default"
+		bindsym h	exec chromium 'http://www.uni-duesseldorf.de/home/fileadmin/redaktion/Oeffentliche_Medien/Karten-Anfahrtplaene-HHU/Infocenter__Lage_und_Anreise/HHU_Campusplan_Juni_2016-smart.jpg', mode "default"
+		bindsym i	exec idea.sh, mode "default"
+		bindsym k	exec keepass, mode "default"
+		bindsym l	mode "$libreoffice"
+		bindsym q	exec qutebrowser, mode "default"
+		bindsym r	exec speedcrunch, mode "default"
+		bindsym o	exec owncloud, mode "default"
+		bindsym q	exec qutebrowser, mode "default"
+		bindsym s	exec spotify, mode "default"
+		bindsym Shift+s	exec speedcrunch, mode "default"
+		bindsym t	exec chromium 'https://translate.google.de/#auto/de/', mode "default"
+		bindsym Shift+t	exec tuxguitar, mode "default"
+		bindsym Mod4+t	exec ~/scripts/tmuxtea, mode "default"
+		bindsym v	exec virtualbox, mode "default"
+		bindsym d	exec dropbox, mode "default"
+		bindsym y	exec yed, mode "default"
+		bindsym b	exec tmux send-keys "blon" Enter, mode "default"
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+set $libreoffice libreoffice (w) writer, (c) calc
+mode "$libreoffice" {
+		bindsym w	exec libreoffice --writer, mode "default"
+		bindsym c	exec libreoffice --calc, mode "default"
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+set $debian DEBIAN (u) update && upgrade, (i) install, (I) aptitude install, (r) remove, (l) dpkg -l | grep, (L) dpkg -L, (p) purge, (P) policy, (s) search, (S) show, (Meta+s) showpkg
+mode "$debian" {
+		bindsym i	exec tmux send-keys "apt-get install " , mode "default"
+		bindsym Shift+i	exec tmux send-keys "aptitude install " , mode "default"
+		bindsym l	exec tmux send-keys "dpkg -l | grep " , mode "default"
+		bindsym Shift+l	exec tmux send-keys "dpkg -L " , mode "default"
+		bindsym p	exec tmux send-keys "apt-get purge " , mode "default"
+		bindsym Shift+p	exec tmux send-keys "apt-cache policy " , mode "default"
+		bindsym r	exec tmux send-keys "apt-get remove " , mode "default"
+		bindsym s	exec tmux send-keys "apt-cache search " , mode "default"
+		bindsym Shift+s	exec tmux send-keys "apt-cache show " , mode "default"
+		bindsym Mod4+s	exec tmux send-keys "apt-cache showpkg " , mode "default"
+		bindsym u	exec tmux send-keys "apt-get update && apt-get upgrade" Enter, mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
+set $arch ARCH (u) pacaur -Suy, (i) pacaur -S, (r) pacaur -Rns, (q) pacaur -Q, (s) pacaur -sS
+mode "$arch" {
+		bindsym u	exec tmux send-keys "pacaur -Suy" Enter, mode "default"
+		bindsym s	exec tmux send-keys "pacaur -Suy" Enter, mode "default"
+		bindsym s	exec tmux send-keys "pacaur -sS " , mode "default"
+		bindsym i	exec tmux send-keys "pacaur -S " , mode "default"
+		bindsym r	exec tmux send-keys "pacaur -Rns " , mode "default"
+		bindsym q	exec tmux send-keys "pacaur -Q " , mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
+set $suse SUSE (l) zypper list-patches, (p) zypper -t patch
+mode "$suse" {
+		bindsym l	exec tmux send-keys "zypper list-patches" Enter, mode "default"
+		bindsym p	exec tmux send-keys "zypper -t patch" Enter , mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
+set $sysadmin (a) arch, (c) cal -my, (d) debian, (Mod4+u) uzziel, (u) uname -a, (s) suse, (v) vim `which , (w) which 
+mode "$sysadmin" {
+		bindsym a	mode "$arch"
+		bindsym c	exec tmux send-keys "cal -my" Enter, mode "default"
+		bindsym d	mode "$debian"
+		bindsym s	mode "$suse"
+		bindsym p	exec tmux send-keys "uberspace" Enter, mode "default"
+		bindsym Mod4+p	exec tmux send-keys "uberspace" Enter, mode "default"
+		bindsym u	exec tmux send-keys "uname -a" Enter, mode "default"
+		bindsym v	exec tmux send-keys "vim \`which " , mode "default"
+		bindsym w	exec tmux send-keys "which " , mode "default"
+		bindsym Mod4+u	exec tmux send-keys "uzziel" Enter, mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
+set $browser (b) Benutzer, (c) Kopierkarte, (C) cgit, (d) dokuwiki, (g) glpi, (h) hosttab, (i) icinga, (t) ildar:howto, (u) useractivity, (M) Mensa, (m) Mitarbeiter
+mode "$browser" {
+		bindsym a exec chromium 'https://auas.cs.uni-duesseldorf.de/abgabe/student/login', mode "default"
+		bindsym b exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer', mode "default"
+		bindsym c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/benutzer:kopierkarten#kopierkarte_registrieren', mode "default"
+		bindsym Shift+c exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/cgit/', mode "default"
+		bindsym d exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/', mode "default"
+		bindsym f exec chromium 'https://www.facebook.com/', mode "default"
+		bindsym g exec chromium 'https://ocsinventory.phil-fak.uni-duesseldorf.de/glpi/index.php?redirect=%2Ffront%2Fticket.php%3Fis_deleted%3D0%26criteria%255B0%255D%255Bfield%255D%3D12%26criteria%255B0%255D%255Bsearchtype%255D%3Dequals%26criteria%255B0%255D%255Bvalue%255D%3Dnotold%26criteria%255B1%255D%255Blink%255D%3DAND%2BNOT%26criteria%255B1%255D%255Bfield%255D%3D1%26criteria%255B1%255D%255Bsearchtype%255D%3Dcontains%26criteria%255B1%255D%255Bvalue%255D%3Dmrbs%26criteria%255B2%255D%255Blink%255D%3DAND%26criteria%255B2%255D%255Bfield%255D%3D80%26criteria%255B2%255D%255Bsearchtype%255D%3Dnotunder%26criteria%255B2%255D%255Bvalue%255D%3D8%26criteria%255B3%255D%255Blink%255D%3DAND%2BNOT%26criteria%255B3%255D%255Bfield%255D%3D1%26criteria%255B3%255D%255Bsearchtype%255D%3Dcontains%26criteria%255B3%255D%255Bvalue%255D%3Dspss%2Bf%25C3%25BCr%2Bstudierende%26criteria%255B4%255D%255Blink%255D%3DAND%2BNOT%26criteria%255B4%255D%255Bfield%255D%3D1%26criteria%255B4%255D%255Bsearchtype%255D%3Dcontains%26criteria%255B4%255D%255Bvalue%255D%3DVersandbest%25C3%25A4tigung%26criteria%255B5%255D%255Blink%255D%3DAND%26criteria%255B5%255D%255Bfield%255D%3D80%26criteria%255B5%255D%255Bsearchtype%255D%3Dnotunder%26criteria%255B5%255D%255Bvalue%255D%3D9%26criteria%255B6%255D%255Blink%255D%3DAND%2BNOT%26criteria%255B6%255D%255Bfield%255D%3D1%26criteria%255B6%255D%255Bsearchtype%255D%3Dcontains%26criteria%255B6%255D%255Bvalue%255D%3DBestellbest%25C3%25A4tigung%26criteria%255B7%255D%255Blink%255D%3DAND%2BNOT%26criteria%255B7%255D%255Bfield%255D%3D4%26criteria%255B7%255D%255Bsearchtype%255D%3Dcontains%26criteria%255B7%255D%255Bvalue%255D%3D%2540voelkner%26criteria%255B8%255D%255Blink%255D%3DAND%2BNOT%26criteria%255B8%255D%255Bfield%255D%3D4%26criteria%255B8%255D%255Bsearchtype%255D%3Dcontains%26criteria%255B8%255D%255Bvalue%255D%3D%2540gls-group%26criteria%255B9%255D%255Blink%255D%3DAND%2BNOT%26criteria%255B9%255D%255Bfield%255D%3D4%26criteria%255B9%255D%255Bsearchtype%255D%3Dcontains%26criteria%255B9%255D%255Bvalue%255D%3D%2540news.hitmeister%26criteria%255B10%255D%255Blink%255D%3DAND%2BNOT%26criteria%255B10%255D%255Bfield%255D%3D5%26criteria%255B10%255D%255Bsearchtype%255D%3Dcontains%26criteria%255B10%255D%255Bvalue%255D%3DLabudda%26criteria%255B11%255D%255Blink%255D%3DAND%2BNOT%26criteria%255B11%255D%255Bfield%255D%3D4%26criteria%255B11%255D%255Bsearchtype%255D%3Dcontains%26criteria%255B11%255D%255Bvalue%255D%3DLabudda%26search%3DSuchen%26itemtype%3DTicket%26start%3D0', mode "default"
+		bindsym h exec chromium 'https://hosttab.phil-fak.uni-duesseldorf.de/Hosttab/hosts/list', mode "default"
+		bindsym i exec chromium 'https://monitor.phil.hhu.de/icinga/', mode "default"
+		bindsym t exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/ildar:howto', mode "default"
+		bindsym u exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/useractivity/', mode "default"
+		bindsym Shift+m exec chromium 'http://www.stw-d.de/Essen/Speiseplan.php?ort=9.100&lang=de', mode "default"
+		bindsym m exec chromium 'https://sna.phil-fak.uni-duesseldorf.de/doku/common:mitarbeiter', mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
+set $git git (s) status, (c) commit -m, (C) checkout, (Meta+c) clone, (d) diff, (D) describe, (a) add, (p) push, (P) pull, (l) log, (t) tag
+mode "$git" {
+		bindsym a	exec tmux send-keys 'add ', mode "default"
+		bindsym b	exec tmux send-keys 'branch ', mode "default"
+		bindsym c	exec tmux send-keys 'commit -m "' , mode "default"
+		bindsym Shift+c	exec tmux send-keys 'checkout ' , mode "default"
+		bindsym Mod4+c	exec tmux send-keys 'clone ' , mode "default"
+		bindsym d	exec tmux send-keys 'diff ' , mode "default"
+		bindsym Shift+d	exec tmux send-keys 'describe ' , mode "default"
+		bindsym l	exec tmux send-keys 'log ' , mode "default"
+		bindsym p	exec tmux send-keys 'push' Enter, mode "default"
+		bindsym Shift+p	exec tmux send-keys 'pull' Enter, mode "default"
+		bindsym s	exec tmux send-keys 'status' Enter, mode "default"
+		bindsym t	exec tmux send-keys 'tag ' , mode "default"
+# back to normal: Enter or Escape
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
+set $systemctl systemctl (s) status, (r) restart, (R) reload, (S) stop, (a) start, (e) enable, (d) disable
+mode "$systemctl" {
+		bindsym a	exec tmux send-keys 'start ', mode "default"
+		bindsym c	exec tmux send-keys 'cat ', mode "default"
+		bindsym d	exec tmux send-keys 'disable ', mode "default"
+		bindsym e	exec tmux send-keys 'enable ', mode "default"
+		bindsym r	exec tmux send-keys 'restart ', mode "default"
+		bindsym Shift+r	exec tmux send-keys 'reload ', mode "default"
+		bindsym s	exec tmux send-keys "status ", mode "default"
+		bindsym Shift+s	exec tmux send-keys 'stop ', mode "default"
+
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+
+set $mode_system System (Return) shutdown, (l) lock, (o) logout, (s) suspend, (r) rebot
+mode "$mode_system" {
+	bindsym l	exec --no-startup-id i3lock -c 000000, mode "default"
+	bindsym o	exec --no-startup-id i3-msg exit, mode "default"
+	bindsym s	exec --no-startup-id i3lock  -c 000000 && systemctl suspend, mode "default"
+	bindsym r	exec --no-startup-id systemctl reboot, mode "default"
+	bindsym Return	exec --no-startup-id systemctl poweroff, mode "default"
+	bindsym space	exec --no-startup-id tmux send-keys 'conf.push || askphrase "shutdown?" && systemctl poweroff' Enter, mode "default"
+# back to normal: Enter or Escape
+	bindsym Escape mode "default"
+}
+
+set $mode_display Display (d) dockscreen, (l) leftscreen, (r) rightscreen, (b) bigscreen, (s) bigscreen small res. (m) mirrorscreen, (n) normal
+mode "$mode_display" {
+	# bindsym d	exec xrandr --output HDMI1 --mode 1920x1200 --output VGA1 --mode 1280x1024 --rotate right --right-of HDMI1 --output LVDS1 --off, mode "default"
+	bindsym d	exec xrandr --output HDMI1 --auto --rotate normal --output VGA1 --auto --left-of HDMI1 --rotate normal --output LVDS1 --off, mode "default"
+	bindsym b	exec xrandr --output HDMI1 --mode 1920x1200 --output VGA1 --off --output LVDS1 --off, mode "default"
+	bindsym s	exec xrandr --output HDMI1 --mode 1280x960 --output VGA1 --off --output LVDS1 --off, mode "default"
+	bindsym m	exec xrandr --output LVDS1 --mode 1024x768 --output VGA1 --mode 1024x768 --same-as LVDS1, mode "default"
+	bindsym n	exec xrandr --output HDMI1 --off --output VGA1 --off --output LVDS1 --auto, mode "default"
+	bindsym l	exec xrandr --output LVDS1 --auto --output VGA1 --auto --left-of LVDS1, mode "default"
+	bindsym r	exec xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1, mode "default"
+# back to normal: Enter or Escape
+	bindsym Return	mode "default"
+	bindsym Escape	mode "default"
+}
+
+set $sleep sleep (6) 60min, (9) 90min, (1) 120min, (2) 240min
+mode "$sleep" {
+		bindsym 1	exec tmux send-keys 'shutdown +120' Enter, mode "default"
+		bindsym 2	exec tmux send-keys 'shutdown +240' Enter, mode "default"
+		bindsym 6	exec tmux send-keys 'shutdown +60' Enter, mode "default"
+		bindsym Mod4+z	exec tmux send-keys 'shutdown +90' Enter, mode "default"
+		bindsym 9	exec tmux send-keys 'shutdown +90' Enter, mode "default"
+		bindsym Mod4+c	exec tmux send-keys 'shutdown -c' Enter, mode "default"
+		bindsym c	exec tmux send-keys 'shutdown -c' Enter, mode "default"
+		bindsym Mod4+a	exec tmux send-keys 'shutdown -c' Enter, mode "default"
+		bindsym a	exec tmux send-keys 'shutdown -c' Enter, mode "default"
+		bindsym Return	mode "default"
+		bindsym Escape	mode "default"
+}
+# bindsym Mod4+x [class="UXTerm"] focus
+
+# set $screenshot screenshot
+# mode "$screenshot" {
+# 	bindsym s exec scrot -s, mode "default"
+# 	bindsym Return	mode "default"
+# 	bindsym Escape	mode "default"
+# }
+# 
+# bindsym Print mode "$screenshot"
+
+bindsym Print exec "scrot -s"
+
+# set $keyboard keyboard layout (r) ru, (d) de, (g) gb
+# mode "$keyboard" {
+# 	bindsym r exec setxkbmap -layout ru -variant phonetic, mode "default"
+# 	bindsym d exec setxkbmap -layout de, mode "default"
+# 	bindsym g exec setxkbmap -layout gb, mode "default"
+# # back to normal: Enter or Escape
+# 	bindsym Escape mode "default"
+# }
+# bindsym Mod4+n mode "$keyboard"
+
+# change focus
+bindsym Mod4+$left focus left
+bindsym Mod4+$down focus down
+bindsym Mod4+$up focus up
+bindsym Mod4+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+# move focused window
+bindsym Mod4+Mod1+$left move left
+bindsym Mod4+Mod1+$down move down
+bindsym Mod4+Mod1+$up move up
+bindsym Mod4+Mod1+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Mod1+Left		move left
+bindsym Mod4+Mod1+Down		move down
+bindsym Mod4+Mod1+Up		move up
+bindsym Mod4+Mod1+Right		move right
+
+# bindsym Mod4+a 
+bindsym Mod4+b				exec ~/scripts/focus_qutebrowser
+bindsym Mod4+c				exec ~/scripts/focus_chromium
+bindsym Mod4+d				exec dmenu_run -fn 'Droid Sans Mono-7'
+bindsym Mod4+e				layout toggle split
+bindsym Mod4+f				fullscreen toggle
+bindsym Mod4+g				exec tmux send-keys "git ", mode "$git"
+# bindsym Mod4+h ## moving
+bindsym Mod4+i				exec ~/scripts/focus_intellij
+# bindsym Mod4+j ## moving
+# bindsym Mod4+k ## moving
+# bindsym Mod4+l ## moving
+# bindsym Mod4+m				exec ~/scripts/focus_spotify
+bindsym Mod4+o				mode "launch"
+bindsym Mod4+p				exec ~/scripts/focus_pdf
+# bindsym Mod4+q 
+bindsym Mod4+r				mode "resize"
+bindsym Mod4+s				layout stacking
+# bindsym Mod4+t 
+bindsym Mod4+u				mode "$sysadmin"
+bindsym Mod4+v				exec ~/scripts/copy_vim_filename
+bindsym Mod4+w				layout tabbed
+bindsym Mod4+x				exec ~/scripts/focus_xterm
+bindsym Mod4+y				exec tmux send-keys "systemctl ", mode "$systemctl"
+bindsym Mod4+z				mode "$sleep"
+
+# bindsym Mod4+Shift+a
+bindsym Mod4+Shift+b		mode "$browser"
+bindsym Mod4+Shift+c		focus child
+bindsym Mod4+Shift+d		mode "$mode_display"
+# bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym Mod4+Shift+f scratchpad show
+#, resize set 1600 1000 # Show the first scratchpad window
+# bindsym Mod4+Shift+g
+bindsym Mod4+Shift+h		exec --no-startup-id i3-msg move workspace to output left
+# bindsym Mod4+Shift+i
+# bindsym Mod4+Shift+j
+# bindsym Mod4+Shift+k
+bindsym Mod4+Shift+l		exec --no-startup-id i3-msg move workspace to output right
+# kindsym Mod4+Shift+m
+# kindsym Mod4+Shift+n
+# kindsym Mod4+Shift+o
+bindsym Mod4+Shift+p		focus parent
+# bindsym Mod4+Shift+p
+bindsym Mod4+Shift+q kill
+bindsym Mod4+Shift+r restart
+bindsym Mod4+Shift+s		move scratchpad
+# bindsym Mod4+Shift+t
+# bindsym Mod4+Shift+u
+# bindsym Mod4+Shift+v
+# bindsym Mod4+Shift+w
+# bindsym Mod4+Shift+x
+# bindsym Mod4+Shift+y
+# bindsym Mod4+Shift+z
+
+bindsym Mod4+Shift+Right	split h
+bindsym Mod4+Shift+Down		split v
+bindsym Mod4+space focus	mode_toggle
+bindsym Mod4+Shift+space	floating toggle
+bindsym Mod4+Mod1+space		floating toggle
+bindsym Mod4+Return			exec i3-sensible-terminal
+
+bindsym Mod4+Control+h		exec --no-startup-id i3-msg focus output left
+bindsym Mod4+Control+l		exec --no-startup-id i3-msg focus output right
+bindsym Mod4+Control+j		exec amixer -c 0 set Master 2- unmute
+bindsym Mod4+Control+k		exec amixer -c 0 set Master 2+ unmute
+bindsym Mod1+Control+Delete mode "$mode_system"
+
+bindsym Mod4+1				workspace 1
+bindsym Mod4+2				workspace 2
+bindsym Mod4+3				workspace 3
+bindsym Mod4+4				workspace 4
+bindsym Mod4+5				workspace 5
+bindsym Mod4+6				workspace 6
+bindsym Mod4+7				workspace 7
+bindsym Mod4+8				workspace 8
+bindsym Mod4+9				workspace 9
+bindsym Mod4+0				workspace 10
+bindsym Mod4+Shift+1		move container to workspace 1
+bindsym Mod4+Shift+2		move container to workspace 2
+bindsym Mod4+Shift+3		move container to workspace 3
+bindsym Mod4+Shift+4		move container to workspace 4
+bindsym Mod4+Shift+5		move container to workspace 5
+bindsym Mod4+Shift+6		move container to workspace 6
+bindsym Mod4+Shift+7		move container to workspace 7
+bindsym Mod4+Shift+8		move container to workspace 8
+bindsym Mod4+Shift+9		move container to workspace 9
+bindsym Mod4+Shift+0		move container to workspace 10
+
+# middle button over titlebar kills window
+bindsym --release button2	kill
+# middle button + Mod4 over any part of the window kills it
+bindsym --whole-window Mod4+button2 kill
+bindsym --whole-window Mod4+button5		focus down
+bindsym --whole-window Mod4+button4		focus up
+
+# bindsym Mod4+Shift+c reload # reload the configuration file
+# exit i3 (logs you out of your X session)
+
+bindsym Mod1+F4 kill
+
+# Show the sup-mail scratchpad window, if any.
+#bindsym mod4+Ss [title="^Sup ::"] scratchpad show
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	# font pango:monospace 7
+	font pango:Droid Sans Mono 7
+	status_command i3status
+}
+
+#######################################################################
+# automatically start i3-config-wizard to offer the user to create a
+# keysym-based config which used their favorite modifier (alt or windows)
+#
+# i3-config-wizard will not launch if there already is a config file
+# in ~/.i3/config.
+#
+# Please remove the following exec line:
+#######################################################################
+
+# assign terminal to workspace 1
+assign [class="UXTerm"] 1
+assign [class="qutebrowser"] 2
+assign [class="chromium"] 2
+# assign [class="App"] 2
+# for_window [class="App"] floating enable
+
+exec i3-config-wizard
+exec --no-startup-id dunst
+exec --no-startup-id volumeicon
+exec --no-startup-id nm-applet
+exec --no-startup-id owncloud
+
+workspace 1 output VGA1
+workspace 2 output HDMI1
+
+exec --no-startup-id i3-msg 'exec sh ~/default-screen'
+exec --no-startup-id i3-msg 'exec sh ~/workspace'
+# exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
+# exec --no-startup-id i3-msg 'workspace 2; exec qutebrowser; exec keepass'

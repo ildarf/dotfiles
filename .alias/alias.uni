@@ -23,6 +23,7 @@ alias webmail="$BROWSER \
 'https://wwwmail.uni-duesseldorf.de/user/'"
 
 alias uni='cd ~/uni/ && ranger-cd'
+alias pro='cd ~/uni/pro/Aufgaben && ranger-cd'
 
 alias lehrplan.info="$BROWSER 'http://dbs.cs.uni-duesseldorf.de/lehrplanungWE.php'"
 alias lehrplan.math="$BROWSER 'http://www.math.uni-duesseldorf.de/~braun/langfrist_web.html'"

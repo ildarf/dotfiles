@@ -3,11 +3,11 @@ alias alias.print='vim ~/.alias/alias.print && source ~/.alias/alias.print'
 
 # NOTE PRINTING >1 DOCUMENTS: after printig odd pages, the documents must be listed in reverse order as parameters for "pre"
 # HOW TO SET PAGE-RANGES: -o page-ranges=#-#
-alias pre="lp -o 'media=a4 landscape number-up=2 number-up-layout=rlbt page-bottom=40 page-set=even outputorder=normal'" # print even pages 
-alias pro="lp -o 'media=a4 landscape number-up=2 number-up-layout=rlbt page-top=40 page-set=odd outputorder=reverse'"    # print odd pages
+alias print.even="lp -o 'media=a4 landscape number-up=2 number-up-layout=rlbt page-bottom=40 page-set=even outputorder=normal'" # print even pages 
+alias print.odd="lp -o 'media=a4 landscape number-up=2 number-up-layout=rlbt page-top=40 page-set=odd outputorder=reverse'"    # print odd pages
 
 # suited for printing ranges of pages of only one document, a4 doublepage
-printr() {
+print.range() {
 	pre $* && yn && pro $*  
 }
 

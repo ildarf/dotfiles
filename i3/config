@@ -338,7 +338,7 @@ bindsym Mod4+Shift+l		exec --no-startup-id i3-msg move workspace to output right
 bindsym Mod4+Shift+p		focus parent
 # bindsym Mod4+Shift+p
 bindsym Mod4+Shift+q kill
-# bindsym Mod4+Shift+r restart # restart i3 inplace 
+bindsym Mod4+Shift+r restart
 bindsym Mod4+Shift+s		move scratchpad
 # bindsym Mod4+Shift+t
 # bindsym Mod4+Shift+u
@@ -428,7 +428,10 @@ exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id owncloud
 
-exec --no-startup-id i3-msg 'exec sh ~/workspace'
+workspace 1 output VGA1
+workspace 2 output HDMI1
+
 exec --no-startup-id i3-msg 'exec sh ~/default-screen'
+exec --no-startup-id i3-msg 'exec sh ~/workspace'
 # exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
 # exec --no-startup-id i3-msg 'workspace 2; exec qutebrowser; exec keepass'
