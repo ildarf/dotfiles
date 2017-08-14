@@ -222,8 +222,6 @@ mode "$mode_display" {
 	bindsym Escape	mode "default"
 }
 
-bindsym Print exec "scrot -s"
-
 # change focus
 bindsym Mod4+$left			focus left
 bindsym Mod4+$down			focus down
@@ -260,7 +258,7 @@ bindsym Mod4+i				exec ~/scripts/focus_intellij
 # bindsym Mod4+j ## moving
 # bindsym Mod4+k ## moving
 # bindsym Mod4+l ## moving
-# bindsym Mod4+m				exec ~/scripts/focus_spotify
+bindsym Mod4+m				exec "scrot -s -e 'mv $f ~/shots/'"
 bindsym Mod4+o				mode "launch"
 bindsym Mod4+p				exec ~/scripts/focus_pdf
 # bindsym Mod4+q 
