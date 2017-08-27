@@ -87,8 +87,9 @@ mode "launch" {
 #	bindsym z
 	bindsym Mod4+t	exec ~/scripts/tmuxtea,		mode "default"
 	bindsym Shift+t	exec tuxguitar,		mode "default"
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+	bindsym Shift+s	exec simple-scan,		mode "default"
+	bindsym Return	mode "default"
+	bindsym Escape	mode "default"
 }
 
 set $libreoffice libreoffice (w) writer, (c) calc
@@ -139,6 +140,7 @@ mode "$suse" {
 set $sysadmin (a) arch, (c) cal -my, (d) debian, (Mod4+u) uzziel, (u) uname -a, (s) suse, (v) vim `which , (w) which 
 mode "$sysadmin" {
 	bindsym a		mode "$arch"
+	bindsym b		exec tmux send-keys "uberspace" Enter,	mode "default"
 	bindsym c		exec tmux send-keys "cal -my" Enter,	mode "default"
 	bindsym d		mode "$debian"
 	bindsym s		mode "$suse"
