@@ -383,8 +383,8 @@ exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id owncloud
 
-workspace 1 output VGA1
-workspace 2 output HDMI1
+# workspace 1 output VGA1
+# workspace 2 output HDMI1
 
 exec --no-startup-id i3-msg 'exec sh ~/default-screen'
 exec --no-startup-id i3-msg 'exec sh ~/workspace'
