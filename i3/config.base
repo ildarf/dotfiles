@@ -145,6 +145,8 @@ mode "$sysadmin" {
 	bindsym d		mode "$debian"
 	bindsym s		mode "$suse"
 	bindsym p		exec tmux send-keys "uberspace" Enter,	mode "default"
+	bindsym r		exec tmux send-keys "systemctl restart apache2" Enter,	mode "default"
+	bindsym Shift+r	exec tmux send-keys "systemctl reload apache2" Enter,	mode "default"
 	bindsym u		exec tmux send-keys "uname -a" Enter,	mode "default"
 	bindsym Mod4+u	exec tmux send-keys "uzziel" Enter,		mode "default"
 	bindsym Return	mode "default"
