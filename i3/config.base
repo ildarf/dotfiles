@@ -81,7 +81,7 @@ mode "launch" {
 	bindsym t		exec chromium 'https://translate.google.de/#auto/de/', mode "default"
 #	bindsym u
 	bindsym v		exec virtualbox,	mode "default"
-#	bindsym w
+	bindsym w		exec libreoffice --writer ~/ownCloud/Documents/wochenplan.ods, mode "default"
 #	bindsym x
 	bindsym y		exec yed,			mode "default"
 #	bindsym z
