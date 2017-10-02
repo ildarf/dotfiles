@@ -365,3 +365,5 @@ function! AutoHighlightToggle()
 endfunction
 
 set lazyredraw
+
+inoremap <c<tab> <code><cr></code><esc>O
