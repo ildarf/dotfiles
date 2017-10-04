@@ -93,8 +93,8 @@ autoload -U edit-command-line
 autoload -Uz compinit && compinit
 zstyle :compinstall filename '/home/ildar/.zshrc'
 
-PROMPT="%{$fg[yellow]%}%B%n@%m %~ %#>%b %{$reset_color%}"
-RPROMPT="%{$fg[yellow]%}%B%* %{$reset_color%}%(?.%{$fg[green]%}✔.%{$fg[red]%}✘)%b%{$reset_color%}"
+PROMPT="%{$fg[green]%}%B%n@%m %~ %#>%b %{$reset_color%}"
+RPROMPT="%{$fg[green]%}%B%* %{$reset_color%}%(?.%{$fg[green]%}✔.%{$fg[red]%}✘)%b%{$reset_color%}"
 
 man() {
       env \
