@@ -112,7 +112,8 @@ mode "$debian" {
 	bindsym s		exec tmux send-keys "apt-cache search " ,	mode "default"
 	bindsym Shift+s	exec tmux send-keys "apt-cache show " ,		mode "default"
 	bindsym Mod4+s	exec tmux send-keys "apt-cache showpkg " ,	mode "default"
-	bindsym u		exec tmux send-keys "apt-get update && apt-get upgrade" Enter, mode "default"
+	bindsym u		exec tmux send-keys "apt-get update" Enter, mode "default"
+	bindsym Shift+u	exec tmux send-keys "apt-get upgrade" Enter, mode "default"
 	bindsym Return	mode "default"
 	bindsym Escape	mode "default"
 }
