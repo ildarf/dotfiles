@@ -1,0 +1,5 @@
+set selection-clipboard clipboard
+set first-page-column 1:1
+set browser qutebrowser %s
+set statusbar-bg \#121212
+set default-bg \#171717
