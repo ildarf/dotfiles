@@ -1,101 +1,30 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-setxkbmap -layout gb,de,ru -variant ,,phonetic -option grp:ctrls_toggle
-xset r rate 200 70
-xset m 120 3
-setxkbmap -option caps:swapescape
-
-# Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="af-magic"
-
-# af-magic.zsh-theme
-# Repo: https://github.com/andyfleming/oh-my-zsh
-# Direct Link: https://github.com/andyfleming/oh-my-zsh/blob/master/themes/af-magic.zsh-theme
-
-if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
-local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
-
-# primary prompt
-PROMPT='$FG[237]------------------------------------------------------------%{$reset_color%}
-$FG[032]%~\
-$(git_prompt_info) \
-$FG[105]%(!.#.»)%{$reset_color%} '
-PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
-RPS1='${return_code}'
-
-
-# color vars
-eval my_gray='$FG[237]'
-eval my_orange='$FG[214]'
-
-# right prompt
-if type "virtualenv_prompt_info" > /dev/null
-then
-	RPROMPT='$(virtualenv_prompt_info)$my_gray%n@%m%{$reset_color%}%'
-else
-	RPROMPT='$my_gray%n@%m%{$reset_color%}%'
-fi
-
-# git settings
-ZSH_THEME_GIT_PROMPT_PREFIX="$FG[075]($FG[078]"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_DIRTY="$my_orange*%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="$FG[075])%{$reset_color%}"
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-#
-
 # Set Prompt
 autoload -U colors && colors
-autoload -Uz vcs_info
-autoload -U edit-command-line
-autoload -Uz compinit && compinit
-zstyle :compinstall filename '/home/ildar/.zshrc'
 
-PROMPT="%{$fg[green]%}%B%n%{$reset_color%}@%{$fg[green]%}%B%m %~ %#>%b %{$reset_color%}"
+autoload -Uz vcs_info
+
+PROMPT="%{$fg[green]%}%B%n@%m% %{$reset_color%}%{$fg[blue]%}%B %~ %#%b %{$reset_color%}"
 RPROMPT="%{$fg[green]%}%B%* %{$reset_color%}%(?.%{$fg[green]%}✔.%{$fg[red]%}✘)%b%{$reset_color%}"
 
+# _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
+# set keyboard repeat delay and rate
+xset r rate 200 70
+
+# set pointer acceleration
+xset m 100 3
+
+# disable screensaver
+xset s off
+xset -dpms
+
+# swap caps lock and esc in X
+setxkbmap -option caps:swapescape
+
+# set keyboardlayout changing shortcut
+setxkbmap -layout gb,de,ru -variant ,,phonetic -option grp:ctrls_toggle
+
+# man page coloration
 man() {
       env \
 	  LESS_TERMCAP_mb=$(printf "\e[1;34m") \
@@ -108,6 +37,9 @@ man() {
 	  man "$@"
 }
 
+# keybindings
+# Make sure that the terminal is in application mode when zle is active, since
+# only then values from $terminfo are valid
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   function zle-line-init() {
     echoti smkx
@@ -119,48 +51,6 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   zle -N zle-line-finish
 fi
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git, gradle) 
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
-
-# source $ZSH/oh-my-zsh.sh
-
 ranger-cd() {
   tempfile=$(mktemp)
   ranger --choosedir="$tempfile" "${@:-$(pwd)}" < $TTY
@@ -171,12 +61,29 @@ ranger-cd() {
   rm -f -- "$tempfile"
   xdotool key "ctrl+j"
 }
+# This binds Ctrl-O to ranger-cd:
 zle -N ranger-cd
 bindkey '\er' ranger-cd
 
+bindkey '\ew' kill-region                             # [Esc-w] - Kill from the cursor to the mark
+bindkey -s '\eu' 'pacaur -Suy\n'
+bindkey -s '\ei' 'sudo pacman -S '
+bindkey -s '\e9' 'uniblatt\n'
+bindkey -s '\ex' ' | xsel -b\n'
 
-zle -N edit-command-line
-bindkey '^r' history-incremental-search-backward
+# directories & uni-keybindings
+bindkey -s '\e.' 'cd ..\n'
+bindkey -s '\e-' 'cd -\n'
+bindkey -s '\e0' '~/Downloads/'
+
+bindkey '^r' history-incremental-search-backward      # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
+if [[ "${terminfo[kpp]}" != "" ]]; then
+  bindkey "${terminfo[kpp]}" up-line-or-history       # [PageUp] - Up a line of history
+fi
+if [[ "${terminfo[knp]}" != "" ]]; then
+  bindkey "${terminfo[knp]}" down-line-or-history     # [PageDown] - Down a line of history
+fi
+
 bindkey '^[k' up-line-or-search
 bindkey '^[j' down-line-or-search
 
@@ -186,29 +93,108 @@ fi
 if [[ "${terminfo[kcud1]}" != "" ]]; then
   bindkey "${terminfo[kcud1]}" down-line-or-search    # start typing + [Down-Arrow] - fuzzy find history backward
 fi
-bindkey -v
 
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+if [[ "${terminfo[khome]}" != "" ]]; then
+  bindkey "${terminfo[khome]}" beginning-of-line      # [Home] - Go to beginning of line
+fi
+if [[ "${terminfo[kend]}" != "" ]]; then
+  bindkey "${terminfo[kend]}"  end-of-line            # [End] - Go to end of line
+fi
 
-setopt autocd
-setopt extendedglob
+bindkey ' ' magic-space                               # [Space] - do history expansion
 
-export KEYTIMEOUT=1
-export PATH=$PATH:~/scripts:~/bin
-export EDITOR=vim
-export BROWSER="qutebrowser"
+bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move forward one word
+bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
 
 if [[ "${terminfo[kcbt]}" != "" ]]; then
   bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
 fi
+
+bindkey '^?' backward-delete-char                     # [Backspace] - delete backward
+if [[ "${terminfo[kdch1]}" != "" ]]; then
+  bindkey "${terminfo[kdch1]}" delete-char            # [Delete] - delete forward
+else
+  bindkey "^[[3~" delete-char
+  bindkey "^[3;5~" delete-char
+  bindkey "\e[3~" delete-char
+fi
+
+# Edit the current command line in $EDITOR
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
+
+# end keybindings
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd
+setopt extendedglob
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/ildar/.zshrc'
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+export KEYTIMEOUT=1
+
+# Set $PATH variable
+export PATH=$PATH:~/scripts:~/bin
+
+# Set GRAPHVIZ_DOT variable
+export GRAPHVIZ_DOT=/usr/bin/dot
+
+# Set $EDITOR 
+export EDITOR=vim
+
+# Set $BROWSER
+export BROWSER="qutebrowser"
 
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 # [[ -z "$TMUX" ]] && exec tmux new-session \; curl -4 http://wttr.in/Dusseldorf \;
 [[ -z "$TMUX" ]] && exec tmux
 
+# pacman aliases
+alias pacclean="sudo pacman -Rns $(pacman -Qqtd)"
+alias upg='sudo pacman -Suy && yaourt -Suy --aur'
+
+# Coloring aliases
+alias ls="ls --color=always"
+alias lsn="ls --color=never"
+alias less="less -R"
+
+# Bluetooth aliases
+alias enbl="echo enable bluetooth | sudo tee /proc/acpi/ibm/bluetooth"
+alias disbl="echo disable bluetooth | sudo tee /proc/acpi/ibm/bluetooth"
+
+# mounting aliase
+alias stick="sudo mount -o umask=000 /dev/sdb1 ~/mnt && ranger ~/mnt"
+alias platte="sudo mount -o gid=users, fmask=113, dmask=002 /dev/sdb1 ~/mnt && ranger ~/mnt"
+mmnt() {
+	sudo mount -o umask=000 $1 ~/mnt
+	ranger ~/mnt
+}
+
+# directory aliases
+alias dls='cd ~/Downloads/ && ranger-cd'
+
+alias vim='vim -p'
+
+# screensaver alias
+alias soff="xset s off; xset -dpms"
+alias son="xset s on; xset +dpms"
+
+# program-aliases
+resizepics() {
+	mogrify -resize 500x\> -verbose $* && mogrify -resize x750\> -verbose $*
+}
+alias res='resizepics'
 
 # ssh-agent
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
@@ -234,6 +220,11 @@ then
 else
     start_agent
 fi
+
+
+ZSH=/usr/share/oh-my-zsh/
+plugins=(git, gradle) 
+
 
 if [ -f ~/.workrc ]
 then

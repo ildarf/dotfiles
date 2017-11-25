@@ -194,7 +194,7 @@ colorscheme industry "nice bright colorscheme
 " show a vertical line at 80 character
 hi ColorColumn ctermbg=DarkGrey
 " let &colorcolumn="80,".join(range(81,300),",")
-set colorcolumn=80
+set colorcolumn=70
 
 " set line number colors
 hi LineNr ctermfg=darkgrey ctermbg=darkgrey 
