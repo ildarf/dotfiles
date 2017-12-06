@@ -17,6 +17,7 @@ xset m 100 3
 # disable screensaver
 xset s off
 xset -dpms
+xset b off
 
 # swap caps lock and esc in X
 setxkbmap -option caps:swapescape
