@@ -393,9 +393,9 @@ client.background       #ffffff
 #######################################################################
 
 # assign terminal to workspace 1
-assign [class="UXTerm"] 1
-assign [class="qutebrowser"] 2
-assign [class="chromium"] 2
+# assign [class="UXTerm"] 1
+# assign [class="qutebrowser"] 2
+# assign [class="chromium"] 2
 # assign [class="App"] 2
 # for_window [class="App"] floating enable
 
