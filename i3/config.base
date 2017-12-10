@@ -36,6 +36,12 @@ set $right	l
 
 floating_modifier Mod4
 
+bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2- unmute
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2+ unmute
+bindsym XF86AudioMute		 exec amixer -c 0 set Master mute
+bindsym XF86MonBrightnessDown	exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp		exec xbacklight -inc 5
+
 mode "resize" {
 	bindsym $left	resize shrink	width	5 px or 5 ppt
 	bindsym $down	resize grow		height	5 px or 5 ppt

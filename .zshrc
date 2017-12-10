@@ -8,23 +8,6 @@ RPROMPT="%{$fg[green]%}%B%* %{$reset_color%}%(?.%{$fg[green]%}âœ”.%{$fg[red]%}âœ
 
 # _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
-# set keyboard repeat delay and rate
-xset r rate 200 70
-
-# set pointer acceleration
-xset m 100 3
-
-# disable screensaver
-xset s off
-xset -dpms
-xset b off
-
-# swap caps lock and esc in X
-setxkbmap -option caps:swapescape
-
-# set keyboardlayout changing shortcut
-setxkbmap -layout gb,de,ru -variant ,,phonetic -option grp:ctrls_toggle
-
 # man page coloration
 man() {
       env \
