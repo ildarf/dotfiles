@@ -312,8 +312,8 @@ bindsym Mod4+Shift+s		move scratchpad
 # bindsym Mod4+Shift+y
 # bindsym Mod4+Shift+z
 
-bindsym Mod4+Shift+Right	split h
-bindsym Mod4+Shift+Down		split v
+bindsym Mod4+Mod1+Control+l	split h
+bindsym Mod4+Mod1+Control+j	split v
 bindsym Mod4+space focus	mode_toggle
 bindsym Mod4+Shift+space	floating toggle
 bindsym Mod4+Mod1+space		floating toggle
